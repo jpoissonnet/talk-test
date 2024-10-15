@@ -25,5 +25,17 @@ Déconstruisons la pyramide des tests pour mieux comprendre la valeur des tests 
 
 ## Message pour le comité 
 
+Nous échangeons depuis plusieurs mois sur la thématique des tests et, forts de nos expériences respectives, nous souhaitons partager notre retour d'expérience et nos conseils. Nous proposons une présentation dynamique, avec des slides interactifs, des démos en direct, et des exemples concrets.
+
+Une personne qui suit cette présentation repartira avec :
+
+- Une compréhension approfondie des différents types de tests (unitaires, intégration, E2E) et de leurs véritables rôles.
+- Des clés pour évaluer la pertinence de chaque type de test dans leur contexte.
+- Des stratégies concrètes pour intégrer les tests end-to-end (E2E) sans sacrifier la vélocité de développement.
+- Des conseils sur comment optimiser leur stratégie de test pour maximiser la valeur ajoutée tout en minimisant la maintenance.
+- Une vision critique sur la nécessité de s’affranchir de la pyramide traditionnelle pour adopter une approche plus flexible et adaptée.
+
+Cette présentation s'adresse à un public technique ou QA/testeur, qu'ils soient novices ou experts. 
+Chacun y trouvera des pistes pour repenser leur approche des tests et renforcer la qualité de leurs projets à long terme.
 
 ## Plan théorique de la présentation
