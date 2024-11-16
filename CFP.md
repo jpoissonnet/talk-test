@@ -39,3 +39,75 @@ Cette présentation s'adresse à un public technique ou QA/testeur, qu'ils soien
 Chacun y trouvera des pistes pour repenser leur approche des tests et renforcer la qualité de leurs projets à long terme.
 
 ## Plan théorique de la présentation
+
+
+Intro + Slide de titre + présentation de chacun
+"à la fin de ce talk vous aurez la meilleures manière de concevoir une stratégie de tests pour vos applications"
+
+1) Test dans l'industrie, exemple du parapluie
+
+- besoin d'une matière imperméable
+- test unitaires
+- besoin d'un mécanisme robuste
+- tests intégration
+- besoin qu'il ne s'explose pas avec le vent
+- besoin de mock
+- besoin d'être à l'abris de la pluie
+- tests e2e
+
+2) Du coup comment on test quand on travaille dans le dev
+
+- on jete des outils dans une stack et on est content.
+- on se met des seuil de coverage et est content
+- on teste nos outils au lieu de tester notre produit / documenter notre métier
+- le code de nos tests ne respecte pas nos principe de code Testbase < codebase
+- on se préoccupe peu dans la conception de ce qu'on veut tester et comment on va le faire => BDD
+- test smells:
+  - non observation
+  - on écrit des tests très long
+  - on test notre mock
+- on run tous nos tests tout le temps
+- pyramide des tests
+
+3) Pour quoi on fait des tests
+
+- conformité "est-ce que ce que le code fait c'est ce qu'on souhaite"
+- stabilité "est-ce que ça casse quelque chose"
+- documenté "que'est ça fait bordel"
+- intégrité "est-ce qu'on est confiant sur le fonctionnement"
+- reproductibilité
+  
+ => Itérer accelerer
+
+5) nos conseils
+
+- Ne mesurer pas le coverage, obter plutot pour des stratégies de mutation testing testing
+- Ta test base fait partie de la codebase "how you do one thing is how you do everything"
+  - s'imposer des règles et les automatisés (lint)
+- Tester avec le diff
+  - jest / vitest le fond
+  - nx affected
+- ...
+
+
+## TODO
+
+
+## Recherche
+
+- [ ] Antoine achete le livre de l'auteur de la pyramide des tests et le lit 
+- [ ] Antoine setup ensuite pour les slides et fait un readme pour Jules
+- [ ] Jules lit le livre sur la qualité des logiciels
+- [ ] Jules lit les regles eslint plugin jest ou vitests
+
+- [ ] Jules et Antoine regardent le page object model
+- [ ] Antoine et Jules se met à jour strykerJS
+- [ ] Antoine reregarde cypress
+- [ ] Antoine et Jules se mettent à jour sur playright
+- [ ] Jules analyse vitest
+- [ ] Jules analyse test container
+
+## conception des slides
+
+
+
