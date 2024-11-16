@@ -100,6 +100,8 @@ Intro + Slide de titre + présentation de chacun
 - [ ] Jules lit le livre sur la qualité des logiciels
 - [ ] Jules lit les regles eslint plugin jest ou vitests
 
+
+
 - [ ] Jules et Antoine regardent le page object model
 - [ ] Antoine et Jules se met à jour strykerJS
 - [ ] Antoine reregarde cypress
