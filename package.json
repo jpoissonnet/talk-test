@@ -1,0 +1,24 @@
+{
+  "name": "talk-compression",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "wds",
+    "start:watch": "wds -w src/slides-transformer.mjs",
+    "presenter": "enprez"
+  },
+  "dependencies": {
+    "highlight.js": "^11.2.0",
+    "lit": "^2.4.0"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.1.34",
+    "chokidar": "^3.5.2",
+    "ensuite-present": "0.1.0",
+    "fs-extra": "^10.0.0",
+    "puppeteer": "^10.4.0",
+    "twemoji": "^13.1.0"
+  },
+  "volta": {
+    "node": "18.10.0"
+  }
+}
