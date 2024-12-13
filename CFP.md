@@ -108,6 +108,15 @@ Intro + Slide de titre + présentation de chacun
 - [ ] Antoine et Jules se mettent à jour sur playright
 - [ ] Jules analyse vitest
 - [ ] Jules analyse test container
+## Conception de la démo
+app qui fait appel à une API volontairement lente
+- testée avec playwright
+- performance API pour avoir une waterfall des temps entre le réseau et l'overhead de playwright
+- mockée avec un mirage / MSW
+
+app avec un test qui crée des users / todo
+- test d'un comportement avce un effet de bord sur la bdd
+- mise en place de test container
 
 ## conception des slides
 
