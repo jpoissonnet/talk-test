@@ -87,7 +87,7 @@ Intro + Slide de titre + présentation de chacun
 - Tester avec le diff
   - jest / vitest le fond
   - nx affected
-- ...
+- rationaliser sa quantité de test -> pour un freelance c'est pas nécessaire de tester parce que pas gain https://xkcd.com/1205/
 
 
 ## TODO
