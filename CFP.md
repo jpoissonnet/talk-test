@@ -60,14 +60,19 @@ Intro + Slide de titre + présentation de chacun
 - on jete des outils dans une stack et on est content.
 - on se met des seuil de coverage et est content
 - on teste nos outils au lieu de tester notre produit / documenter notre métier
-- le code de nos tests ne respecte pas nos principe de code Testbase < codebase
-- on se préoccupe peu dans la conception de ce qu'on veut tester et comment on va le faire => BDD
+- le code de nos tests ne respecte pas nos principe de code Testbase < codebase (test fido)
+- on se préoccupe peu dans la conception de ce qu'on veut tester et comment on va le faire => BDD / Acceptance driven development
 - test smells:
   - non observation
   - on écrit des tests très long
   - on test notre mock
 - on run tous nos tests tout le temps
+- Problématique de stabilité
+- problématique de performance
+- Le cap de "j'ai trop de tests, ma CI est trop lente"
 - pyramide des tests
+  - dérive du modèle
+  - Modèle de base référence à Mike Cohn
 
 3) Pour quoi on fait des tests
 
@@ -84,9 +89,19 @@ Intro + Slide de titre + présentation de chacun
 - Ne mesurer pas le coverage, obter plutot pour des stratégies de mutation testing testing
 - Ta test base fait partie de la codebase "how you do one thing is how you do everything"
   - s'imposer des règles et les automatisés (lint)
-- Tester avec le diff
+  - Se reposer sur analyse statique / compilation
+- Tester avec le diff avec une architecture découpé
   - jest / vitest le fond
   - nx affected
+  - Sharding
+  - catéoriser et prioriser les tests
+- Dans le monde JS, préférer des outils comme Vitest (référence l'article de Younes)
+  - expliquer rapidement pourquoi
+- Setup une stack E2E est facile 2025 et les tests mettent beaucoup de temps qu'à une époque Selenium
+- Dans des tests d'interface web, un truc qui prend le plus de temps c'est l'http.
+  - faire du mock avec des outils comme SuperAgentMock / Mirage / MSW 
+  - en plus ça débloque la possibilité de tester des comportement à la marge (latence / erreur)
+- ...
 - rationaliser sa quantité de test -> pour un freelance c'est pas nécessaire de tester parce que pas gain https://xkcd.com/1205/
 
 
@@ -95,19 +110,16 @@ Intro + Slide de titre + présentation de chacun
 
 ## Recherche
 
-- [ ] Antoine achete le livre de l'auteur de la pyramide des tests et le lit 
-- [ ] Antoine setup ensuite pour les slides et fait un readme pour Jules
-- [ ] Jules lit le livre sur la qualité des logiciels
-- [ ] Jules lit les regles eslint plugin jest ou vitests
-
-
-
 - [ ] Jules et Antoine regardent le page object model
-- [ ] Antoine et Jules se met à jour strykerJS
+- [ ] Jules se met à jour strykerJS
 - [ ] Antoine reregarde cypress
 - [ ] Antoine et Jules se mettent à jour sur playright
 - [ ] Jules analyse vitest
 - [ ] Jules analyse test container
+- [ ] Antoine se mettent à jour sur playright
+- [ ] Jules analyse vitest / lire article younes
+- [ ] Jules et Antoine analyse test container
+
 ## Conception de la démo
 app qui fait appel à une API volontairement lente
 - testée avec playwright
