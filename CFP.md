@@ -84,7 +84,7 @@ Intro + Slide de titre + présentation de chacun
   
  => Itérer accelerer
 
-5) nos conseils
+4) nos conseils
 
 - Ne mesurer pas le coverage, obter plutot pour des stratégies de mutation testing testing
 - Ta test base fait partie de la codebase "how you do one thing is how you do everything"
