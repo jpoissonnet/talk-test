@@ -29,7 +29,7 @@ const styleTag = html`
                     transition:
                             transform 0.1s ease-in-out,
                             background 0.2s ease;
-                    display: flex;
+                    display: inline-flex;
                     align-items: center;
                     gap: 8px;
                 }
@@ -61,7 +61,7 @@ const styleTag = html`
                 }
 
                 .pending {
-                    color: #b45309;
+                    color: #4f46e5;
                 }
 
                 .fulfilled {
@@ -79,74 +79,100 @@ const styleTag = html`
 
                 .loader {
                     display: none;
-                    width: 18px;
-                    height: 18px;
+                    height: 100%;
+                    aspect-ratio: 1 / 1;
                     border: 2px solid #ffffff;
                     border-top: 2px solid transparent;
                     border-radius: 50%;
                     animation: spin 1s linear infinite;
+                }
+                .flex {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                
+                [title="timer"] {
+                    font-size: 3rem;
                 }
             </style>
         `;
 
 export const appTemplate = (delay: string) => (
     html`
-    <html lang="en">
-      <head>
-        ${styleTag}
-      </head>
-      <body>
+        <html lang="en">
+        <head>
+            ${styleTag}
+        </head>
+        <body>
         <div class="container">
-          <h1>API Fetch Demo</h1>
+            <h1>API Fetch Demo</h1>
 
-          <button onclick="handleFetch()">
-            <span>Fetch Data</span>
-            <div class="loader" id="loader"></div>
-            <span>🚀</span>
-          </button>
+            <button onclick="handleFetch()">
+                <span>Fetch Data</span>
+                <div class="loader" id="loader"></div>
+                <span>🚀</span>
+            </button>
 
-          <div class="status">
-            <div class="status-label">Status:</div>
-            <div class="status-content" title="status">Waiting to fetch...</div>
-          </div>
+            <div class="status flex">
+                <div>
+                    <div class="status-label">Status:</div>
+                    <div class="status-content" title="status">Waiting to fetch...</div>
+                </div>
+                <div class="status-content" title="timer">0.00 seconds</div>
+            </div>
 
-          <div class="status">
-            <div class="status-label">Result:</div>
-            <div class="status-content" title="result"></div>
-          </div>
+            <div class="status flex">
+                <div class="status-label">Result:</div>
+                <div class="status-content" title="result"></div>
+            </div>
+            
         </div>
 
         <script>
-          function handleFetch() {
-            const statusElement = document.querySelector('[title="status"]');
-            const loader = document.getElementById("loader");
-            const button = document.querySelector("button");
+            function handleFetch() {
+                const statusElement = document.querySelector('[title="status"]');
+                const timerElement = document.querySelector('[title="timer"]');
+                const loader = document.getElementById("loader");
+                const button = document.querySelector("button");
+                let startTime;
+                let timerInterval;
 
-            button.disabled = true;
-            loader.style.display = "block";
+                function updateTimer() {
+                    const currentTime = performance.now();
+                    const elapsedTime = ((currentTime - startTime) / 1000).toFixed(2);
+                    timerElement.innerText = elapsedTime + " seconds";
+                }
 
-            statusElement.innerText = "Fetching data...";
-            statusElement.classList.add("pending");
+                button.disabled = true;
+                loader.style.display = "block";
 
-            fetch("/api/${delay}")
-              .then((res) => res.text())
-              .then((content) => {
-                statusElement.innerText = "Request successful!";
-                statusElement.classList.remove("pending");
-                statusElement.classList.add("fulfilled");
-                document.querySelector('[title="result"]').innerText = content;
-              })
-              .catch((error) => {
-                statusElement.innerText = "Error fetching data";
-                document.querySelector('[title="result"]').innerText =
-                  error.message;
-              })
-              .finally(() => {
-                button.disabled = false;
-                loader.style.display = "none";
-              });
-          }
+                statusElement.innerText = "Fetching data...";
+                statusElement.classList.add("pending");
+
+                // Start the timer
+                startTime = performance.now();
+                timerInterval = setInterval(updateTimer, 20);
+
+                fetch("/api/${delay}")
+                        .then((res) => res.text())
+                        .then((content) => {
+                            statusElement.innerText = "Request successful!";
+                            statusElement.classList.remove("pending");
+                            statusElement.classList.add("fulfilled");
+                            document.querySelector('[title="result"]').innerText = content;
+                        })
+                        .catch((error) => {
+                            statusElement.innerText = "Error fetching data";
+                            document.querySelector('[title="result"]').innerText = error.message;
+                        })
+                        .finally(() => {
+                            clearInterval(timerInterval); // Stop the timer
+                            button.disabled = false;
+                            loader.style.display = "none";
+                        });
+            }
         </script>
-      </body>
-    </html>
-  `);
+        </body>
+        </html>
+    `);
