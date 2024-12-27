@@ -7,16 +7,16 @@
     "presenter": "enprez"
   },
   "dependencies": {
-    "highlight.js": "^11.2.0",
-    "lit": "^2.4.0"
+    "highlight.js": "^11.11.1",
+    "lit": "^2.8.0"
   },
   "devDependencies": {
-    "@web/dev-server": "^0.1.34",
-    "chokidar": "^3.5.2",
+    "@web/dev-server": "^0.1.38",
+    "chokidar": "^3.6.0",
     "ensuite-present": "0.1.0",
-    "fs-extra": "^10.0.0",
+    "fs-extra": "^10.1.0",
     "puppeteer": "^10.4.0",
-    "twemoji": "^13.1.0"
+    "twemoji": "^13.1.1"
   },
   "volta": {
     "node": "18.10.0"
