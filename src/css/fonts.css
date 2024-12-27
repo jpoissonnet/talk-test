@@ -117,3 +117,11 @@
   font-weight: bold;
   src: url(/src/fonts/OperatorMono-Medium.otf) format('opentype');
 }
+
+
+@font-face {
+  font-family: 'NoticiaText';
+  font-display: swap;
+  font-weight: bold;
+  src: url(/src/fonts/NoticiaText-Bold.ttf) format('truetype');
+}

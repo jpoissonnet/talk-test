@@ -2,6 +2,7 @@ import { css, html } from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { defineSlideType } from './base.js';
 import { getMeta, getTitle, markup, pipeline } from '../utils.mjs';
+import '../animated-background.js';
 
 defineSlideType('slide-poster', {
   render ({ attrs, content }) {
@@ -11,107 +12,57 @@ defineSlideType('slide-poster', {
       content ?? getTitle(),
       (text) => text.replace(', ', ' '),
       markup,
-    ).toUpperCase();
+    );
 
     return html`
-      <img src="/src/img/scrabble-empty.svg" alt="">
-      <div class="title">
-        ${unsafeHTML(title)}
-      </div>
-      <div class="background"></div>
-      <div class="details details--bottom">
-        <h2 class='event-title'>${meta.event} / <span class="date">${meta.date}</span></h2>
-        
-        <table>
-          <thead>
-            <tr>
-              <th>Nom</th>
-              <th>Prénom</th>
-              <th>Rézosocios</th>
-              <th>Entreprise</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Caron</td>
-              <td>Antoine</td>
-              <td>@Slashgear_</td>
-              <td>Scaleway</td>
-            </tr>
-            <tr>
-              <td>Sablonnière</td>
-              <td>Hubert</td>
-              <td>@hsablonniere</td>
-              <td>Clever Cloud</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-          </tbody>
-        </table>
+      <animated-background></animated-background>
+      <div class="newspaper">
+        <div class="name">${unsafeHTML(title)}</div>
+        <hr class="small">
+        <div class='date'>${meta.date}</div>
+        <hr class="big">
+        <div class="columns">
+          <div class='headline'>
+            Jules et Antoine débarquent au ${meta.event}
+            <div class='city'>${meta.city}</div>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p class='end-80'></p>
+          </div>
+          <div>
+            <p></p>
+            <p class='end-80'></p>
+            <hr>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p class='end-60'></p>
+          </div>
+          <div>
+            <p></p>
+            <p></p>
+            <div class='picture'></div>
+            <p></p>
+            <p></p>
+          </div>
+        </div>
       </div>
     `;
   },
   // language=CSS
   styles: css`
-    @keyframes slide-out {
-      0% {
-        transform: scale(1.8) translateX(-5%) rotate(30deg) translateY(0%);
-      }
-      100% {
-        transform: scale(1.8) translateX(-5%) rotate(30deg) translateY(-10%);
-      }
-    }
-
     :host {
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: white;
-    }
-
-    .date {
-      font-family: 'Just Another Hand', sans-serif;
-      color: #0019a4;
-      font-size: 1.25em;
-      font-weight: normal;
-    }
-
-    .details--bottom {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      right: -0%;
-      bottom: -50%;
-      width: 45%;
-      height: 30em;
-      padding: 1em 3em;
-      background-color: white;
       color: black;
-      transform: rotate(-10deg) scale(1);
     }
-
-    .details--bottom .event-title {
-      text-align: center;
-      font-family: 'Interstate', sans-serif;
-    }
+    
 
     .title {
       background: #ee2325;
@@ -122,50 +73,74 @@ defineSlideType('slide-poster', {
       transform: scale(1, 1.2);
       font-family: 'Sufler', sans-serif;
     }
-
-    img {
-      position: absolute;
-      object-fit: contain;
-      width: 100%;
-      height: 100%;
-      opacity: 0.6;
-      animation: slide-out linear infinite alternate 30s;
+    
+    .newspaper {
+        position: absolute;
+        width: 80%;
+        height: 75%;
+        background: white;
+        padding: 0.25em 1.5em;
+        box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
     }
-
-    h2 {
-      margin: 0.25em 0;
+    
+    .name {
+        text-align: center;
+        font-size: 2.5em;
+        font-family: 'Sufler', sans-serif;
     }
-
-    table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
+    
+    .date {
+        font-style: italic;
+        font-size: 1em;
+        text-align: center;
     }
-
-    td {
-      text-align: left;
+    
+    .columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
     }
-
-    th {
-      font-family: 'Interstate', sans-serif;
+    
+    .columns > div {
+        height: 100%;
     }
-
-    td {
-      font-family: 'Just Another Hand', sans-serif;
-      color: #0019a4;
-      font-size: 2.25em;
-      padding: 0.5rem 0.6rem 0 0.6rem;
-      line-height: 1.75rem;
-      white-space: nowrap;
-      min-height: 2rem;
+    
+    .headline {
+        font-size: 1.25em;
+        font-weight: 800;
+        text-align: center;
+        font-family: 'NoticiaText', serif;
     }
-
-    .background {
-      background-color: #2f6646;
-      position: absolute;
-      left: 33%;
-      top: 0;
-      bottom: 0;
-      right: 0;
+    
+    .city {
+        font-size: 0.75em;
+        font-style: italic;
+    }
+    
+    hr {
+        border-color: black;
+    }
+    
+    hr.big {
+        border-top-width: 3px;
+    }
+    
+    p {
+        height: 1em;
+        background-color: grey;
+    }
+    
+    p.end-80 {
+        width: 80%;
+    }
+    p.end-60 {
+        width: 60%;
+    }
+    
+    .picture {
+        width: 100%;
+        min-height: 200px;
+        background-color: grey;
     }
   `,
 });
