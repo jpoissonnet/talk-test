@@ -19,7 +19,7 @@ defineSlideType('slide-media', {
 
     const media = content
       .split('\n')
-      .find((line) => line.startsWith('<img ') || line.startsWith('<video '));
+      .find((line) => line.startsWith('<img ') || line.startsWith('<video ') || line.startsWith('<iframe '));
 
     const mediaAttrs = getAttributes(media);
 
@@ -75,7 +75,8 @@ defineSlideType('slide-media', {
     }
 
     :host > img,
-    :host > video {
+    :host > video,
+    :host > iframe {
       position: absolute;
       left: 0;
       top: 0;
@@ -88,12 +89,15 @@ defineSlideType('slide-media', {
     :host([contain]) img,
     :host([logo]) img,
     :host([contain]) video,
-    :host([logo]) video {
+    :host([logo]) video,
+    :host([contain]) iframe,
+    :host([logo]) iframe {
       object-fit: contain;
     }
 
     :host([logo]) img,
-    :host([logo]) video {
+    :host([logo]) video,
+    :host([logo]) iframe {
       top: 30%;
       left: 25%;
       height: 40%;
@@ -101,7 +105,8 @@ defineSlideType('slide-media', {
     }
 
     :host([top]) img,
-    :host([top]) video {
+    :host([top]) video,
+    :host([top]) iframe {
       object-position: top center;
     }
     

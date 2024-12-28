@@ -30,8 +30,8 @@ defineSlideType('slide-text', {
 
     .text {
       text-align: center;
-      font-family: 'Yanone Kaffeesatz', sans-serif;
-      font-size: 4.5rem;
+      font-family: 'Railway', sans-serif;
+      font-size: 2.5rem;
       line-height: 1.25;
       font-weight: bold;
     }

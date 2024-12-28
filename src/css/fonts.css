@@ -125,3 +125,24 @@
   font-weight: bold;
   src: url(/src/fonts/NoticiaText-Bold.ttf) format('truetype');
 }
+
+@font-face {
+  font-family: 'Chomsky';
+  font-display: swap;
+  font-weight: bold;
+  src: url(/src/fonts/Chomsky.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Railway';
+  font-display: swap;
+  font-weight: bold;
+  src: url(/src/fonts/Raleway-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'NotoSerif';
+  font-display: swap;
+  font-weight: bold;
+  src: url(/src/fonts/NotoSerif-VariableFont_wdth,wght.ttf) format('truetype');
+}

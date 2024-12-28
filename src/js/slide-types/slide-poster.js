@@ -6,48 +6,48 @@ import '../animated-background.js';
 
 defineSlideType('slide-poster', {
   render ({ attrs, content }) {
-
     const meta = getMeta();
-    const title = pipeline(
-      content ?? getTitle(),
-      (text) => text.replace(', ', ' '),
-      markup,
-    );
+    const isMainPage = attrs.main !== undefined;
+    let title;
+
+    if(isMainPage) {
+      title = content.split('\n')[1]
+    }
+
+    const columns = content.split('==========').slice(1, -1).map((column) => {
+      const rows = column.split('\n');
+
+      return html`<div>
+        ${rows.map((row) => {
+          if(row.startsWith('-----')) {
+            return html`<hr/>`
+          }
+          if(row.startsWith('!')) {
+            return html`<div class='picture'></div>`
+          }
+          if(row.startsWith('xxx')) {
+            return html`<p class='end-${row.length}'></p>`
+          }
+          if(row.startsWith('<img')){
+            return html`${unsafeHTML(row)}`
+          }
+          return html`<div class='headline'>${unsafeHTML(markup(row))}</div>`;
+        })}
+      </div>`
+    });
+
 
     return html`
       <animated-background></animated-background>
       <div class="newspaper">
-        <div class="name">${unsafeHTML(title)}</div>
-        <hr class="small">
-        <div class='date'>${meta.date}</div>
+        ${isMainPage ? 
+        html`<div class="name">${unsafeHTML(title)}</div>
+          <hr class="small">
+        <div class='date'>${meta.event} - ${meta.date} - ${meta.city}</div>`
+          : null}
         <hr class="big">
         <div class="columns">
-          <div class='headline'>
-            Jules et Antoine débarquent au ${meta.event}
-            <div class='city'>${meta.city}</div>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p class='end-80'></p>
-          </div>
-          <div>
-            <p></p>
-            <p class='end-80'></p>
-            <hr>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p class='end-60'></p>
-          </div>
-          <div>
-            <p></p>
-            <p></p>
-            <div class='picture'></div>
-            <p></p>
-            <p></p>
-          </div>
+          ${columns.map((column) => column)}
         </div>
       </div>
     `;
@@ -85,8 +85,9 @@ defineSlideType('slide-poster', {
     
     .name {
         text-align: center;
-        font-size: 2.5em;
-        font-family: 'Sufler', sans-serif;
+        font-size: 4em;
+        line-height: 1;
+        font-family: 'Chomsky', sans-serif;
     }
     
     .date {
@@ -97,12 +98,13 @@ defineSlideType('slide-poster', {
     
     .columns {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
         gap: 2rem;
     }
     
     .columns > div {
         height: 100%;
+        width: 100%
     }
     
     .headline {
@@ -110,11 +112,6 @@ defineSlideType('slide-poster', {
         font-weight: 800;
         text-align: center;
         font-family: 'NoticiaText', serif;
-    }
-    
-    .city {
-        font-size: 0.75em;
-        font-style: italic;
     }
     
     hr {
@@ -130,17 +127,43 @@ defineSlideType('slide-poster', {
         background-color: grey;
     }
     
-    p.end-80 {
-        width: 80%;
-    }
-    p.end-60 {
-        width: 60%;
+    .columns {
+        font-family: 'NotoSerif', serif;
     }
     
-    .picture {
+    .columns hr {
+        margin: 1em 0 1em;
+    }
+    
+    .columns img {
         width: 100%;
-        min-height: 200px;
-        background-color: grey;
+        filter: grayscale(100%);
+        object-fit: cover;
+        max-height: 9em;
+    }
+    
+    .columns img.contain {
+      max-height: 100%;
+      object-fit: contain;  
+    } 
+    
+    p.end-4 {
+        width: 40%;
+    }
+    p.end-5 {
+        width: 50%;
+    }
+    p.end-6 {
+        width: 60%;
+    }
+    p.end-7 {
+        width: 70%;
+    }
+    p.end-8 {
+        width: 80%;
+    }
+    p.end-9 {
+        width: 90%;
     }
   `,
 });
