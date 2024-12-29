@@ -15,7 +15,7 @@
     "chokidar": "^3.6.0",
     "ensuite-present": "0.1.0",
     "fs-extra": "^10.1.0",
-    "puppeteer": "^10.4.0",
+    "puppeteer": "^23.0.0",
     "twemoji": "^13.1.1"
   },
   "volta": {
