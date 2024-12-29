@@ -16,7 +16,7 @@
     "ensuite-present": "0.1.0",
     "fs-extra": "^10.1.0",
     "puppeteer": "^10.4.0",
-    "twemoji": "^13.1.1"
+    "twemoji": "^14.0.0"
   },
   "volta": {
     "node": "18.10.0"
