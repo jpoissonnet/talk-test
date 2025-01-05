@@ -3,23 +3,21 @@ import { createClient } from 'redis';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { withClient } from './index';
 
-describe.concurrent('cart feature [CONTAINERS]', () => {
+describe('cart feature [CONTAINERS]', () => {
     let container;
     let client;
     let redisClient;
 
     beforeEach(async () => {
         // Start Redis container with specialized RedisContainer
-        container = await new RedisContainer()
+        container = await new RedisContainer("redis:7.2")
             .withExposedPorts(6379)
             .start();
 
         // Create Redis client connected to container
         client = await createClient({
             url: container.getConnectionUrl()
-        })
-            .on('error', err => console.log('Redis Client Error', err))
-            .connect();
+        }).connect();
 
         redisClient = withClient(client);
         await redisClient.seedDatabase();
@@ -27,7 +25,11 @@ describe.concurrent('cart feature [CONTAINERS]', () => {
 
     afterEach(async () => {
         // Clean up
-        await client.quit();
+        try {
+            await client.quit();
+        } catch (e) {
+            console.error('Error while quitting client', e);
+        }
         await container.stop();
     });
 
