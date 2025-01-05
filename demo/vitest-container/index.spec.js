@@ -16,8 +16,12 @@ describe.concurrent('cart feature', () => {
     });
 
     afterEach(async () => {
-        await client.flushDb();
-        await client.quit();
+        try {
+            await client.flushDb();
+            await client.quit();
+        } catch (e) {
+            console.error('Error while quitting client', e);
+        }
     });
 
 
