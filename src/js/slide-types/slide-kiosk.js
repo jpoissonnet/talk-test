@@ -8,7 +8,74 @@ defineSlideType('slide-kiosk', {
     const {event} = getMeta();
 
 
+    const flip = (event) => {
+      const start = event.target;
+      const svgElement = start.parentNode;
+
+      const newDiv = document.createElement('div');
+      newDiv.classList.add('flip-card');
+      newDiv.append('conformito');
+      newDiv.style.position = 'absolute';
+      newDiv.style.inset = '0';
+      newDiv.style.zIndex = '2';
+      newDiv.style.backgroundColor = start.getAttribute('fill');
+      newDiv.onclick = () => {
+        newDiv.animate([{
+          transformOrigin: 'top left',
+          transform: 'none'
+        }, {
+          transformOrigin: 'top left',
+          transform: `
+            translate(${deltaX}px, ${deltaY}px)
+            scale(${deltaW}, ${deltaH})
+          `
+        }], {
+          duration: 300,
+          easing: 'ease-in-out',
+          fill: 'both'
+        }).onfinish = () => {
+            newDiv.remove();
+            const resultDiv = document.createElement('div');
+            resultDiv.style.position = 'absolute';
+            resultDiv.style.top = start.getBoundingClientRect().top + 'px';
+            resultDiv.style.left = start.getBoundingClientRect().left + 'px';
+            resultDiv.style.width = start.getBoundingClientRect().width + 'px';
+            resultDiv.style.height = start.getBoundingClientRect().height + 'px';
+            resultDiv.style.backgroundColor = start.getAttribute('fill');
+            resultDiv.style.zIndex = '0';
+            resultDiv.append('conformito');
+            svgElement.parentNode.insertAdjacentElement('afterend', resultDiv);
+        }
+      }
+      svgElement.insertAdjacentElement('afterend', newDiv);
+
+      const startRect = start.getBoundingClientRect();
+      const endRect = newDiv.getBoundingClientRect();
+
+      const deltaX = startRect.left - endRect.left;
+      const deltaY = startRect.top - endRect.top;
+      const deltaW = startRect.width / endRect.width;
+      const deltaH = startRect.height / endRect.height;
+
+      newDiv.animate([{
+        transformOrigin: 'top left',
+        transform: `
+          translate(${deltaX}px, ${deltaY}px)
+          scale(${deltaW}, ${deltaH})
+        `
+      }, {
+        transformOrigin: 'top left',
+        transform: 'none'
+      }], {
+        duration: 300,
+        easing: 'ease-in-out',
+        fill: 'both'
+      });
+
+    };
+
     return html`
+        <div style="position: relative; width: 100%; height: 100%;">
       <svg width="100%" height="100%" viewBox="0 0 3248 3289" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M241 1375.5H228.5V1388V3105V3117.5H241H3008H3020.5V3105V1388V1375.5H3008H241Z" fill="#076143" stroke="#063B29" stroke-width="25"/>
         <mask id="path-2-inside-1_16_7" fill="white">
@@ -23,11 +90,11 @@ defineSlideType('slide-kiosk', {
         <rect x="824" y="2561" width="1600" height="544" fill="#CDCDCD"/>
         <rect x="825" y="1915" width="1600" height="646" fill="#1A1818"/>
         <rect x="333" y="1896" width="334" height="497" fill="#FC4358" @click="${flip}"/>
-        <rect x="2582" y="1896" width="334" height="497" fill="#FDDD3D"/>
-        <rect x="333" y="2533" width="334" height="497" fill="#44BDF9"/>
-        <rect x="2583" y="2533" width="334" height="497" fill="#4AF208"/>
+        <rect x="2582" y="1896" width="334" height="497" @click="${flip}" fill="#FDDD3D"/>
+        <rect x="333" y="2533" width="334" height="497" @click="${flip}" fill="#44BDF9"/>
+        <rect x="2583" y="2533" width="334" height="497" @click="${flip}" fill="#4AF208"/>
         <rect x="934" y="2597" width="317" height="472" fill="#BBBBBB"/>
-        <rect x="1462" y="2597" width="317" height="472" fill="#FA0F98"/>
+        <rect x="1462" y="2597" width="317" height="472" @click="${flip}" fill="#FA0F98"/>
         <rect x="1990" y="2597" width="317" height="472" fill="#BBBBBB"/>
         <mask id="mask0_16_7" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="728" y="1740" width="1792" height="313">
           <path d="M847.978 1983.5C847.978 1992.5 846.547 2001.4 843.766 2009.71C840.985 2018.02 836.909 2025.58 831.771 2031.94C826.633 2038.3 820.533 2043.34 813.82 2046.79C807.107 2050.23 799.911 2052 792.645 2052C785.379 2052 778.183 2050.23 771.47 2046.79C764.757 2043.34 758.657 2038.3 753.519 2031.94C748.381 2025.58 744.305 2018.02 741.524 2009.71C738.743 2001.4 737.312 1992.5 737.312 1983.5L792.645 1983.5H847.978Z" fill="#D9D9D9"/>
@@ -62,10 +129,24 @@ defineSlideType('slide-kiosk', {
           </linearGradient>
         </defs>
       </svg>
+        </div>
     `;
   },
   // language=CSS
   styles: css`
+    :host {
+      cursor: url('/src/img/pointer.svg') 24 15, auto;
+    }
+    
+    .flip-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Oswald', sans-serif;
+      font-size: 150px;
+      text-transform: uppercase;
+    }
     
   `,
 });

@@ -175,7 +175,7 @@ _"Nous on teste absolument tout, coverage à 100%"_
 ## text todo
 _"On teste que cette partie là, le reste c'est pas important"_
 
-
+## kiosk
 
 ## poster main
 Merci beaucoup !
