@@ -81,8 +81,8 @@ Intro + Slide de titre + présentation de chacun
 - documenté "que'est ça fait bordel"
 - intégrité "est-ce qu'on est confiant sur le fonctionnement"
 - reproductibilité
-  
- => Itérer accelerer
+
+- => Itérer accelerer
 
 4) nos conseils
 

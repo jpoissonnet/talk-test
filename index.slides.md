@@ -100,6 +100,7 @@ Qu'est-ce qu'on teste ?
 On <strong>mock</strong> le vent avec la soufflerie
 > #JP# Tout ça, ça nous donne un parapluie hydrophobe, robuste et résistant au vent.
 > Mais ça nous assure toujours pas qu'on soit à l'abris de la pluie.
+> $AC$ En effet, en testant morceaux par morceaux notre parapluie, on n'est pas à l'abris de ne pas l'être.
 
 ## media fade-from logo
 <iframe src="https://giphy.com/embed/BmQPKjwhScjdK" frameBorder="0" allowFullScreen></iframe>
@@ -108,31 +109,72 @@ On <strong>mock</strong> le vent avec la soufflerie
 
 ## text white
 De <strong>bout en bout (e2e)</strong> l'usage du parapluie
-> #JP# Ok, maintenant qu'on est là, il se peut qu'on arrive à cette situation.
+> #JP# Ok, maintenant on est encore plus sûr que notre parapluie est de qualité.
+> $AC$ On pourrait envoyer des nouveaux modèles de parapluie pour voir si on a des retours positifs / négatifs.
+
+## text white
+Du <strong>canary testing</strong> sur les nouveaux modèles
+> _#JP#_ Yes, on appelle en général ça du canary testing, on envoie un petit groupe de personnes pour tester un nouveau produit.
 
 ## text
 🤔
-> $AC$ Premièrement, déjà "Pourquoi ces deux là me parlent de parapluie ?"
-> #JP# Et deuxièmement, il est possible que les définition qu'on vient de donner ne vous vont pas.
-> En effet, on constate qu'il existe souvent des grandes différences entre les définitions de tests unitaires, d'intégration et d'end-to-end, de mock etc.
-> $AC$ On ne cherche pas ici à donner des définitions universelles, mais plutôt à vous donner une vision pragmatique de ce que ces tests peuvent être.
-> Clairement, si vous les appelez autrement, il y a pas de soucis, l'important c'est de comprendre ce qu'ils apportent.
+> $AC$ Normalement vous devriez vous demander "Pourquoi ces deux là me parlent de parapluie ?"
+> #JP# C'est une très bonne question.
+> $AC$ On a voulu vous montrer que les tests, c'est pas juste une question de techno, c'est aussi une question de réflexion.
+> Par cette parabole....douteuse... on vous a partagé quelques définitions sur des procédés de tests qui répondent à différents besoin.
+> #JP# Il est possible que les définitions qu'on vient de donner ne vous plaisent pas.
+> On constate qu'il existe souvent des grandes différences entre les définitions de tests unitaires, d'intégration et d'end-to-end, de mock etc.
+> $AC$ On ne cherche pas ici à donner des définitions universelles, on se met juste d'accord sur ce qu'on entend par ces termes et sur les besoins auxquels ils répondent.
+> Clairement, si vous les appelez autrement, il y a pas de soucis.
 
 ## blank white
 > $AC$ Maintenant voyons un peu ce qui se passe dans le monde du dev et qui diffère de l'exercice de pensée précédent.
-> En général quand je demande à quelqu'un comment cette personne teste, j'obtiens les réponses suivantes.
+> J'ai monté un institut de sondage Pipo forgé par nos biais de confirmation et quelques échanges que nous avons eu depuis plusieurs années quand on pose la question.
+> Soit en meetup, en conférence, en menant des audits, on faisant des entretiens, etc.
+> #JP# On a souvent posé la questions: "Et vous, comment vous testez ?"
+> Voici donc quelques typologies de réponses observées, on va essayer de sainement les critiquer au sens propre du terme.
+> En essayant de montrer les limites de ces approches.
 
 ## text todo
 _"Nous on teste pas, on a pas le temps"_
+> $AC$ Malheureusement la réponse qu'on entend le plus souvent.
+> Nous on teste pas, celle-ci, je l'aime particulièrement.
+> Souvent elle est teinté de frustration, de manque de temps, de pression, de manque de compétence, de manque de ressource, etc.
+> Régulièrement je réponds pour détendre un peu "Mais du coup vous faites que du code qui marche du premier coup ?".
+> Ne pas automatiser ses tests c'est souvent privéliégier du temps humain de vérification.
+> Il n'y a pas de magie, les équipes de devs vont manuellement tester lors de leur développement, les équipes produits, les équipes de tests parfois.
+> #JP# C'est souvent une question de priorité, de culture, de compétence, de ressource, de maturité, etc.
+> Ces approches sans automatisations peuvent paraitre de prime abord plus rapide, mais elles sont souvent plus couteuses à long terme.
+> La confiance sur le code va reposer sur la mémoire humaine, la documentation, la communication.
+> $AC$ Clairement la stratégie du **rien** ne nous parait pas viable mis à part dans un mode draft ou on sait qu'on va jeter explicitement ce qu'on produit.
+> On entend parfois des équipes qui font reposer le test manuels sur des équipe QA qui ont toute la charge de la qualité.
+> #JP# C'est souvent une stratégie de test très coûteuse, qui va ralentir le développement, qui va être source de frustration.
+> On ne dit pas que d'avoir des tests manuels c'est mal hein, on va juste dire que centraliser sa stratégie de tests dessus n'est pas pour nous une bonne idée.
 
 ## text todo
 _"On fait du Jest/Testing Library/Cypress/..."_
+> $AC$ En deuxième position des réponses à la question "Comment vous testez ?" on a souvent des réponses plus techniques.
+> On nous répond des technos de tests, des outils, des librairies, des frameworks.
+> Comme si ces outils étaient une fin en soi. 
+> Soyons clair des outils de tests c'est bien, mais savoir clairement "Qu'est-ce qu'on teste ?" est mieux.
+> #JP# On a régulièrement cette réponse quand la stratégie de test semble imposée de manière très solutionniste.
+> On fait des tests parce qu'on nous a dit d'en faire / qu'on nous a dit que c'était bien.
+> Est-ce que ces outils, ces librairies vous aident ou au contraire vous infliges de l'aide.
 
 ## text todo
 _"Nous on teste absolument tout, coverage à 100%"_
+> #JP# En troisième position, on va retrouver des équipes qui ont une stratégie de test très quantitative.
+> Pas forcément associé à des pratiques TDD, BDD, on retrouve cependant de plus en plus d'équipe qui utilisent des indicateurs de coverage de test pour objectiver leur stratégie de tests.
+> $AC$ On a souvent des équipes qui vont se fixer des objectifs de coverage de test, 80%, 90%, 100%.
+> Est-ce que cependant le coverage est une bonne métrique ?
+> Est-ce que chacune des lignes de votre codebase mérite d'être testée avec la même précision, la même rigeure, le même détail ?
+> #JP# De plus, le coverage n'est qu'un indicateur de quantité et de ratio, il ne donne aucune indication sur la qualité des tests.
+> Il est très facile de faire des tests qui couvrent 100% d'une fonction / class / module mais qui ne font aucun expect par exemple.
+> Trop de tests.
 
 ## text todo
 _"On teste que cette partie là, le reste c'est pas important"_
+
 
 
 ## poster main
