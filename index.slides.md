@@ -41,7 +41,7 @@ xxxxxxxxx
 ==========
 > $AC$ Bonjour à toutes et tous, j'espère que vous allez bien et que cette journée se déroule comme vous l'espériez.
 > Je m'appelle Antoine Caron et je suis Engineering manager Frontend chez Scaleway, vous m'avez peut-être vu l'année passée vous parler de Gzip.
-> #JP# Et moi c'est Jules Poissonet, Frontend Dev chez Bedrock Streaming.
+> #JP# Et moi c'est Jules Poissonnet, Frontend Dev chez Bedrock Streaming.
 > Si l'autre malin avec son parapluie et moi-même sommes ici aujourd'hui, c'est pour vous parler de tests.
 > C'est un sujet qui nous intéresse beaucoup et qu'on trouve souvent mal abordé.
 > $AC$ On espère avec cette présentation ouvrir un peu vos chakras sur la notion de testing.
@@ -205,7 +205,7 @@ xxxxx
 
 Références :
 
-* Dépôt de la présentation : https://github.com/jpoissonet/talk-test/
+* Dépôt de la présentation : https://github.com/jpoissonnet/talk-test/
 
 Liens :
 
