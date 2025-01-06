@@ -27,6 +27,9 @@ importers:
       fs-extra:
         specifier: ^10.1.0
         version: 10.1.0
+      prettier:
+        specifier: ^3.4.2
+        version: 3.4.2
       puppeteer:
         specifier: ^10.4.0
         version: 10.4.0
