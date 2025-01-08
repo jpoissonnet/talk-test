@@ -46,8 +46,8 @@ defineSlideType("slide-kiosk", {
           resultDiv.style.left = start.getBoundingClientRect().left + "px";
           resultDiv.style.width = start.getBoundingClientRect().width + "px";
           resultDiv.style.height = start.getBoundingClientRect().height + "px";
+          resultDiv.style.transform = "rotate(-45deg)";
           resultDiv.classList.add("result-card");
-          resultDiv.style.backgroundColor = start.getAttribute("fill");
 
           resultDiv.append(start.getAttribute("data-text"));
           svgElement.parentNode.insertAdjacentElement("afterend", resultDiv);
@@ -164,7 +164,7 @@ defineSlideType("slide-kiosk", {
             y="2533"
             width="334"
             height="497"
-            data-text="documentation"
+            data-text="documenter"
             @click="${flip}"
             fill="#44BDF9"
           />
@@ -327,11 +327,10 @@ defineSlideType("slide-kiosk", {
       position: absolute;
       z-index: 0;
       border-inline-width: thick;
-      transform: rotate(180deg);
-      writing-mode: tb;
       font-family: "Oswald", sans-serif;
       text-transform: uppercase;
-      font-size: 9px;
+      font-weight: 700;
+      font-size: 0.75em;
     }
   `,
 });

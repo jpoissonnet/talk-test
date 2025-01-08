@@ -1,41 +1,43 @@
-import { css, html } from 'lit';
-import { defineSlideType } from './base.js';
+import { css, html } from "lit";
+import { defineSlideType } from "./base.js";
 
-defineSlideType('slide-credits', {
-  render ({ content }) {
-
+defineSlideType("slide-credits", {
+  render({ content }) {
     const groups = [];
     let currentGroup;
 
     content
-      .split('\n')
-      .filter((line) => line !== '')
+      .split("\n")
+      .filter((line) => line !== "")
       .forEach((rawLine) => {
-        if (!rawLine.startsWith('* ')) {
+        if (!rawLine.startsWith("* ")) {
           currentGroup = {
             title: rawLine,
             lines: [],
           };
           groups.push(currentGroup);
-        }
-        else {
+        } else {
           const [left, right] = rawLine
-            .replace(/^\* /, '')
-            .replace(/https?:\/\//, '')
-            .split(' : ');
+            .replace(/^\* /, "")
+            .replace(/https?:\/\//, "")
+            .split(" : ");
           currentGroup.lines.push([left, right]);
         }
       });
 
     return html`
       <div class="wrapper">
-        ${groups.map((group) => html`
-          <div class="group-title">${group.title}</div>
-          ${group.lines.map(([left, right]) => html`
-            <div class="credit-line-left">${left}</div>
-            <div class="credit-line-right">${right}</div>
-          `)}
-        `)}
+        ${groups.map(
+          (group) => html`
+            <div class="group-title">${group.title}</div>
+            ${group.lines.map(
+              ([left, right]) => html`
+                <div class="credit-line-left">${left}</div>
+                <div class="credit-line-right">${right}</div>
+              `,
+            )}
+          `,
+        )}
       </div>
     `;
   },
@@ -85,8 +87,17 @@ defineSlideType('slide-credits', {
     .credit-line-left,
     .credit-line-right {
       font-size: 1.25rem;
-      font-family: PT Sans, sans-serif;
+      font-family:
+        PT Sans,
+        sans-serif;
       line-height: 1.2;
+    }
+
+    .credit-line-right {
+      max-width: 70%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
     }
 
     .credit-line-left {

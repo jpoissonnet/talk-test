@@ -47,6 +47,9 @@ xxxxxxxxx
 > $AC$ On espère avec cette présentation ouvrir un peu vos chakras sur la notion de testing.
 > Souvent abordé de manière dogmatique, on va essayer une approche plus pragmatique
 > #JP# Que vous fassiez du frontend, du backend, du mobile ou de l'embarqué, des "tests" ou pas, on souhaite vous proposer quelques réfléxions / conseils et approches qui pourraient être utiles et concrètes.
+> $AC$ Alors pourquoi "Tester c'est tricher", tricher c'est enfreindre des règles établis, des conventions, des normes.
+> Pour nous il existe des normes, des stratégies de tests qui sont souvent mal comprises, mal appliquées, mal interprétées.
+> #JP# On va essayer de vous montrer que les tests c'est pas juste une question de techno, c'est aussi une question de réflexion, de culture, de priorité.
 
 ## blank white 
 > $AC$ ...Bon, plongeons nous dans un univers qui n'est pas le dévelopment pour voir ce qu'on peut en tirer
@@ -127,13 +130,118 @@ Du <strong>canary testing</strong> sur les nouveaux modèles
 > $AC$ On ne cherche pas ici à donner des définitions universelles, on se met juste d'accord sur ce qu'on entend par ces termes et sur les besoins auxquels ils répondent.
 > Clairement, si vous les appelez autrement, il y a pas de soucis.
 
-## blank white
-> $AC$ Maintenant voyons un peu ce qui se passe dans le monde du dev et qui diffère de l'exercice de pensée précédent.
+## text
+Quelle <strong>stratégie</strong> alors pour mes tests ?
+> #JP# Maintenant qu'on a fait les zozo avec notre parapluie, quel stratégie de test on peut appliquer à nos projets ? 
+> Quand on vous parle de conception / structuration des tests, vous avez certainement un modèle en tête.
+> Vous avez probablement entendu parlé de la pyramide des tests.
+> C'est le modèle le plus connu, mais le connaissez-vous vraiment ?
+
+## text white
+La pyramide des tests
+> $AC$ La pyramide des tests dans votre tête c'est quoi ?
+> Quand on a fouillé avec Jules, on a trouvé énormément de représentation de celle-ci et vous aller voir c'est assez comique.
+> Aller, soirée diapositives, voici donc 3 exemples trouvés sur internet.
+
+## media fade-from contain white
+<img src="src/img/pyramide/pyramide-1.png" />
+
+> $AC$ Bel arc en ciel n'est-ce pas ? 
+> On voit une notion de vitesse et peut-être de scope.
+
+## media fade-from contain white
+<img src="src/img/pyramide/pyramide-2.png" />
+
+> $AC$ Ici on voit des "solutions tests", qui ne sont pas définis dans l'article connexe.
+> Pourquoi pas des "Problem tests" ?
+
+## media fade-from contain white
+<img src="src/img/pyramide/pyramide-3.png" />
+
+> $AC$ Celle-là je l'aime bien, elle a le bon goût du fait maison.
+> Ici E2E pour end-to-end
+> #JP# Bon on pourrait jouer des heures à vous montrer des pyramides, mais on va pas le faire.
+> 3 étages, parfois 2 étages, plusieurs dimensions, clairement le modèle est fortement interpreté.
+> Alors sur quoi pouvons-nous nous baser pour le modele de la pyramide des tests ?
+
+## text white
+Mais en vrai ça vient d'où ?
+> $AC$ Le réflexe qu'on devrait avoir ce serait de savoir d'où ça vient au départ.
+> Et même...
+
+## text white
+Mais en vrai ça vient <strong>de qui</strong> ?
+> $AC$ de qui !
+> Déjà, contrairement à ce qu'on peut lire dans beaucoup d'article, non ce n'est pas Martin Fowler.
+
+## media contain logo
+<img src="src/img/mike-cohn.png">
+
+> #JP# C'est Mike Cohn, dans son livre "Succeeding with Agile: Software Development using Scrum".
+
+## media contain
+<img src="src/img/succeeding-with-agile.png">
+
+>  #JP# Dans ce livre il défini un modèle en forme de pyramide pour comparer 3 typologies de tests tout en comparant leur facilité de mise en oeuvre et leur capaciter à apporter du feedback rapidement. 
+> Voyons ça un peu de plus près.
+
+## media fade-from contain logo
+<img src="src/img/pyramide/pyramide-mike-cohn.png" />
+
+> Déjà dans sa pyramide, dans le chapitre il explique qu'il place que des tests automatisés.
+> Dans le modèle de base il ne compare pas les tests à la main avec des tests automatisés.
+> Il place en haut de la pyramide les tests UI, il ne parle pas spécifiquement de test E2E, il parle juste de tests d'interface.
+> Ensuite il place les tests de service, et enfin les tests unitaires.
+> #JP# Il explique que les tests UI sont les plus couteux à mettre en place, les plus lents, les plus fragiles.
+> Rappel, en 2009 je suis en CE1, et clairement pour tester de manière automatisée une interface graphique c'est pas la joie.
+> On est pas loin de taper deux silex entre eux pour faire du feu.
+> $AC$ J'ai commencé a faire des tests automatisés en 2014, et même à cette époque là, on galérait.
+> Si je vous parle de Selenium, il y a peut-être quelques frissons qui vont se propager dans la salle.
+
+
+## text
+Les limites de ce modèle
+> #JP# Ce modèle qui connait beaucoup de dérives nous parait un peu dépassé.
+> Pour plusieurs raisons qu'on justifiera par la suite.
+> $AC$ Déjà en 2025 il est bien plus facile de setup des tests d'UI.
+> Voir même aussi facile que des Test unitaires.
+> Que les tests unitaires peuvent être rapide à setup mais qu'ils souffrent souvent d'overspecifying.
+
+## text
+Un modèle de <strong>2009</strong>
+> #JP# On ne va pas jeter la pierre à Mike Cohn, lui même reconnait dans son livre que cette pyramide fait sens notamment lié au contexte technologique.
+> $AC$ Pour autant on voit encore ce modèle exposé, transformé, avec plus où moins d'étages sans pour autant qu'on se préoccupe du message initiale.
+
+## text white
+🔬
+> $AC$ Maintenant voyons un peu ce qui se passe dans le monde réel, en sortant du modèle de Mike Cohn.
 > J'ai monté un institut de sondage Pipo forgé par nos biais de confirmation et quelques échanges que nous avons eu depuis plusieurs années quand on pose la question.
-> Soit en meetup, en conférence, en menant des audits, on faisant des entretiens, etc.
+> Soit en meetup, en conférence, en menant des audits, on faisant des entretiens, en regardant les résultats de sondages et d'enquêtes.
 > #JP# On a souvent posé la questions: "Et vous, comment vous testez ?"
 > Voici donc quelques typologies de réponses observées, on va essayer de sainement les critiquer au sens propre du terme.
 > En essayant de montrer les limites de ces approches.
+
+
+## poster fade-to
+==========
+_"Nous on ne test pas, on a pas le temps."_
+xxxxxxxxxx
+xxxx
+xxxxxxxxxx
+xxxxxxxx
+==========
+xxxxxxxxxx
+xxxxxx
+------
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+==========
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxx
+==========
 
 ## text todo
 _"Nous on teste pas, on a pas le temps"_
@@ -172,7 +280,7 @@ _"Nous on teste absolument tout, coverage à 100%"_
 > Il est très facile de faire des tests qui couvrent 100% d'une fonction / class / module mais qui ne font aucun expect par exemple.
 > Trop de tests.
 
-## text todo
+## poster todo
 _"On teste que cette partie là, le reste c'est pas important"_
 
 ## kiosk
@@ -212,6 +320,11 @@ Liens :
 
 Images :
 
+* photos des parapluie : https://www.neyrat.fr/
+* pyramide des tests 1 : https://thumbs.dreamstime.com/b/pyramide-de-test-avec-interface-utilisateur-tests-d-int%C3%A9gration-et-unitaires-essai-vecteur-unitaire-282317017.jpg
+* pyramide des tests 2 : https://blog.atinternet.com/wp-content/uploads/2020/06/ROI-test.jpg
+* pyramide des tests 3 : https://miro.medium.com/v2/resize:fit:1400/format:webp/1*IA6N133_wkTin6DMq30u0w.png
+* mike cohn : https://upload.wikimedia.org/wikipedia/commons/a/ac/WEB_RES-Mike_Cohn-%C2%A9-2016-Hows_Your_Headshot-6.jpg
 
 Polices :
 
@@ -224,5 +337,5 @@ Polices :
 
 Remerciements :
 
-* Hubert Sablonnière: pour lui même et ses outils hyper pratiques pour les slides
+* Hubert Sablonnière : pour lui même et ses outils hyper pratiques pour les slides
 * Jules : pour sa patience et sa persévérance malgrés ses cours en parallèle
