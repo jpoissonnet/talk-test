@@ -473,28 +473,37 @@ Quoi en penser ?
 ## media logo white
 <img src="https://static.vecteezy.com/system/resources/previews/026/551/422/non_2x/exit-full-screen-pixelated-ui-icon-video-player-view-display-get-out-fullscreen-mode-editable-8bit-graphic-element-outline-isolated-user-interface-image-for-web-mobile-app-retro-style-vector.jpg"/>
 
-> $AC$ En fait, si on dézoome et qu'on se demande **pourquoi** on teste, on compte 5 piliers majeurs qui nous poussent à écrire des tests.
+> $AC$ En fait, si on dézoome et qu'on se demande **pourquoi** on teste, on compte 5 raisons de pourquoi on devrait automatiser des tests.
 
 ## kiosk
-> #JP# On va vous faire participer un peu ! Avec un kiosk avec 5 mots à révéler qui sont pour nous les 5 piliers du testing. On va voir si on peut retrouver ensemble les 5 piliers.
-> On va essayer de prendre vos réponses et de voir si on peut les faire correspondre à nos piliers.
-> Selon vous, pourquoi on teste nos applications ?
+> #JP# On va vous faire participer un peu ! On va voir si on peut retrouver ensemble ces 5 motivations.
+> Selon vous, pourquoi quelles sont les raisons qui nous poussent à automatiser nos tests ?
 
 > Rouge : Conformité
-> On veut s'assurer que notre application respecte les spécifications, les contraintes, les normes, les standards, les réglementations, les lois, etc. En bref, que le code, il répond bien à nos attentes.
+> On veut s'assurer que notre application respecte les spécifications et les contraintes, etc. En bref, que le code, il répond bien à nos attentes.
+> Que ce soit au moment du développement comme après.
 > Bleu : Documenter
 > Les tests sont une forme de documentation, ils laissent une trace des comportements de notre code dans différentes situations.
+> Tout ce dont on veut se souvenir.
 > Magenta : Reproductibilité
 > Les tests permettent de reproduire des comportements, de s'assurer que le code fonctionne toujours comme prévu même dans des cas complexes.
+> Reproduire un parcours utilisateur complexe, ou bien impossible. Par exemple un disaster case, on a besoin de pouvoir tester
+> mon code dans des conditions non triviales. _Echec de paiement_
 > Jaune : Intégrité
-> Ils permettent d'assurer un état stable de l'application, dans l'historique du code, dans les branches, dans les environnements, etc.  
+> Ils permettent d'assurer un état stable de l'application, dans l'historique du code, dans les branches, dans les environnements, etc.
+> **Observabilité** de l'état de l'application. Feedback rapide de l'état de l'application.
 > Vert : Stabilité
+> **Non-regression**
 > Est-ce que le diff que j'apporte répond bien à tous les tests déjà en place ? Est-ce que je casse pas quelque chose ? 
  
-> $AC$ Pour nous voilà les 5 piliers qui nous poussent à écrire des tests. Il faut garder à l'esprit qu'on met en place
-> tout ça pour accélerer notre développement. D'ailleurs, si vous sentez qu'un ou plusieurs de ces piliers sont des sujets
+> $AC$ Pour nous voilà les 5 raisons qui nous poussent à écrire des tests. Il faut garder à l'esprit qu'on met en place
+> tout ça pour accélerer notre développement. D'ailleurs, si vous sentez qu'un ou plusieurs de ces points sont des sujets
 > dans vos projets, c'est peut-être le moment pour voir s'il n'y pas un besoin de voir ou revoir la stratégie de vos tests.
-
+> Si vous avez des tests qui :
+> - ne décrivent pas votre produit: peut etre qu'ils sont trop liés à l'implémentation
+> - ne sont fait qu'a la main: et vous en écrivez par obligation
+> - sont flaky: vous passez plus de temps à les réparer qu'à les écrire
+> - n'apportent aucune confiance
 ## poster todo
 journal section trucs et astuces
 
@@ -517,12 +526,13 @@ it('should add two numbers and return the result', () => {
 });
 ```
 > #JP# Regarde Antoine, j'ai trouvé un code avec 100% de coverage. C'est trop bien, mais là, il y a un souci évident non ?
+> _solicitation du public_
 > $AC$ Oui, il n'y a aucun expect. On a 100% de coverage mais on a pas de test.
-> #JP# Pour mesurer la qualité de vos tests sans coverage, on peut utiliser des outils de mutation testing.
+> #JP# Une mesure quantitative ne peut pas se soustraire d'une mesure qualitative si on veut garder du sens. Un outil intéressant
+> pour ça c'est le mutation testing. L'idée en deux phrases, c'est de modifier le code source et de voir si les tests échouent.
 
 ## text todo
 Optez pour du <strong>mutation testing</strong>
-todo: completer l'explication
 > #JP# L'idée en deux phrases, c'est de modifier le code source et de voir si les tests échouent. Si les tests qui passent même avec des modifications dans votre code sont des tests inutiles.
 > $AC$ Le sujet en lui est très vaste et on aurait pu passer la conférence entière dessus. On vous invite à regarder des outils comme Stryker, PIT, etc.
 
@@ -530,21 +540,24 @@ todo: completer l'explication
 todo: ajouter un **related** sur conference du mutation testing
 
 ## text todo
-Traite ta test base comme ta codebase "how you do one thing is how you do everything"
-- s'imposer des règles et les automatisés (lint)
-- Se reposer sur analyse statique / compilation
-> Tester avec le diff avec une architecture découpé
+Traite ta test base comme ta codebase how you do one thing is how you do everything
+s'imposer des règles et les automatisés (lint)
+Se reposer sur analyse statique / compilation
+
+> Tester avec le diff avec une architecture découpée
 jest / vitest le fond
 nx affected
 Sharding
-> catégoriser et prioriser les tests
-> Dans le monde JS, préférer des outils comme Vitest (référence l'article de Younes)
+catégoriser et prioriser les tests
+Dans le monde JS, préférer des outils comme Vitest (référence l'article de Younes)
 expliquer rapidement pourquoi
-> Setup une stack E2E est facile 2025 et les tests mettent beaucoup de temps qu'à une époque Selenium
-> Dans des tests d'interface web, un truc qui prend le plus de temps c'est l'http. _DEMO_ playwright overhead
-> en plus ça débloque la possibilité de tester des comportement à la marge (latence / erreur)
-> les tests UI ça coutent plus aussi cher qu'a l'époque, playwright est simple à setup et rapide (ce qui côute c'est ce qu'on teste)
 > rationaliser sa quantité de test -> pour un freelance c'est pas nécessaire de tester parce que pas gain https://xkcd.com/1205/
+> Setup une stack E2E est facile 2025 et les tests mettent beaucoup moins de temps qu'à l'époque de Selenium
+> Dans des tests d'interface web, un truc qui prend le plus de temps c'est ce qu'on fait dedans. 
+_DEMO_ playwright overhead
+les tests UI ça coutent plus aussi cher qu'a l'époque, playwright est simple à setup et rapide (ce qui côute c'est ce qu'on teste)
+> Tester des usages pas des outils
+montrer qu'avant on testait des composants et des méthodes, maintenant on teste des usages (les états du DOM, les interactions, les parcours utilisateurs)
 
 ## poster main
 Merci beaucoup !
