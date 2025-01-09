@@ -212,6 +212,13 @@ Un modèle de <strong>2009</strong>
 > #JP# On ne va pas jeter la pierre à Mike Cohn, lui même reconnait dans son livre que cette pyramide fait sens notamment lié au contexte technologique.
 > $AC$ Pour autant on voit encore ce modèle exposé, transformé, avec plus où moins d'étages sans pour autant qu'on se préoccupe du message initiale.
 
+## media contain white todo
+<img src="https://cookbook.marmicode.io/assets/images/honeycomb-test-model-033e461521df0d8b1cf5bf7dc22e1380.png">
+
+> $AC$ Pour nous, une façon de modéliser qui nous semble pertinente aujourd'hui, c'est le modèle exprimé dans un article de Younes Jaaidi de Marmicode avec un hexagone des tests.
+> Ce modèle règle deux parties floues de la pyramide des tests qu'on a pu voir.
+> #JP# D'abord, il lève l'ambiguïté entre les tests d'intégration et les tests unitaires, en les regroupant sous le terme de tests "narrow". Ensuite, il déplace ces tests unitaires vers le centre de l'hexagone, pour montrer qu'ils sont au cœur de la stratégie de test, mais qu'ils ne sont pas la base de tout et qu'ils ne sont pas suffisants.
+
 ## text white
 🔬
 > $AC$ Maintenant voyons un peu ce qui se passe dans le monde réel, en sortant du modèle de Mike Cohn.
@@ -456,7 +463,88 @@ xxxxxxxxxx
 xxxxxxx
 ==========
 
+## text
+Quoi en penser ?
+<br/>
+<br/>
+🤔
+> $AC$ Bon, d'après ce sondage DIY il nous laisse l'impression que les dev ont pas tous en tête toutes les raisons et les bénéfices qu'on tire du fait de tester.
+
+## media logo white
+<img src="https://static.vecteezy.com/system/resources/previews/026/551/422/non_2x/exit-full-screen-pixelated-ui-icon-video-player-view-display-get-out-fullscreen-mode-editable-8bit-graphic-element-outline-isolated-user-interface-image-for-web-mobile-app-retro-style-vector.jpg"/>
+
+> $AC$ En fait, si on dézoome et qu'on se demande **pourquoi** on teste, on compte 5 piliers majeurs qui nous poussent à écrire des tests.
+
 ## kiosk
+> #JP# On va vous faire participer un peu ! Avec un kiosk avec 5 mots à révéler qui sont pour nous les 5 piliers du testing. On va voir si on peut retrouver ensemble les 5 piliers.
+> On va essayer de prendre vos réponses et de voir si on peut les faire correspondre à nos piliers.
+> Selon vous, pourquoi on teste nos applications ?
+
+> Rouge : Conformité
+> On veut s'assurer que notre application respecte les spécifications, les contraintes, les normes, les standards, les réglementations, les lois, etc. En bref, que le code, il répond bien à nos attentes.
+> Bleu : Documenter
+> Les tests sont une forme de documentation, ils laissent une trace des comportements de notre code dans différentes situations.
+> Magenta : Reproductibilité
+> Les tests permettent de reproduire des comportements, de s'assurer que le code fonctionne toujours comme prévu même dans des cas complexes.
+> Jaune : Intégrité
+> Ils permettent d'assurer un état stable de l'application, dans l'historique du code, dans les branches, dans les environnements, etc.  
+> Vert : Stabilité
+> Est-ce que le diff que j'apporte répond bien à tous les tests déjà en place ? Est-ce que je casse pas quelque chose ? 
+ 
+> $AC$ Pour nous voilà les 5 piliers qui nous poussent à écrire des tests. Il faut garder à l'esprit qu'on met en place
+> tout ça pour accélerer notre développement. D'ailleurs, si vous sentez qu'un ou plusieurs de ces piliers sont des sujets
+> dans vos projets, c'est peut-être le moment pour voir s'il n'y pas un besoin de voir ou revoir la stratégie de vos tests.
+
+## poster todo
+journal section trucs et astuces
+
+> #JP# Dans les conseils qu'on peut vous donner pour concevoir une stratégie de test, voilà quelques idées et astuces qu'on peut vous donner.
+
+## text
+Ne mesurez pas le <strong>coverage</strong>
+> $AC$ "Ne mesurez pas le coverage". Le coverage pour rappel, c'est le ratio de ligne exécutée lors de vos tests. Ca ne mesure en rien la qualité de vos tests.
+
+## code
+```js
+function add(a, b) {
+  return a + b;
+}
+
+it('should add two numbers and return the result', () => {
+    const firstNumber = 1;
+    const secondNumber = 2;
+    let result = add(firstNumber, secondNumber);
+});
+```
+> #JP# Regarde Antoine, j'ai trouvé un code avec 100% de coverage. C'est trop bien, mais là, il y a un souci évident non ?
+> $AC$ Oui, il n'y a aucun expect. On a 100% de coverage mais on a pas de test.
+> #JP# Pour mesurer la qualité de vos tests sans coverage, on peut utiliser des outils de mutation testing.
+
+## text todo
+Optez pour du <strong>mutation testing</strong>
+todo: completer l'explication
+> #JP# L'idée en deux phrases, c'est de modifier le code source et de voir si les tests échouent. Si les tests qui passent même avec des modifications dans votre code sont des tests inutiles.
+> $AC$ Le sujet en lui est très vaste et on aurait pu passer la conférence entière dessus. On vous invite à regarder des outils comme Stryker, PIT, etc.
+
+## text todo
+todo: ajouter un **related** sur conference du mutation testing
+
+## text todo
+Traite ta test base comme ta codebase "how you do one thing is how you do everything"
+- s'imposer des règles et les automatisés (lint)
+- Se reposer sur analyse statique / compilation
+> Tester avec le diff avec une architecture découpé
+jest / vitest le fond
+nx affected
+Sharding
+> catégoriser et prioriser les tests
+> Dans le monde JS, préférer des outils comme Vitest (référence l'article de Younes)
+expliquer rapidement pourquoi
+> Setup une stack E2E est facile 2025 et les tests mettent beaucoup de temps qu'à une époque Selenium
+> Dans des tests d'interface web, un truc qui prend le plus de temps c'est l'http. _DEMO_ playwright overhead
+> en plus ça débloque la possibilité de tester des comportement à la marge (latence / erreur)
+> les tests UI ça coutent plus aussi cher qu'a l'époque, playwright est simple à setup et rapide (ce qui côute c'est ce qu'on teste)
+> rationaliser sa quantité de test -> pour un freelance c'est pas nécessaire de tester parce que pas gain https://xkcd.com/1205/
 
 ## poster main
 Merci beaucoup !
@@ -492,7 +580,7 @@ Liens :
 * state of js : https://stateofjs.com/en-US
 * Alister B Scott, Ice Cream model : https://alisterscott.github.io/TestingPyramids.html
 
-
+* Designing a Pragmatic Testing Strategy : https://cookbook.marmicode.io/angular/pragmatic-testing-strategy/
 Images :
 
 * photos des parapluie : https://www.neyrat.fr/
