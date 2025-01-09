@@ -221,34 +221,70 @@ Un modèle de <strong>2009</strong>
 > Voici donc quelques typologies de réponses observées, on va essayer de sainement les critiquer au sens propre du terme.
 > En essayant de montrer les limites de ces approches.
 
-
 ## poster fade-to
 ==========
 _"Nous on ne test pas, on a pas le temps."_
-xxxxxxxxxx
-xxxx
-xxxxxxxxxx
-xxxxxxxx
-==========
-xxxxxxxxxx
-xxxxxx
-------
-xxxxxxxxxx
-xxxxxxxxxx
-xxxxxxxxxx
-==========
-xxxxxxxxxx
-xxxxxxxxxx
+<img src="src/img/chaplin.gif" style="max-height: 300px;" />
 xxxxxxxxxx
 xxxxxxxxx
 ==========
-
-## text todo
-_"Nous on teste pas, on a pas le temps"_
+xxxxxxxxxx
+xxxxxxxxxx
+----------
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxx
+==========
 > $AC$ Malheureusement la réponse qu'on entend le plus souvent.
 > Nous on teste pas, celle-ci, je l'aime particulièrement.
 > Souvent elle est teinté de frustration, de manque de temps, de pression, de manque de compétence, de manque de ressource, etc.
 > Régulièrement je réponds pour détendre un peu "Mais du coup vous faites que du code qui marche du premier coup ?".
+> #JP# Vous allez nous dire, on abuse, il y en a pas tant que ça des équipes qui ne testent pas.
+> Alors pour s'y intéresser, il y a relativement peu d'étude statistique fiable sur le sujet.
+> Mais il y en a une déjà qu'on pourrait citer.
+> Vous connaissez le State of JS ? 
+
+## media
+<img src="src/img/state-of-js.jpg" screenshot-url="https://stateofjs.com/en-US"/>
+
+> #JP# C'est une étude qui est menée chaque année sur l'écosystème JS.
+> Il y a un chapitre qui s'intéresse aux outils de tests voici donc quelques résultats.
+
+## barchart unit="%" max="50"
+State of JS 2024
+O outil : 21 red
+1 outil : 9
+2 outils : 10
+3 outils : 10
+4 outils : 10
+5+ outils : 40
+
+> Voici ce que déclarent les répondants à l'étude.
+> Déja on peut se rassurer, les équipes qui ne testent pas sont minoritaires.
+> On a cependant presque un quart qui n'utilise aucun outil de test.
+
+## poster fade-to
+==========
+_"Nous on ne test pas, on a pas le temps."_
+<img src="src/img/chaplin.gif" style="max-height: 300px;" />
+xxxxxxxxxx
+xxxxxxxxx
+==========
+xxxxxxxxxx
+xxxxxxxxxx
+----------
+21% n'automatisent pas leurs tests
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxx
+==========
 > Ne pas automatiser ses tests c'est souvent privéliégier du temps humain de vérification.
 > Il n'y a pas de magie, les équipes de devs vont manuellement tester lors de leur développement, les équipes produits, les équipes de tests parfois.
 > #JP# C'est souvent une question de priorité, de culture, de compétence, de ressource, de maturité, etc.
@@ -256,32 +292,169 @@ _"Nous on teste pas, on a pas le temps"_
 > La confiance sur le code va reposer sur la mémoire humaine, la documentation, la communication.
 > $AC$ Clairement la stratégie du **rien** ne nous parait pas viable mis à part dans un mode draft ou on sait qu'on va jeter explicitement ce qu'on produit.
 > On entend parfois des équipes qui font reposer le test manuels sur des équipe QA qui ont toute la charge de la qualité.
+> C'est le modèle qu'on appelle parfois le "Ice Cream Cone" posé par **Alister B Scott**.
+
+## media contain white
+<img src="src/img/pyramide/ice-cream.png"/>
+
 > #JP# C'est souvent une stratégie de test très coûteuse, qui va ralentir le développement, qui va être source de frustration.
 > On ne dit pas que d'avoir des tests manuels c'est mal hein, on va juste dire que centraliser sa stratégie de tests dessus n'est pas pour nous une bonne idée.
+> Ça ne passera pas à l'échelle.
 
-## text todo
-_"On fait du Jest/Testing Library/Cypress/..."_
+## poster fade-to
+==========
+_"On fait du Jest / Testing Library / Cypress / ..."_
+xxxxxxxxxx
+xxxxxxxxxx
+----------
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxx
+==========
+<img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 400px" />
+xxxxxxxxxx
+xxxxxxxxxx
+==========
 > $AC$ En deuxième position des réponses à la question "Comment vous testez ?" on a souvent des réponses plus techniques.
 > On nous répond des technos de tests, des outils, des librairies, des frameworks.
 > Comme si ces outils étaient une fin en soi. 
 > Soyons clair des outils de tests c'est bien, mais savoir clairement "Qu'est-ce qu'on teste ?" est mieux.
+
+## poster fade-to
+==========
+_"On fait du Jest / Testing Library / Cypress / ..."_
+xxxxxxxxxx
+xxxxxxxxxx
+----------
+Faire des tests, juste pour en faire
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxx
+==========
+<img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 400px" />
+xxxxxxxxxx
+xxxxxxxxxx
+==========
 > #JP# On a régulièrement cette réponse quand la stratégie de test semble imposée de manière très solutionniste.
 > On fait des tests parce qu'on nous a dit d'en faire / qu'on nous a dit que c'était bien.
 > Est-ce que ces outils, ces librairies vous aident ou au contraire vous infliges de l'aide.
+> Clairement vous ici dans la salle, si vous regardez vos tests, à quoi vous sont ils utiles ?
+> Qu'est-ce qu'ils vous apportent au jour le jour ?
 
-## text todo
+## poster fade-to
+==========
+_"On fait du Jest / Testing Library / Cypress / ..."_
+xxxxxxxxxx
+xxxxxxxxxx
+----------
+Faire des tests, juste pour en faire
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxx
+==========
+<img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 400px" />
+Qu'est-ce que vous testez ?
+xxxxxxxxxx
+==========
+> #JP# On a régulièrement cette réponse quand la stratégie de test semble imposée de manière très solutionniste.
+> On fait des tests parce qu'on nous a dit d'en faire / qu'on nous a dit que c'était bien.
+> Est-ce que ces outils, ces librairies vous aident ou au contraire vous infliges de l'aide.
+> Clairement vous ici dans la salle, si vous regardez vos tests, à quoi vous sont ils utiles ?
+> Qu'est-ce qu'ils vous apportent au jour le jour ?
+
+## poster fade-to
+==========
 _"Nous on teste absolument tout, coverage à 100%"_
+xxxxxxxxxx
+xxxx
+<img src="src/img/bianca-ackermann-fUIDHNjwbto-unsplash.jpg" />
+xxxxxxxxxx
+==========
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxx
+------
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxx
+==========
 > #JP# En troisième position, on va retrouver des équipes qui ont une stratégie de test très quantitative.
 > Pas forcément associé à des pratiques TDD, BDD, on retrouve cependant de plus en plus d'équipe qui utilisent des indicateurs de coverage de test pour objectiver leur stratégie de tests.
 > $AC$ On a souvent des équipes qui vont se fixer des objectifs de coverage de test, 80%, 90%, 100%.
+> Le coverage c'est comptabiliser le ratio de lignes de code qui sont exécutées par vos tests.
+> Ça ne vous dit pas du tout si vos tests sont bons, si ils sont pertinents, si ils sont efficaces.
 > Est-ce que cependant le coverage est une bonne métrique ?
 > Est-ce que chacune des lignes de votre codebase mérite d'être testée avec la même précision, la même rigeure, le même détail ?
-> #JP# De plus, le coverage n'est qu'un indicateur de quantité et de ratio, il ne donne aucune indication sur la qualité des tests.
-> Il est très facile de faire des tests qui couvrent 100% d'une fonction / class / module mais qui ne font aucun expect par exemple.
-> Trop de tests.
 
-## poster todo
+## poster fade-to
+==========
+_"Nous on teste absolument tout, coverage à 100%"_
+xxxxxxxxxx
+xxxx
+<img src="src/img/bianca-ackermann-fUIDHNjwbto-unsplash.jpg" />
+xxxxxxxxxx
+==========
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+------
+Le coverage n'est pas un indicateur de qualité de tests
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxx
+==========
+> #JP# Le coverage n'est qu'un indicateur de quantité et de ratio, il ne donne aucune indication sur la qualité des tests.
+> Il est très facile de faire des tests qui couvrent 100% d'une fonction / class / module mais qui ne font aucun expect par exemple.
+> Une stratégie quantitative va également vous apporter des problèmes de scalabilité de vos tests.
+> #AC# On se retrouve avec énormément de tests à faire tourner ce qui va ralentir votre CI, ralentir votre développement, le délai pour avoir du feedback en sera que plus long.
+
+## poster fade-to
+==========
+_"Nous on teste absolument tout, coverage à 100%"_
+xxxxxxxxxx
+xxxx
+<img src="src/img/bianca-ackermann-fUIDHNjwbto-unsplash.jpg" />
+xxxxxxxxxx
+==========
+xxxxxxxxxx
+xxxxxxxxxx
+Trop de tests, CI trop lente
+------
+Le coverage n'est pas un indicateur de qualité de tests
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxx
+==========
+> #AC# Avoir beaucoup de tests ça peut devenir un enfer, attendre 40min pour avoir du feedback ça peut être très compliqué.
+> Est-ce que run **tous** les tests **tout le temps** est une bonne idée ?
+> On verra ensemble des techniques pour éviter ça.
+
+## poster fade-to todo
+==========
 _"On teste que cette partie là, le reste c'est pas important"_
+xxxxxxxxxx
+xxxx
+xxxxxxxxxx
+xxxxxxxxxx
+==========
+xxxxxxxxxx
+xxxxxxxxxx
+------
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxx
+==========
 
 ## kiosk
 
@@ -316,6 +489,8 @@ Références :
 * Dépôt de la présentation : https://github.com/jpoissonnet/talk-test/
 
 Liens :
+* state of js : https://stateofjs.com/en-US
+* Alister B Scott, Ice Cream model : https://alisterscott.github.io/TestingPyramids.html
 
 
 Images :
@@ -325,6 +500,7 @@ Images :
 * pyramide des tests 2 : https://blog.atinternet.com/wp-content/uploads/2020/06/ROI-test.jpg
 * pyramide des tests 3 : https://miro.medium.com/v2/resize:fit:1400/format:webp/1*IA6N133_wkTin6DMq30u0w.png
 * mike cohn : https://upload.wikimedia.org/wikipedia/commons/a/ac/WEB_RES-Mike_Cohn-%C2%A9-2016-Hows_Your_Headshot-6.jpg
+* image de chantier : https://unsplash.com/fr/photos/homme-en-veste-grise-et-orange-tenant-un-appareil-photo-reflex-numerique-vert-et-noir-pendant-la-journee-wq7oyx_Kx-4
 
 Polices :
 

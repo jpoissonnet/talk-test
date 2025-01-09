@@ -1,30 +1,33 @@
-import { css, html } from 'lit';
-import { classMap } from 'lit/directives/class-map.js';
-import { defineSlideType } from './base.js';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
-import { markup } from '../utils.mjs';
+import { css, html } from "lit";
+import { classMap } from "lit/directives/class-map.js";
+import { defineSlideType } from "./base.js";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
+import { markup } from "../utils.mjs";
 
-const NNBSP = '\u202f';
-const SI_PREFIXES = ['', 'k', 'M', 'G', 'T', 'P'];
+const NNBSP = "\u202f";
+const SI_PREFIXES = ["", "k", "M", "G", "T", "P"];
 
-const nf = new Intl.NumberFormat('fr', { minimumFractionDigits: 0, maximumFractionDigits: 1 });
+const nf = new Intl.NumberFormat("fr", {
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 1,
+});
 
-export function formatBytes (rawValue) {
-  const symbol = 'o';
+export function formatBytes(rawValue) {
+  const symbol = "o";
   const separator = NNBSP;
   // Figure out the "magnitude" of the rawValue: 1000 => 1 / 1000000 => 2 / 1000000000 => 3 ...
-  const prefixIndex = (rawValue > 1)
-    ? Math.floor(Math.log10(rawValue) / 3)
-    : 0;
+  const prefixIndex = rawValue > 1 ? Math.floor(Math.log10(rawValue) / 3) : 0;
   // Use the prefixIndex to "rebase" the rawValue into the new base, 1250 => 1.25 / 1444000 => 1.444...
   const rebasedValue = rawValue / 1000 ** prefixIndex;
   // Use Intl/i18n aware number formatter
   const formattedValue = nf.format(rebasedValue);
   const prefix = SI_PREFIXES[prefixIndex];
-  return html`${formattedValue}<strong class="unit">${prefix + symbol}</strong>`;
+  return html`${formattedValue}<strong class="unit"
+      >${prefix + symbol}</strong
+    >`;
 }
 
-export function formatTime (rawValue, speed) {
+export function formatTime(rawValue, speed) {
   const value = rawValue / speed;
   if (value > 1000) {
     const formattedValue = nf.format(value / 1000);
@@ -34,45 +37,45 @@ export function formatTime (rawValue, speed) {
   return html`${formattedValue}<strong class="unit">ms</strong>`;
 }
 
-function format (value, unit, speed) {
+function format(value, unit, speed) {
   if (unit == null) {
     return formatBytes(value);
   }
-  if (unit === '') {
+  if (unit === "") {
     return html`${nf.format(value)}`;
   }
-  if (unit === 'raw') {
+  if (unit === "raw") {
     return html`${value}`;
   }
-  if (unit === 'time') {
+  if (unit === "time") {
     return formatTime(value, speed);
   }
   return html`${nf.format(value)}<strong class="unit">${unit}</strong>`;
 }
 
-defineSlideType('slide-barchart', {
-  render ({ attrs, content }) {
-
+defineSlideType("slide-barchart", {
+  render({ attrs, content }) {
     const unit = attrs.unit;
 
     const [title, ...parts] = content
       .trim()
-      .split('\n')
+      .split("\n")
       .map((line) => line.trim());
 
     const sections = parts
       .map((line) => {
-        const [rawLabel, rawDetails] = line.split(' : ').map((a) => a.trim());
-        const [rawValue, color = '#888'] = rawDetails.split(' ');
-        const isCommented = rawLabel.startsWith('// ');
-        const label = rawLabel.replace('// ', '');
+        const [rawLabel, rawDetails] = line.split(" : ").map((a) => a.trim());
+        const [rawValue, color = "#888"] = rawDetails.split(" ");
+        const isCommented = rawLabel.startsWith("// ");
+        const label = rawLabel.replace("// ", "");
         const value = Number(rawValue);
         return { label, value, isCommented, color };
       })
       .map((section, i, all) => {
-        const max = (attrs.max != null)
-          ? Number(attrs.max)
-          : Math.max(...all.map((s) => s.value));
+        const max =
+          attrs.max != null
+            ? Number(attrs.max)
+            : Math.max(...all.map((s) => s.value));
         const percent = (section.value * 100) / max;
         return { ...section, percent };
       });
@@ -80,32 +83,48 @@ defineSlideType('slide-barchart', {
     const maxValue = Math.max(...sections.map((s) => s.value));
 
     return html`
-
       <div class="title">
         <div>${unsafeHTML(markup(title))}</div>
-        ${attrs.logo != null ? html`
-          <img class="title-logo" src="src/img/logo-${attrs.logo}.svg" alt="">
-        ` : ''}
+        ${attrs.logo != null
+          ? html`
+              <img
+                class="title-logo"
+                src="src/img/logo-${attrs.logo}.svg"
+                alt=""
+              />
+            `
+          : ""}
       </div>
 
       <div class="container">
-        ${sections.map(({ label, value, isCommented, color, percent }) => html`
-          <div class="section ${classMap({ comment: isCommented })}">
-            <div class="bar">
-              <div class="bar-value" style="--bar-percent: ${percent}" data-color="${color}">
-                ${attrs.percent == null ? html`
-                  <div class="bar-label">${format(value, unit, attrs.speed)}</div>
-                ` : ''}
-                ${attrs.percent != null ? html`
-                  <div class="bar-label">${format(percent, '%')}</div>
-                ` : ''}
+        ${sections.map(
+          ({ label, value, isCommented, color, percent }) => html`
+            <div class="section ${classMap({ comment: isCommented })}">
+              <div class="bar">
+                <div
+                  class="bar-value"
+                  style="--bar-percent: ${percent}"
+                  data-color="${color}"
+                >
+                  ${attrs.percent == null
+                    ? html`
+                        <div class="bar-label">
+                          ${format(value, unit, attrs.speed)}
+                        </div>
+                      `
+                    : ""}
+                  ${attrs.percent != null
+                    ? html`
+                        <div class="bar-label">${format(percent, "%")}</div>
+                      `
+                    : ""}
+                </div>
               </div>
+              <div class="legend">${unsafeHTML(markup(label))}</div>
             </div>
-            <div class="legend">${unsafeHTML(markup(label))}</div>
-          </div>
-        `)}
+          `,
+        )}
       </div>
-
     `;
   },
   // language=CSS
@@ -122,7 +141,7 @@ defineSlideType('slide-barchart', {
       font-size: 3rem;
       font-weight: bold;
       padding: 1rem 0;
-      font-family: 'Yanone Kaffeesatz', sans-serif;
+      font-family: "Yanone Kaffeesatz", sans-serif;
       display: flex;
       align-items: center;
       gap: 1rem;
@@ -183,7 +202,7 @@ defineSlideType('slide-barchart', {
     .bar-label {
       bottom: 100%;
       box-sizing: border-box;
-      font-family: 'OperatorMono-Medium', monospace;
+      font-family: "OperatorMono-Medium", monospace;
       font-size: 1.5rem;
       left: 50%;
       padding-bottom: 0.5rem;
@@ -227,6 +246,10 @@ defineSlideType('slide-barchart', {
       background-color: #ea4335;
     }
 
+    .bar-value[data-color="red"] {
+      background-color: #ea4335;
+    }
+
     .bar-value[data-color="min"] {
       background-color: #fbbc04;
     }
@@ -254,14 +277,13 @@ defineSlideType('slide-barchart', {
     .legend {
       border-top: 0.15rem solid #000;
       box-sizing: border-box;
-      font-family: 'OperatorMono-Medium', monospace;
+      font-family: "OperatorMono-Medium", monospace;
       font-size: 1.4rem;
       line-height: 1.5;
       padding: 0.5rem 1rem;
       text-align: center;
       width: 100%;
     }
-
 
     :host([small]) .legend {
       min-width: 5rem;
