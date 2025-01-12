@@ -19,9 +19,7 @@ defineSlideType("slide-ext-content", {
           ? html`<div class="qr-container">
               <qr-code-element
                 text="${qr}"
-                graphic-element="canvas"
                 error-correction="medium"
-                border-width="0"
                 mask-pattern="-1"
                 scale="5"
               >
@@ -62,13 +60,12 @@ defineSlideType("slide-ext-content", {
       bottom: 1em;
       justify-content: center;
       z-index: 3;
-      max-width: 200px;
       object-fit: cover;
-      border: 0.5em solid var(--color-bb);
+      overflow: hidden;
     }
 
-    .qr-container .qr-code-element {
-      height: fit-content;
+    qr-code-element {
+      --size: 10em;
     }
 
     span {

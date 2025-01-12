@@ -232,17 +232,15 @@ Designing a Pragmatic Testing Strategy - <strong>Y Jaaidi</strong>
 > Voici donc quelques typologies de réponses observées, on va essayer de sainement les critiquer au sens propre du terme.
 > En essayant de montrer les limites de ces approches.
 
-## poster fade-to
+## poster fade-to main
+Les believers
 ==========
 _"Nous on ne test pas, on a pas le temps."_
 <img src="src/img/chaplin.gif" style="max-height: 300px;" />
-xxxxxxxxxx
-xxxxxxxxx
 ==========
 xxxxxxxxxx
 xxxxxxxxxx
 ----------
-xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxxx
@@ -280,19 +278,16 @@ O outil : 21 red
 > Déja on peut se rassurer, les équipes qui ne testent pas sont minoritaires.
 > On a cependant presque un quart qui n'utilise aucun outil de test.
 
-## poster
+## poster main
+Les believers
 ==========
 _"Nous on ne test pas, on a pas le temps."_
 <img src="src/img/chaplin.gif" style="max-height: 300px;" />
-xxxxxxxxxx
-xxxxxxxxx
 ==========
 xxxxxxxxxx
 xxxxxxxxxx
 ----------
 21% n'automatisent pas leurs tests
-xxxxxxxxxx
-xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxxx
@@ -316,7 +311,8 @@ Ice cream modele - <strong>Alister B Scott</strong>
 > On ne dit pas que d'avoir des tests manuels c'est mal hein, on va juste dire que centraliser sa stratégie de tests dessus n'est pas pour nous une bonne idée.
 > Ça ne passera pas à l'échelle.
 
-## poster
+## poster main
+Les technophiles
 ==========
 _"On fait du Jest / Testing Library / Cypress / ..."_
 xxxxxxxxxx
@@ -325,20 +321,17 @@ xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxxx
-xxxxxxxxxx
-xxxxxxxxxx
 xxxxxxxx
 ==========
 <img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 400px" />
-xxxxxxxxxx
-xxxxxxxxxx
 ==========
 > $AC$ En deuxième position des réponses à la question "Comment vous testez ?" on a souvent des réponses plus techniques.
 > On nous répond des technos de tests, des outils, des librairies, des frameworks.
 > Comme si ces outils étaient une fin en soi. 
 > Soyons clair des outils de tests c'est bien, mais savoir clairement "Qu'est-ce qu'on teste ?" est mieux.
 
-## poster
+## poster main
+Les technophiles
 ==========
 _"On fait du Jest / Testing Library / Cypress / ..."_
 xxxxxxxxxx
@@ -346,13 +339,9 @@ xxxxxxxxxx
 ----------
 Faire des tests, juste pour en faire
 xxxxxxxxxx
-xxxxxxxxxx
-xxxxxxxxxx
 xxxxxxxx
 ==========
 <img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 400px" />
-xxxxxxxxxx
-xxxxxxxxxx
 ==========
 > #JP# On a régulièrement cette réponse quand la stratégie de test semble imposée de manière très solutionniste.
 > On fait des tests parce qu'on nous a dit d'en faire / qu'on nous a dit que c'était bien.
@@ -360,41 +349,36 @@ xxxxxxxxxx
 > Clairement vous ici dans la salle, si vous regardez vos tests, à quoi vous sont ils utiles ?
 > Qu'est-ce qu'ils vous apportent au jour le jour ?
 
-## poster
+## poster main
+Les technophiles
 ==========
 _"On fait du Jest / Testing Library / Cypress / ..."_
-xxxxxxxxxx
 xxxxxxxxxx
 ----------
 Faire des tests, juste pour en faire
 xxxxxxxxxx
-xxxxxxxxxx
-xxxxxxxxxx
-xxxxxxxx
-==========
-<img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 400px" />
 Qu'est-ce que vous testez ?
 xxxxxxxxxx
 ==========
+<img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 400px" />
+==========
 > #JP# On a régulièrement cette réponse quand la stratégie de test semble imposée de manière très solutionniste.
 > On fait des tests parce qu'on nous a dit d'en faire / qu'on nous a dit que c'était bien.
 > Est-ce que ces outils, ces librairies vous aident ou au contraire vous infliges de l'aide.
 > Clairement vous ici dans la salle, si vous regardez vos tests, à quoi vous sont ils utiles ?
 > Qu'est-ce qu'ils vous apportent au jour le jour ?
 
-## poster
+## poster main
+Les Sceptiques
 ==========
 _"Nous on teste absolument tout, coverage à 100%"_
 xxxxxxxxxx
-xxxx
 <img src="src/img/bianca-ackermann-fUIDHNjwbto-unsplash.jpg" />
-xxxxxxxxxx
 ==========
 xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxx
 ------
-xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxxx
@@ -409,21 +393,18 @@ xxxxxxx
 > Est-ce que cependant le coverage est une bonne métrique ?
 > Est-ce que chacune des lignes de votre codebase mérite d'être testée avec la même précision, la même rigeure, le même détail ?
 
-## poster
+## poster main
+Les Sceptiques
 ==========
 _"Nous on teste absolument tout, coverage à 100%"_
 xxxxxxxxxx
-xxxx
 <img src="src/img/bianca-ackermann-fUIDHNjwbto-unsplash.jpg" />
-xxxxxxxxxx
 ==========
 xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxxx
 ------
 Le coverage n'est pas un indicateur de qualité de tests
-xxxxxxxxxx
-xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxx
 ==========
@@ -432,21 +413,17 @@ xxxxxxx
 > Une stratégie quantitative va également vous apporter des problèmes de scalabilité de vos tests.
 > #AC# On se retrouve avec énormément de tests à faire tourner ce qui va ralentir votre CI, ralentir votre développement, le délai pour avoir du feedback en sera que plus long.
 
-## poster
+## poster main
+Les Sceptiques
 ==========
 _"Nous on teste absolument tout, coverage à 100%"_
 xxxxxxxxxx
-xxxx
 <img src="src/img/bianca-ackermann-fUIDHNjwbto-unsplash.jpg" />
-xxxxxxxxxx
 ==========
-xxxxxxxxxx
 xxxxxxxxxx
 La CI qui met 2 heures.
 ------
 Le coverage n'est pas un indicateur de qualité de tests
-xxxxxxxxxx
-xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxx
 ==========
@@ -454,15 +431,16 @@ xxxxxxx
 > Est-ce que run **tous** les tests **tout le temps** est une bonne idée ?
 > On verra ensemble des techniques pour éviter ça.
 
-## poster
+## poster main
+Les Sceptiques
 ==========
 _"On teste que cette partie là, le reste c'est pas important"_
 <img src="src/img/lena-taranenko-hCUA4xtxVTA-unsplash.jpg" style="object-position: top">
 xxxxxxxxxx
 xxxx
-xxxxxxxxxx
-xxxxxxxxxx
 ==========
+xxxxxxxxxx
+xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxxx
 ------
@@ -472,13 +450,56 @@ xxxxxxxxxx
 xxxxxxx
 ==========
 
-> #JP# Enfin, on a des équipes qui vont avoir une stratégie de test avec du focus.
+> #JP# Enfin, et c'est beaucoup plus rare, on a des équipes qui vont avoir une stratégie de test avec du focus.
 > Ou avec une quantité de tests très limitée.
 > Est-ce critiquable ? Est-ce que c'est une bonne idée ?
 > $AC$ Clairement, on a souvent des équipes qui vont se concentrer sur des parties de leur codebase, souvent les plus critiques.
 > On pourrait se dire que c'est une mauvaise idée, mais en fait c'est une stratégie qui peut être très pertinente.
 
+## poster main
+Les good enough
+==========
+_"On teste que cette partie là, le reste c'est pas important"_
+<img src="src/img/lena-taranenko-hCUA4xtxVTA-unsplash.jpg" style="object-position: top">
+xxxxxxxxxx
+xxxx
+==========
+xxxxxxxxxx
+xxxxxxxxxx
+Une approche pragmatique
+xxxxxxxxxx
+------
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxx
+==========
 
+> Cette vision pragmatique, si elle repose bien sur une analyse de risque, peut être très pertinente.
+> Si clairement on a peu de tests parce qu'on a la flemme où qu'on a pas le temps, c'est pas une bonne idée.
+> Mais si on peut fragmenter son application, identifier les parties les plus critiques, les plus risquées, et les tester en priorité.
+> _Choisir c'est aussi renoncer_, si on choisi de ne pas tester certaines parties, c'est qu'on a fait le choix de ne pas les tester.
+> C'est intéressant de creuser le pourquoi.
+
+## ext-content 
+<img src="src/img/is_it_worth_the_time_2x.png"/>
+https://xkcd.com/1205/
+<strong>XKCD 1205</strong>
+
+> #JP# Automatiser des tests ça aura un certain cout, un certain temps, une certaine complexité.
+> Vous connaissez peut-être ce XKCD ?
+> C'est une bande dessinée qui illustre bien cette problématique.
+> Passer des heures à automatiser des tests sur une feature qui n'est pas importante pour vous, le business de votre entreprise, la codebase entière.
+> Est-ce toujours pertinent ?
+
+## ext-content contain
+<img src="src/img/gain_perte.jpg" />
+Automate Within the sprint - <strong>Mike Cohn</strong>
+
+> $AC$ Ces questions de coût et de gain sur l'automatisation on se les pose depuis longtemps.
+> Avec le temps, le cout de maintenance, de run d'un test automatisé risque de dépasser son gain.
+> Mike Cohn dans son livre exposait déjà son point de vue avec ce graphique.
+> Pausons nous quelques secondes pour réfléchir à ce qu'on a vu.
 
 ## text
 Quoi en penser ?
