@@ -545,17 +545,74 @@ Optez pour du <strong>mutation testing</strong>
 > $AC$ Le sujet en lui est très vaste et on aurait pu passer la conférence entière dessus. On vous invite à regarder des outils comme Stryker, PIT, etc.
 
 ## text todo
-todo: ajouter un **related** sur conference du mutation testing
+todo: ajouter un **related** sur https://www.youtube.com/watch?v=297tyPsXOm8
+
+> $AC$ Voilà un article que je recommande toujours sur le mutation testing si vous voulez creuser c'est un sujet très intéressant
+
+## media contain
+<img src="src/img/how_you_do_anything.jpeg">
+Traite ta testbase comme ta codebase
+
+> #JP# Da manière plus globale, ce qu'on vous recommande chaudement, c'est de soigner autant votre testbase que votre codebase. Tout d'abord par souci de cohérence, mais surtout parce que quand on y réfléchit un peu, on a les mêmes contraintes dans une testbase que dans une codebase. À savoir, le code des tests doit être lu, compris, maintenu dans le temps. Donc, on n'hésite pas, on configure un linter pour ses tests et on s'y tient.
+
+> $AC$ Si on vous parle de lint dans les tests, c'est parce qu'on pense que c'est un moyen facile d'imposer des bonnes pratiques, plutôt que de s'en tenir à la discipline individuelle. Sachez que pour Eslint, l'outil de lint en JS le plus connu, il existe un grand nombre de règles déjà en place, qui témoigne des erreurs que les devs ont faites par le passé. Ma préférée étant la règle `expect-expect` de eslint-plugin-jest
+
+## code
+<h1>Enforce assertion to be made in a test body (expect-expect)</h1>
+⚠️ This rule warns in the ✅ recommended config.
+
+Ensure that there is at least one expect call made in a test.
+
+<h2>Rule details</h2>
+This rule triggers when there is no call made to expect in a test, to prevent users from forgetting to add assertions.
+
+> $AC$ Qui vérifie que pour chaque test, on vérifie bien au moins quelque chose ;)
 
 ## text todo
-Traite ta test base comme ta codebase how you do one thing is how you do everything
-s'imposer des règles et les automatisés (lint)
-Se reposer sur analyse statique / compilation
+<strong>Ne</strong> tester <strong>que</strong> les modules impactés par vos changements
 
-> Tester avec le diff avec une architecture découpée
-jest / vitest le fond
-nx affected
-Sharding
+> #JP# On a parlé de qualité de test, au tour de la quantité. Un bon moyen de gagner du temps que la CI met à tourner est de réduire la quantité de test qu'on run à chaque fois. L'idée est de ne faire tourner que les tests du code que vous avez changé sans faire tourner le reste.
+
+## text todo
+<strong>Ne</strong> tester <strong>que</strong> les modules impactés par vos changements
+<i>Le test le plus rapide, c'est celui qu'on ne lance pas</i>
+
+> #JP# eh oui, le test le plus rapide, c'est celui qu'on ne lance pas. Bon, cela ne s'applique évidemment que lorsque vous avez une architecture qui vous permet de le faire.
+
+## code
+```md
+## changed
+- Type: boolean | string
+- Default: false
+Run tests only against changed files. If no value is provided, it will run tests against uncommitted changes (including staged and unstaged).
+
+To run tests against changes made in the last commit, you can use --changed HEAD~1. You can also pass commit hash (e.g. --changed 09a9920) or branch name (e.g. --changed origin/develop).
+```
+
+> $AC$ Mais si c'est le cas, sachez que des outils que vitest et jest propose de run les tests sur votre diff git. Chez vitest, on a le flag `--changed` auquel on peut passer un hash de commit pour run les tests sur les fichiers qui diffèrent.
+
+## code
+```md
+## `--onlyChanged`
+Alias: -o. Attempts to identify which tests to run based on which files have changed in the current repository. Only works if you're running tests in a git/hg repository at the moment and requires a static dependency graph (ie. no dynamic requires).
+```
+> $AC$ Chez Jest, on a un flag `--onlyChanged` qui permet de dire à jest d'essayer d'identifier les tests liés aux fichiers modifiés
+
+## code
+```md
+## `--changedFilesWithAncestor`
+Runs tests related to the current changes and the changes made in the last commit. Behaves similarly to `--onlyChanged`.
+
+## `--changedSince`
+Runs tests related to the changes since the provided branch or commit hash. If the current branch has diverged from the given branch, then only changes made locally will be tested. Behaves similarly to `--onlyChanged`.
+```
+> $AC$ Et les deux petits frères qui permettent respectivement de run les tests sur le diff du dernier commit et sur un commit spécifié.
+
+## text
+`nx affected`
+
+> #JP# Les outils de gestion de repo permettent de faire ce genre de chose. Par exemple, en utilisant `nx affected`, on peut ne run la commande de test sur les packages concernés.
+
 catégoriser et prioriser les tests
 Dans le monde JS, préférer des outils comme Vitest (référence l'article de Younes)
 expliquer rapidement pourquoi
@@ -564,6 +621,7 @@ expliquer rapidement pourquoi
 > Dans des tests d'interface web, un truc qui prend le plus de temps c'est ce qu'on fait dedans. 
 _DEMO_ playwright overhead
 les tests UI ça coutent plus aussi cher qu'a l'époque, playwright est simple à setup et rapide (ce qui côute c'est ce qu'on teste)
+> avoir un testing.md qui détermine sa stratégie de tests qui détermine, ce qu'on teste, comment on le teste et les pratiques de manière explicite.
 > Tester des usages pas des outils
 montrer qu'avant on testait des composants et des méthodes, maintenant on teste des usages (les états du DOM, les interactions, les parcours utilisateurs)
 
