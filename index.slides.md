@@ -588,7 +588,7 @@ Mutation Testing - <strong>Loïc Knuchel</strong>
 > $AC$ Voilà une conférence que je recommande sur le mutation testing si vous voulez creuser c'est un sujet très intéressant
 
 ## tip
-Soigne ta testbase comme ta codebase
+Soigne ta <em>testbase</em> comme ta codebase
 
 ## ext-content
 <img src="src/img/how-you-do-one-thing.webp">
@@ -598,8 +598,17 @@ Soigne ta testbase comme ta codebase
 > Tout d'abord par souci de cohérence, mais surtout parce que quand on y réfléchit un peu, on devrait avoir les mêmes contraintes dans une testbase que dans une codebase. 
 > À savoir, le code des tests doit être lu, compris, maintenu dans le temps.
 
-## media contain white
-<img src="src/img/duplicate-it-describe.png">
+## code
+```js
+describe('foo', () => {
+  it('should do bar', () => {});
+  it('should do bar', () => {}); // Has the same title as the previous test
+
+  describe('baz', () => {
+    // ...
+  });
+});
+```
 
 > $AC$ Si on ne se fixe pas de règle, on peut vite se retrouver avec des tests qui se ressemblent, qui se dupliquent, qui ne sont pas maintenables.
 > Il existe une pléthore de règles de lint pour les tests, pour les noms de tests, pour les expect, pour les describe, etc.
@@ -607,24 +616,21 @@ Soigne ta testbase comme ta codebase
 > Sachez que pour Eslint, l'outil de lint en JS le plus connu, il existe un 
 > Ma préférée étant la règle `expect-expect` de eslint-plugin-vitest.
 
-## media contain white
-<img src="src/img/expect-expect.png">
+## ext-content contain
+<img src="src/img/expect-expect-light.png">
+Le readme de du plugin <strong>expect-expect</strong> de Vitest
 
 > $AC$ Qui vérifie que pour chaque test, on vérifie bien au moins quelque chose ;)
 
-## text todo
-Ne tester que <strong>les modules impactés</strong> par vos changements
-<br/>
-<br/>
+## tip
+Ne testez que <strong>les modules impactés</strong> par vos changements
 
 > #JP# On a parlé de qualité de test, parlons maintenant de la quantité. 
 > Un bon moyen de gagner du temps sur la CI est de réduire la quantité de test qu'on run à chaque fois.
 > L'idée est de ne faire tourner que les tests du code que vous avez changé sans faire tourner le reste.
 > Parce que...
 
-## text todo
-Ne tester que <strong>les modules impactés</strong> par vos changements
-<br/>
+## text
 <i>Le test le plus rapide, c'est celui qu'on ne lance pas</i>
 
 > #JP# _le test le plus rapide, c'est celui qu'on ne lance pas_. 
@@ -632,13 +638,15 @@ Ne tester que <strong>les modules impactés</strong> par vos changements
 > Si votre architecture le permet, configurez votre projet pour qu'il ne run que les tests impactés par vos changements.
 > $AC$ Les runners de tests, en tout cas côté javascript, comme Jest, Vitest ;), Nx, etc. proposent des outils pour run les tests sur votre diff git.
 
-## media contain white
-<img src="src/img/changed-vitest.png">
+## ext-content contain white
+<img src="src/img/changed.png"/>
+Le flag <strong>--changed</strong> de Vitest
 
 > $AC$ Chez vitest, on a le flag `--changed` auquel on peut passer un hash de commit pour run les tests sur les fichiers qui diffèrent depuis le HEAD. 
 
-## media contain white
-<img src="src/img/nx-affected.png">
+## ext-content contain white
+<img src="src/img/nxaffected.png">
+Nx affected project graph when <strong>lib10</strong> is changed - Nx docs
 
 > #JP# Avec nx, qui est un outil de gestion de monorepo, on a `nx affected`, qui permet de run les tests sur les modules impactés par vos changements.
 > Si on fait une modif dans le module "lib10", on va run les tests de "lib10" et des modules qui dépendent de "lib10", mais pas les autres.
