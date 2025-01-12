@@ -618,7 +618,7 @@ describe('foo', () => {
 
 ## ext-content contain
 <img src="src/img/expect-expect-light.png">
-Le readme de du plugin <strong>expect-expect</strong> de Vitest
+Le readme dans le repo <strong>eslint-plugin-vitest</strong>
 
 > $AC$ Qui vérifie que pour chaque test, on vérifie bien au moins quelque chose ;)
 
@@ -651,17 +651,27 @@ Nx affected project graph when <strong>lib10</strong> is changed - Nx docs
 > #JP# Avec nx, qui est un outil de gestion de monorepo, on a `nx affected`, qui permet de run les tests sur les modules impactés par vos changements.
 > Si on fait une modif dans le module "lib10", on va run les tests de "lib10" et des modules qui dépendent de "lib10", mais pas les autres.
 
-<!-- catégoriser et prioriser les tests
-Dans le monde JS, préférer des outils comme Vitest (référence l'article de Younes)
-expliquer rapidement pourquoi
-rationaliser sa quantité de test -> pour un freelance c'est pas nécessaire de tester parce que pas gain https://xkcd.com/1205/
-Setup une stack E2E est facile 2025 et les tests mettent beaucoup moins de temps qu'à l'époque de Selenium
-Dans des tests d'interface web, un truc qui prend le plus de temps c'est ce qu'on fait dedans. 
-_DEMO_ playwright overhead
-les tests UI ça coutent plus aussi cher qu'a l'époque, playwright est simple à setup et rapide (ce qui côute c'est ce qu'on teste)
-avoir un testing.md qui détermine sa stratégie de tests qui détermine, ce qu'on teste, comment on le teste et les pratiques de manière explicite.
-Tester des usages pas des outils
-montrer qu'avant on testait des composants et des méthodes, maintenant on teste des usages (les états du DOM, les interactions, les parcours utilisateurs) -->
+<!--
+# présenter nos recos: vitest / playwright
+## believer (ça prend trop de temps)
+C'est plus aussi vrai qu'avant
+pour les tests unitaires -> vitest **REF** de l'article de Younes
+pour les tests UI -> playwright -> **DEMO** de un test facile
+
+## technophile (on fait du jest, du cypress...)
+On teste des usages, des comportements pas des outils
+Avant, on testait des méthodes maintenant on test des usages
+
+## sceptique (on teste tout, coverage à 100%)
+Mutation testing au lieu de coverage
+
+## good enough (on test que ce qui est critique)
+Reprendre les raisons de pourquoi on teste et voir les frictions
+Si les raisons c'est parceque ça prend du temps -> mocker le réseau **DEMO** playwright overhead
+
+# Avoir un testing.md
+
+-->
 
 ## poster main
 Merci beaucoup !
@@ -706,6 +716,8 @@ Images :
 * pyramide des tests 3 : https://miro.medium.com/v2/resize:fit:1400/format:webp/1*IA6N133_wkTin6DMq30u0w.png
 * mike cohn : https://upload.wikimedia.org/wikipedia/commons/a/ac/WEB_RES-Mike_Cohn-%C2%A9-2016-Hows_Your_Headshot-6.jpg
 * image de chantier : https://unsplash.com/fr/photos/homme-en-veste-grise-et-orange-tenant-un-appareil-photo-reflex-numerique-vert-et-noir-pendant-la-journee-wq7oyx_Kx-4
+* méchant de john wick : https://villains.fandom.com/wiki/Marquis_de_Gramont?file=F6iIyvDbMAAqS8A.jpg
+* Nx affected graph : https://nx.dev/ci/features/affected#run-only-tasks-affected-by-a-pr
 
 Polices :
 
