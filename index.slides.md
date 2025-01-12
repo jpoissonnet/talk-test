@@ -547,7 +547,7 @@ journal section trucs et astuces
 
 > #JP# Dans les conseils qu'on peut vous donner pour concevoir une stratégie de test, voilà quelques idées et astuces qu'on peut vous donner.
 
-## text
+## tip
 N'objectivez pas le <strong>coverage</strong>
 > $AC$ "N'objectivez pas le coverage". Le coverage pour rappel, c'est le ratio de ligne exécutée lors de vos tests. Ca ne mesure en rien la qualité de vos tests.
 
@@ -586,11 +586,12 @@ Mutation Testing - <strong>Loïc Knuchel</strong>
 
 > $AC$ Voilà une conférence que je recommande sur le mutation testing si vous voulez creuser c'est un sujet très intéressant
 
-## text todo
+## tip
 Soigne ta testbase comme ta codebase
 
-## media contain white
-<img src="src/img/how_you_do_anything.jpeg">
+## ext-content
+<img src="src/img/how-you-do-one-thing.webp">
+<h3 style="width:100%">"How you do anything is how you do everything" - Le méchant dans <strong>John Wick 4</strong></h3>
 
 > #JP# De manière plus globale, ce qu'on vous recommande chaudement, c'est de soigner autant votre testbase que votre codebase. 
 > Tout d'abord par souci de cohérence, mais surtout parce que quand on y réfléchit un peu, on devrait avoir les mêmes contraintes dans une testbase que dans une codebase. 
@@ -709,4 +710,5 @@ Polices :
 Remerciements :
 
 * Hubert Sablonnière : pour lui même et ses outils hyper pratiques pour les slides
-* Jules : pour sa patience et sa persévérance malgrés ses cours en parallèle
+* Jules : pour sa patience et sa persévérance malgré ses cours en parallèle
+* Antoine : pour sa bienveillance à toute épreuve
