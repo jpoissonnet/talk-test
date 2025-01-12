@@ -548,8 +548,8 @@ journal section trucs et astuces
 > #JP# Dans les conseils qu'on peut vous donner pour concevoir une stratégie de test, voilà quelques idées et astuces qu'on peut vous donner.
 
 ## text
-Ne mesurez pas le <strong>coverage</strong>
-> $AC$ "Ne mesurez pas le coverage". Le coverage pour rappel, c'est le ratio de ligne exécutée lors de vos tests. Ca ne mesure en rien la qualité de vos tests.
+N'objectivez pas le <strong>coverage</strong>
+> $AC$ "N'objectivez pas le coverage". Le coverage pour rappel, c'est le ratio de ligne exécutée lors de vos tests. Ca ne mesure en rien la qualité de vos tests.
 
 ## code
 ```js
@@ -563,99 +563,95 @@ it('should add two numbers and return the result', () => {
     let result = add(firstNumber, secondNumber);
 });
 ```
-> #JP# Regarde Antoine, j'ai trouvé un code avec 100% de coverage. C'est trop bien, mais là, il y a un souci évident non ?
+> #JP# Regarde Antoine, j'ai trouvé un code avec 100% de coverage. 
+> C'est trop bien, mais là, il y a un souci évident non ?
 > _solicitation du public_
 > $AC$ Oui, il n'y a aucun expect. On a 100% de coverage mais on a pas de test.
-> #JP# Une mesure quantitative ne peut pas se soustraire d'une mesure qualitative si on veut garder du sens. Un outil intéressant
-> pour ça c'est le mutation testing. L'idée en deux phrases, c'est de modifier le code source et de voir si les tests échouent.
+> #JP# Une mesure quantitative ne peut pas se soustraire d'une mesure qualitative si on veut garder du sens. 
+> Un principe intéressant pour compléter l'analyse de coverage, c'est le mutation testing. 
+> L'idée en deux phrases, c'est de modifier le code source et de voir si les tests échouent.
 
-## text todo
+## ext-content
+<img src="src/img/strykerJS.png">
+https://stryker-mutator.io/
 Optez pour du <strong>mutation testing</strong>
-> #JP# L'idée en deux phrases, c'est de modifier le code source et de voir si les tests échouent. Si les tests qui passent même avec des modifications dans votre code sont des tests inutiles.
+
+> #JP# Si les tests passent même avec des modifications dans votre code, alors ce sont des tests inutiles.
 > $AC$ Le sujet en lui est très vaste et on aurait pu passer la conférence entière dessus. On vous invite à regarder des outils comme Stryker, PIT, etc.
 
-## ext-content todo
-<img src="https://i3.ytimg.com/vi/297tyPsXOm8/maxresdefault.jpg"/>
+## ext-content
+<img src="src/img/mutationtesting.jpg"/>
 https://www.youtube.com/watch?v=297tyPsXOm8
 Mutation Testing - <strong>Loïc Knuchel</strong>
 
-> $AC$ Voilà un article que je recommande toujours sur le mutation testing si vous voulez creuser c'est un sujet très intéressant
+> $AC$ Voilà une conférence que je recommande sur le mutation testing si vous voulez creuser c'est un sujet très intéressant
 
-## media contain
+## text todo
+Soigne ta testbase comme ta codebase
+
+## media contain white
 <img src="src/img/how_you_do_anything.jpeg">
-Traite ta testbase comme ta codebase
 
-> #JP# Da manière plus globale, ce qu'on vous recommande chaudement, c'est de soigner autant votre testbase que votre codebase. Tout d'abord par souci de cohérence, mais surtout parce que quand on y réfléchit un peu, on a les mêmes contraintes dans une testbase que dans une codebase. À savoir, le code des tests doit être lu, compris, maintenu dans le temps. Donc, on n'hésite pas, on configure un linter pour ses tests et on s'y tient.
+> #JP# De manière plus globale, ce qu'on vous recommande chaudement, c'est de soigner autant votre testbase que votre codebase. 
+> Tout d'abord par souci de cohérence, mais surtout parce que quand on y réfléchit un peu, on devrait avoir les mêmes contraintes dans une testbase que dans une codebase. 
+> À savoir, le code des tests doit être lu, compris, maintenu dans le temps.
 
-> $AC$ Si on vous parle de lint dans les tests, c'est parce qu'on pense que c'est un moyen facile d'imposer des bonnes pratiques, plutôt que de s'en tenir à la discipline individuelle. Sachez que pour Eslint, l'outil de lint en JS le plus connu, il existe un grand nombre de règles déjà en place, qui témoigne des erreurs que les devs ont faites par le passé. Ma préférée étant la règle `expect-expect` de eslint-plugin-jest
+## media contain white
+<img src="src/img/duplicate-it-describe.png">
 
-## code
-<h1>Enforce assertion to be made in a test body (expect-expect)</h1>
-⚠️ This rule warns in the ✅ recommended config.
+> $AC$ Si on ne se fixe pas de règle, on peut vite se retrouver avec des tests qui se ressemblent, qui se dupliquent, qui ne sont pas maintenables.
+> Il existe une pléthore de règles de lint pour les tests, pour les noms de tests, pour les expect, pour les describe, etc.
+> Si ces règles ont été mises en place, c'est pour faire faces aux erreurs les plus courantes.
+> Sachez que pour Eslint, l'outil de lint en JS le plus connu, il existe un 
+> Ma préférée étant la règle `expect-expect` de eslint-plugin-vitest.
 
-Ensure that there is at least one expect call made in a test.
-
-<h2>Rule details</h2>
-This rule triggers when there is no call made to expect in a test, to prevent users from forgetting to add assertions.
+## media contain white
+<img src="src/img/expect-expect.png">
 
 > $AC$ Qui vérifie que pour chaque test, on vérifie bien au moins quelque chose ;)
 
 ## text todo
-<strong>Ne</strong> tester <strong>que</strong> les modules impactés par vos changements
+Ne tester que <strong>les modules impactés</strong> par vos changements
+<br/>
+<br/>
 
-> #JP# On a parlé de qualité de test, au tour de la quantité. Un bon moyen de gagner du temps que la CI met à tourner est de réduire la quantité de test qu'on run à chaque fois. L'idée est de ne faire tourner que les tests du code que vous avez changé sans faire tourner le reste.
+> #JP# On a parlé de qualité de test, parlons maintenant de la quantité. 
+> Un bon moyen de gagner du temps sur la CI est de réduire la quantité de test qu'on run à chaque fois.
+> L'idée est de ne faire tourner que les tests du code que vous avez changé sans faire tourner le reste.
+> Parce que...
 
 ## text todo
-<strong>Ne</strong> tester <strong>que</strong> les modules impactés par vos changements
+Ne tester que <strong>les modules impactés</strong> par vos changements
+<br/>
 <i>Le test le plus rapide, c'est celui qu'on ne lance pas</i>
 
-> #JP# eh oui, le test le plus rapide, c'est celui qu'on ne lance pas. Bon, cela ne s'applique évidemment que lorsque vous avez une architecture qui vous permet de le faire.
+> #JP# _le test le plus rapide, c'est celui qu'on ne lance pas_. 
+> Ça parait évident, mais il est bon de le rappeler.
+> Si votre architecture le permet, configurez votre projet pour qu'il ne run que les tests impactés par vos changements.
+> $AC$ Les runners de tests, en tout cas côté javascript, comme Jest, Vitest ;), Nx, etc. proposent des outils pour run les tests sur votre diff git.
 
-## code
-```md
-## changed
-- Type: boolean | string
-- Default: false
-Run tests only against changed files. If no value is provided, it will run tests against uncommitted changes (including staged and unstaged).
+## media contain white
+<img src="src/img/changed-vitest.png">
 
-To run tests against changes made in the last commit, you can use --changed HEAD~1. You can also pass commit hash (e.g. --changed 09a9920) or branch name (e.g. --changed origin/develop).
-```
+> $AC$ Chez vitest, on a le flag `--changed` auquel on peut passer un hash de commit pour run les tests sur les fichiers qui diffèrent depuis le HEAD. 
 
-> $AC$ Mais si c'est le cas, sachez que des outils que vitest et jest propose de run les tests sur votre diff git. Chez vitest, on a le flag `--changed` auquel on peut passer un hash de commit pour run les tests sur les fichiers qui diffèrent.
+## media contain white
+<img src="src/img/nx-affected.png">
 
-## code
-```md
-## `--onlyChanged`
-Alias: -o. Attempts to identify which tests to run based on which files have changed in the current repository. Only works if you're running tests in a git/hg repository at the moment and requires a static dependency graph (ie. no dynamic requires).
-```
-> $AC$ Chez Jest, on a un flag `--onlyChanged` qui permet de dire à jest d'essayer d'identifier les tests liés aux fichiers modifiés
+> #JP# Avec nx, qui est un outil de gestion de monorepo, on a `nx affected`, qui permet de run les tests sur les modules impactés par vos changements.
+> Si on fait une modif dans le module "lib10", on va run les tests de "lib10" et des modules qui dépendent de "lib10", mais pas les autres.
 
-## code
-```md
-## `--changedFilesWithAncestor`
-Runs tests related to the current changes and the changes made in the last commit. Behaves similarly to `--onlyChanged`.
-
-## `--changedSince`
-Runs tests related to the changes since the provided branch or commit hash. If the current branch has diverged from the given branch, then only changes made locally will be tested. Behaves similarly to `--onlyChanged`.
-```
-> $AC$ Et les deux petits frères qui permettent respectivement de run les tests sur le diff du dernier commit et sur un commit spécifié.
-
-## text
-`nx affected`
-
-> #JP# Les outils de gestion de repo permettent de faire ce genre de chose. Par exemple, en utilisant `nx affected`, on peut ne run la commande de test sur les packages concernés.
-
-catégoriser et prioriser les tests
+<!-- catégoriser et prioriser les tests
 Dans le monde JS, préférer des outils comme Vitest (référence l'article de Younes)
 expliquer rapidement pourquoi
-> rationaliser sa quantité de test -> pour un freelance c'est pas nécessaire de tester parce que pas gain https://xkcd.com/1205/
-> Setup une stack E2E est facile 2025 et les tests mettent beaucoup moins de temps qu'à l'époque de Selenium
-> Dans des tests d'interface web, un truc qui prend le plus de temps c'est ce qu'on fait dedans. 
+rationaliser sa quantité de test -> pour un freelance c'est pas nécessaire de tester parce que pas gain https://xkcd.com/1205/
+Setup une stack E2E est facile 2025 et les tests mettent beaucoup moins de temps qu'à l'époque de Selenium
+Dans des tests d'interface web, un truc qui prend le plus de temps c'est ce qu'on fait dedans. 
 _DEMO_ playwright overhead
 les tests UI ça coutent plus aussi cher qu'a l'époque, playwright est simple à setup et rapide (ce qui côute c'est ce qu'on teste)
-> avoir un testing.md qui détermine sa stratégie de tests qui détermine, ce qu'on teste, comment on le teste et les pratiques de manière explicite.
-> Tester des usages pas des outils
-montrer qu'avant on testait des composants et des méthodes, maintenant on teste des usages (les états du DOM, les interactions, les parcours utilisateurs)
+avoir un testing.md qui détermine sa stratégie de tests qui détermine, ce qu'on teste, comment on le teste et les pratiques de manière explicite.
+Tester des usages pas des outils
+montrer qu'avant on testait des composants et des méthodes, maintenant on teste des usages (les états du DOM, les interactions, les parcours utilisateurs) -->
 
 ## poster main
 Merci beaucoup !
