@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@cicciosgamino/qr-code-element':
+        specifier: 0.1.0
+        version: 0.1.0
       highlight.js:
         specifier: ^11.11.1
         version: 11.11.1
@@ -90,6 +93,9 @@ packages:
 
   '@balena/dockerignore@1.0.2':
     resolution: {integrity: sha512-wMue2Sy4GAVTk6Ic4tJVcnfdau+gx2EnG7S+uAEe+TWJFqE4YoWN4/H8MSLj4eYJKxGg26lZwboEniNiNwZQ6Q==}
+
+  '@cicciosgamino/qr-code-element@0.1.0':
+    resolution: {integrity: sha512-M9UZx32p1vcE3vvsB5MX9OB2NtPg5YBl6SKtbeo+zw4qUf3PnQ6I5TsbnPhkT3ZZOKt8g/JlpOaDpcJgwsyJmA==}
 
   '@esbuild/aix-ppc64@0.21.5':
     resolution: {integrity: sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==}
@@ -2031,6 +2037,10 @@ snapshots:
   '@babel/helper-validator-identifier@7.25.9': {}
 
   '@balena/dockerignore@1.0.2': {}
+
+  '@cicciosgamino/qr-code-element@0.1.0':
+    dependencies:
+      lit: 2.8.0
 
   '@esbuild/aix-ppc64@0.21.5':
     optional: true

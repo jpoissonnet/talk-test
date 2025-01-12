@@ -143,20 +143,23 @@ La pyramide des tests
 > Quand on a fouillé avec Jules, on a trouvé énormément de représentation de celle-ci et vous aller voir c'est assez comique.
 > Aller, soirée diapositives, voici donc 3 exemples trouvés sur internet.
 
-## media fade-from contain white
+## ext-content
 <img src="src/img/pyramide/pyramide-1.png" />
+Pyramide des tests modèle 1
 
 > $AC$ Bel arc en ciel n'est-ce pas ? 
 > On voit une notion de vitesse et peut-être de scope.
 
-## media fade-from contain white
+## ext-content
 <img src="src/img/pyramide/pyramide-2.png" />
+Pyramide des tests modèle 2
 
 > $AC$ Ici on voit des "solutions tests", qui ne sont pas définis dans l'article connexe.
 > Pourquoi pas des "Problem tests" ?
 
-## media fade-from contain white
+## ext-content white
 <img src="src/img/pyramide/pyramide-3.png" />
+Pyramide des tests modèle 3 / 10000
 
 > $AC$ Celle-là je l'aime bien, elle a le bon goût du fait maison.
 > Ici E2E pour end-to-end
@@ -176,17 +179,17 @@ Mais en vrai ça vient <strong>de qui</strong> ?
 
 ## media contain logo
 <img src="src/img/mike-cohn.png">
-
 > #JP# C'est Mike Cohn, dans son livre "Succeeding with Agile: Software Development using Scrum".
 
-## media contain
+## ext-content
 <img src="src/img/succeeding-with-agile.png">
 
 >  #JP# Dans ce livre il défini un modèle en forme de pyramide pour comparer 3 typologies de tests tout en comparant leur facilité de mise en oeuvre et leur capaciter à apporter du feedback rapidement. 
 > Voyons ça un peu de plus près.
 
-## media fade-from contain logo
+## ext-content contain
 <img src="src/img/pyramide/pyramide-mike-cohn.png" />
+Pyramide des tests de <strong>Mike Cohn</strong>
 
 > Déjà dans sa pyramide, dans le chapitre il explique qu'il place que des tests automatisés.
 > Dans le modèle de base il ne compare pas les tests à la main avec des tests automatisés.
@@ -197,7 +200,6 @@ Mais en vrai ça vient <strong>de qui</strong> ?
 > On est pas loin de taper deux silex entre eux pour faire du feu.
 > $AC$ J'ai commencé a faire des tests automatisés en 2014, et même à cette époque là, on galérait.
 > Si je vous parle de Selenium, il y a peut-être quelques frissons qui vont se propager dans la salle.
-
 
 ## text
 Les limites de ce modèle
@@ -212,8 +214,10 @@ Un modèle de <strong>2009</strong>
 > #JP# On ne va pas jeter la pierre à Mike Cohn, lui même reconnait dans son livre que cette pyramide fait sens notamment lié au contexte technologique.
 > $AC$ Pour autant on voit encore ce modèle exposé, transformé, avec plus où moins d'étages sans pour autant qu'on se préoccupe du message initiale.
 
-## media contain white todo
-<img src="https://cookbook.marmicode.io/assets/images/honeycomb-test-model-033e461521df0d8b1cf5bf7dc22e1380.png">
+## ext-content contain
+<img src="src/img/honeycomb-test-model-033e461521df0d8b1cf5bf7dc22e1380.png">
+https://cookbook.marmicode.io/angular/pragmatic-testing-strategy/
+Designing a Pragmatic Testing Strategy - <strong>Y Jaaidi</strong>
 
 > $AC$ Pour nous, une façon de modéliser qui nous semble pertinente aujourd'hui, c'est le modèle exprimé dans un article de Younes Jaaidi de Marmicode avec un hexagone des tests.
 > Ce modèle règle deux parties floues de la pyramide des tests qu'on a pu voir.
@@ -255,8 +259,10 @@ xxxxxx
 > Mais il y en a une déjà qu'on pourrait citer.
 > Vous connaissez le State of JS ? 
 
-## media
+## ext-content contain
 <img src="src/img/state-of-js.jpg" screenshot-url="https://stateofjs.com/en-US"/>
+https://stateofjs.com/en-US
+State of JS 2024
 
 > #JP# C'est une étude qui est menée chaque année sur l'écosystème JS.
 > Il y a un chapitre qui s'intéresse aux outils de tests voici donc quelques résultats.
@@ -274,7 +280,7 @@ O outil : 21 red
 > Déja on peut se rassurer, les équipes qui ne testent pas sont minoritaires.
 > On a cependant presque un quart qui n'utilise aucun outil de test.
 
-## poster fade-to
+## poster
 ==========
 _"Nous on ne test pas, on a pas le temps."_
 <img src="src/img/chaplin.gif" style="max-height: 300px;" />
@@ -301,14 +307,16 @@ xxxxxx
 > On entend parfois des équipes qui font reposer le test manuels sur des équipe QA qui ont toute la charge de la qualité.
 > C'est le modèle qu'on appelle parfois le "Ice Cream Cone" posé par **Alister B Scott**.
 
-## media contain white
+## ext-content contain
 <img src="src/img/pyramide/ice-cream.png"/>
+https://alisterscott.github.io/TestingPyramids.html
+Ice cream modele - <strong>Alister B Scott</strong>
 
 > #JP# C'est souvent une stratégie de test très coûteuse, qui va ralentir le développement, qui va être source de frustration.
 > On ne dit pas que d'avoir des tests manuels c'est mal hein, on va juste dire que centraliser sa stratégie de tests dessus n'est pas pour nous une bonne idée.
 > Ça ne passera pas à l'échelle.
 
-## poster fade-to
+## poster
 ==========
 _"On fait du Jest / Testing Library / Cypress / ..."_
 xxxxxxxxxx
@@ -330,7 +338,7 @@ xxxxxxxxxx
 > Comme si ces outils étaient une fin en soi. 
 > Soyons clair des outils de tests c'est bien, mais savoir clairement "Qu'est-ce qu'on teste ?" est mieux.
 
-## poster fade-to
+## poster
 ==========
 _"On fait du Jest / Testing Library / Cypress / ..."_
 xxxxxxxxxx
@@ -352,7 +360,7 @@ xxxxxxxxxx
 > Clairement vous ici dans la salle, si vous regardez vos tests, à quoi vous sont ils utiles ?
 > Qu'est-ce qu'ils vous apportent au jour le jour ?
 
-## poster fade-to
+## poster
 ==========
 _"On fait du Jest / Testing Library / Cypress / ..."_
 xxxxxxxxxx
@@ -374,7 +382,7 @@ xxxxxxxxxx
 > Clairement vous ici dans la salle, si vous regardez vos tests, à quoi vous sont ils utiles ?
 > Qu'est-ce qu'ils vous apportent au jour le jour ?
 
-## poster fade-to
+## poster
 ==========
 _"Nous on teste absolument tout, coverage à 100%"_
 xxxxxxxxxx
@@ -401,7 +409,7 @@ xxxxxxx
 > Est-ce que cependant le coverage est une bonne métrique ?
 > Est-ce que chacune des lignes de votre codebase mérite d'être testée avec la même précision, la même rigeure, le même détail ?
 
-## poster fade-to
+## poster
 ==========
 _"Nous on teste absolument tout, coverage à 100%"_
 xxxxxxxxxx
@@ -424,7 +432,7 @@ xxxxxxx
 > Une stratégie quantitative va également vous apporter des problèmes de scalabilité de vos tests.
 > #AC# On se retrouve avec énormément de tests à faire tourner ce qui va ralentir votre CI, ralentir votre développement, le délai pour avoir du feedback en sera que plus long.
 
-## poster fade-to
+## poster
 ==========
 _"Nous on teste absolument tout, coverage à 100%"_
 xxxxxxxxxx
@@ -434,7 +442,7 @@ xxxxxxxxxx
 ==========
 xxxxxxxxxx
 xxxxxxxxxx
-Trop de tests, CI trop lente
+La CI qui met 2 heures.
 ------
 Le coverage n'est pas un indicateur de qualité de tests
 xxxxxxxxxx
@@ -446,7 +454,7 @@ xxxxxxx
 > Est-ce que run **tous** les tests **tout le temps** est une bonne idée ?
 > On verra ensemble des techniques pour éviter ça.
 
-## poster fade-to todo
+## poster
 ==========
 _"On teste que cette partie là, le reste c'est pas important"_
 xxxxxxxxxx
