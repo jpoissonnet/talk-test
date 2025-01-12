@@ -544,8 +544,10 @@ Optez pour du <strong>mutation testing</strong>
 > #JP# L'idée en deux phrases, c'est de modifier le code source et de voir si les tests échouent. Si les tests qui passent même avec des modifications dans votre code sont des tests inutiles.
 > $AC$ Le sujet en lui est très vaste et on aurait pu passer la conférence entière dessus. On vous invite à regarder des outils comme Stryker, PIT, etc.
 
-## text todo
-todo: ajouter un **related** sur https://www.youtube.com/watch?v=297tyPsXOm8
+## ext-content todo
+<img src="https://i3.ytimg.com/vi/297tyPsXOm8/maxresdefault.jpg"/>
+https://www.youtube.com/watch?v=297tyPsXOm8
+Mutation Testing - <strong>Loïc Knuchel</strong>
 
 > $AC$ Voilà un article que je recommande toujours sur le mutation testing si vous voulez creuser c'est un sujet très intéressant
 
