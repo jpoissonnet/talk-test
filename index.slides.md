@@ -508,8 +508,8 @@ Quoi en penser ?
 🤔
 > $AC$ Bon, d'après ce sondage DIY il nous laisse l'impression que les dev ont pas tous en tête toutes les raisons et les bénéfices qu'on tire du fait de tester.
 
-## media logo white
-<img src="https://static.vecteezy.com/system/resources/previews/026/551/422/non_2x/exit-full-screen-pixelated-ui-icon-video-player-view-display-get-out-fullscreen-mode-editable-8bit-graphic-element-outline-isolated-user-interface-image-for-web-mobile-app-retro-style-vector.jpg"/>
+## media contain white
+<img onclick="this.src+=''" src="src/img/unzoom.gif"/>
 
 > $AC$ En fait, si on dézoome et qu'on se demande **pourquoi** on teste, on compte 5 raisons de pourquoi on devrait automatiser des tests.
 
