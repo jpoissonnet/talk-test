@@ -457,6 +457,7 @@ xxxxxxx
 ## poster
 ==========
 _"On teste que cette partie là, le reste c'est pas important"_
+<img src="src/img/lena-taranenko-hCUA4xtxVTA-unsplash.jpg" style="object-position: top">
 xxxxxxxxxx
 xxxx
 xxxxxxxxxx
@@ -470,6 +471,14 @@ xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxx
 ==========
+
+> #JP# Enfin, on a des équipes qui vont avoir une stratégie de test avec du focus.
+> Ou avec une quantité de tests très limitée.
+> Est-ce critiquable ? Est-ce que c'est une bonne idée ?
+> $AC$ Clairement, on a souvent des équipes qui vont se concentrer sur des parties de leur codebase, souvent les plus critiques.
+> On pourrait se dire que c'est une mauvaise idée, mais en fait c'est une stratégie qui peut être très pertinente.
+
+
 
 ## text
 Quoi en penser ?
