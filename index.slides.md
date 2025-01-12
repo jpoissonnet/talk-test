@@ -549,6 +549,7 @@ journal section trucs et astuces
 
 ## tip
 N'objectivez pas le <strong>coverage</strong>
+
 > $AC$ "N'objectivez pas le coverage". Le coverage pour rappel, c'est le ratio de ligne exécutée lors de vos tests. Ca ne mesure en rien la qualité de vos tests.
 
 ## code
@@ -571,7 +572,7 @@ it('should add two numbers and return the result', () => {
 > Un principe intéressant pour compléter l'analyse de coverage, c'est le mutation testing. 
 > L'idée en deux phrases, c'est de modifier le code source et de voir si les tests échouent.
 
-## ext-content
+## ext-content contain
 <img src="src/img/strykerJS.png">
 https://stryker-mutator.io/
 Optez pour du <strong>mutation testing</strong>
