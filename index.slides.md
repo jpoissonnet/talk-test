@@ -542,8 +542,27 @@ Quoi en penser ?
 > - ne sont fait qu'a la main: et vous en écrivez par obligation
 > - sont flaky: vous passez plus de temps à les réparer qu'à les écrire
 > - n'apportent aucune confiance
-## poster todo
-journal section trucs et astuces
+
+## poster main
+Nos conseils
+xxxxxxxxxx
+xxxx
+==========
+Trucs et astuces
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+==========
+xxxxxxxxxx
+xxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxx
+xxxxxxxxxx
+xxxxxxx
+==========
 
 > #JP# Dans les conseils qu'on peut vous donner pour concevoir une stratégie de test, voilà quelques idées et astuces qu'on peut vous donner.
 
@@ -611,32 +630,39 @@ describe('foo', () => {
 ```
 
 > $AC$ Si on ne se fixe pas de règle, on peut vite se retrouver avec des tests qui se ressemblent, qui se dupliquent, qui ne sont pas maintenables.
-> Il existe une pléthore de règles de lint pour les tests, pour les noms de tests, pour les expect, pour les describe, etc.
+> Comme ici !
+
+## text todo
+Inserer screen npm eslint-plugin-vitest
+
+> Il existe pléthore de règles de lint pour les tests, pour les noms de tests, pour les expect, pour les describe, etc.
 > Si ces règles ont été mises en place, c'est pour faire faces aux erreurs les plus courantes.
-> Sachez que pour Eslint, l'outil de lint en JS le plus connu, il existe un 
-> Ma préférée étant la règle `expect-expect` de eslint-plugin-vitest.
+> Sachez que pour Eslint, l'outil de lint en JS le plus connu, il existe des tas.
+
 
 ## ext-content contain
 <img src="src/img/expect-expect-light.png">
 Le readme dans le repo <strong>eslint-plugin-vitest</strong>
 
-> $AC$ Qui vérifie que pour chaque test, on vérifie bien au moins quelque chose ;)
+> $AC$ Ma préférée étant la règle `expect-expect` de eslint-plugin-vitest.
+> Qui vérifie que pour chaque test, on vérifie bien au moins quelque chose ;)
 
 ## tip
-Ne testez que <strong>les modules impactés</strong> par vos changements
-
-> #JP# On a parlé de qualité de test, parlons maintenant de la quantité. 
+Ciblez les tests que vos changements impacts
+todo: reword 
+on aura des effets de bords de temps en temps, mais le temps gagné vaut le coup de ne pas lancer toute la boucle de test à chaque fois
+> #JP# On a parlé de qualité de test, parlons maintenant de la quantité.
+> L'important, c'est d'avoir une feedback loop la plus courte possible.
 > Un bon moyen de gagner du temps sur la CI est de réduire la quantité de test qu'on run à chaque fois.
 > L'idée est de ne faire tourner que les tests du code que vous avez changé sans faire tourner le reste.
 > Parce que...
 
 ## text
-<i>Le test le plus rapide, c'est celui qu'on ne lance pas</i>
+<i>Le test le plus rapide, c'est celui qu'on ne <strong>lance pas</strong></i>
 
-> #JP# _le test le plus rapide, c'est celui qu'on ne lance pas_. 
-> Ça parait évident, mais il est bon de le rappeler.
+> #JP# _le test le plus rapide, c'est celui qu'on ne lance pas_.
 > Si votre architecture le permet, configurez votre projet pour qu'il ne run que les tests impactés par vos changements.
-> $AC$ Les runners de tests, en tout cas côté javascript, comme Jest, Vitest ;), Nx, etc. proposent des outils pour run les tests sur votre diff git.
+> $AC$ Les runners de tests, en tout cas côté javascript, comme Jest et Vitest proposent des outils pour run les tests sur votre diff git.
 
 ## ext-content contain white
 <img src="src/img/changed.png"/>
@@ -647,8 +673,9 @@ Le flag <strong>--changed</strong> de Vitest
 ## ext-content contain white
 <img src="src/img/nxaffected.png">
 Nx affected project graph when <strong>lib10</strong> is changed - Nx docs
+todo: reword nx est un exemple
 
-> #JP# Avec nx, qui est un outil de gestion de monorepo, on a `nx affected`, qui permet de run les tests sur les modules impactés par vos changements.
+> #JP# Dans un contexte _monorepo_, les outils de gestions permettent de run les tests sur les modules impactés par vos changements. Ici, on a `nx affected`....
 > Si on fait une modif dans le module "lib10", on va run les tests de "lib10" et des modules qui dépendent de "lib10", mais pas les autres.
 
 <!--
@@ -656,20 +683,38 @@ Nx affected project graph when <strong>lib10</strong> is changed - Nx docs
 ## believer (ça prend trop de temps)
 C'est plus aussi vrai qu'avant
 pour les tests unitaires -> vitest **REF** de l'article de Younes
-pour les tests UI -> playwright -> **DEMO** de un test facile
+pour les tests UI -> playwright -> **DEMO** d'un test facile
+en plus c'est rapide -> **DEMO** playwright overhead
 
 ## technophile (on fait du jest, du cypress...)
 On teste des usages, des comportements pas des outils
-Avant, on testait des méthodes maintenant on test des usages
+Privilégier les happy path
+🚚 Mettez du lint dans vos tests
+BDD / ATDD
 
 ## sceptique (on teste tout, coverage à 100%)
 Mutation testing au lieu de coverage
+> Cool pour les juniors
+🚚 nx affected
 
 ## good enough (on test que ce qui est critique)
 Reprendre les raisons de pourquoi on teste et voir les frictions
-Si les raisons c'est parceque ça prend du temps -> mocker le réseau **DEMO** playwright overhead
+Et voir avec les piliers qu'on a vu si la stratégie en place est pertinente 
+Vous subissez mais vous avez une stratégie
 
-# Avoir un testing.md
+## pour tout le monde 
+
+Avoir un testing.md
+Mettre à plat, ce que vous testez, comment, comment vous répondez aux différents piliers.
+Bon pour l'onboarding, pour la maintenance
+
+**TEMPLATE** d'un fichier qui répond aux questions
+
+# Conclusion
+c'est de la triche mais on a pas de solution miracle pour vous tous
+rien n'est dogmatique
+à vous de cook
+établissez votre stratégie
 
 -->
 
