@@ -558,9 +558,9 @@ xxxxxxxxx
 xxxxxxxxxx
 xxxxxxx
 ==========
-> #JP# Pour répondre aux différentes catégories de gens qu'on a vu dans le sondage, on a quelques conseils à vous donner.
-> On rappelle qu'on n'est pas en mesure de vous donner des solutions miracles pour vos cas, juste des conseils.
-> Il faut aussi garder en tête qu'on est des dev front javascript, donc on va vous donner des conseils qui sont orientés vers ce qu'on connait.
+> #JP# Pour répondre aux groupes identifiés dans le sondage, on a plusieurs conseils à vous donner.
+> On rappelle qu'il n'y a pas de solution miracle pour vos cas, juste des conseils.
+> Il faut aussi garder en tête qu'on est des dev front javascript, donc on va vous apporter des conseils qui sont orientés vers ce qu'on connait.
 
 <!--
 # présenter nos recos: vitest / playwright
@@ -579,6 +579,13 @@ Pour les <strong>believers</strong>
 > Ou encore si c'est la maintenance des tests qui semble trop lourde.
 > A ceux-là, on conseillerait de se pencher sur des outils modernes qui viennent en réponse aux problèmes de lenteur et de complexité.
 
+
+## text
+2 categories d'outils wide / narrow
+
+## Text
+Narrow
+
 ## text
 Vitest
 
@@ -586,63 +593,79 @@ Vitest
 > Pour ceux qui ont déjà entendu parler de Jest, il s'agit d'un outil qui se veut être son successeur.
 > Il est rapide, simple, bien documenté. 
 > Une migration de Jest à Vitest pourrait être une bonne idée, mais pas nécessaire.
-> Par contre pour tous ceux qui démarrent de rien, on déconseille de partir sur Jest plutôt que sur Vitest. 
+> Par contre, pour les équipes qui démarrent de rien, on déconseille de partir sur Jest plutôt que sur Vitest. 
 > Ce seront des tests qui seront proche du code avec une facilité de maintenance et qui offrent un feedback rapide.
 
 ## ext-content contain
 <img src="src/img/marmicode_vitest.png">
-Why Vitest? - <strong>Younes "Marmicode" Jaaidi</strong>
+https://cookbook.marmicode.io/angular/why-vitest/
+Why Vitest? - <strong>Younes Jaaidi</strong>
 
-> $AC$ On vous conseille de regarder l'article de Marmicode sur Vitest, il explique très bien pourquoi il a fait le choix de cet outil.
+> $AC$ On vous conseille de regarder l'article de Younes Jaaidi sur Vitest, il explique très bien pourquoi il a fait le choix de cet outil.
 > Sur son blog, vous trouverez des articles très intéressants sur les tests et notamment sur la migration de Jest à Vitest.
 > Il faut voir que c'est une commande pour l'installer et une commande pour l'initialiser et hop, on est prêt à tester.
 > Pour les tests d'interfaces, ou un peu plus _wide_ on vous recommande...
 
 ## text
+wide
+
+## text 
 Playwright
 
-> #JP# Playwright, c'est le petit frère de Cypress, derrière lequel se cache Microsoft.
+> #JP# Playwright, c'est une alternative à Cypress, Selenium, Puppeteer, WebdriverIO, derrière laquelle se cache Microsoft.
 > C'est un outil qui contrairement à Cypress, à pas un modèle économique qui veut vos sous.
 > Il a beaucoup de fonctionnalités, qui peuvent couvrir la plupart de vos cas d'usages.
 > Mais surtout, il est d'une simplicité déconcertante à mettre en place par rapport à ce qu'on peut penser.
 > La aussi, en 2 temps 3 mouvements, vous avez un test qui tourne.
 
-## code
-```js
-  test(`can fetch with 100ms delay`, async ({ page }) => {
-    await page.goto(`http://localhost:3000/100`);
-    const response = page.waitForResponse(/api/);
-    await page.getByRole("button").click();
-    await response;
-    await expect(page.getByTitle("status")).toHaveText("Request successful!");
-});
-```
-on fait un test simple
-
-## code
-```js
-[0, 100, 200, 400, 800, 1600, 3200, 6400, 12800].forEach((delay) => {
-    test(`can fetch with ${delay}ms delay`, async ({ page }) => {
-        await page.goto(`http://localhost:3000/${delay}`);
-        const response = page.waitForResponse(/api/);
-        await page.getByRole("button").click();
-        await response;
-        await expect(page.getByTitle("status")).toHaveText("Request successful!");
-    });
-});
-```
-on montre qu'on peut le paramétrer
 
 ## demo
-faire la démo de playwright overhead
+demo de la facilité de mise en place de playwright
 
+1) Montrer le site, Site avec le bouton, ou on fait juste une observation
+2) Pour montrer package.json vide, presque pas de config, une ligne de commande et 6 lignes de test (on a déjà un test qui fait une observation et qui échoue)
+3) On live code, la correction.
+4) On montre dans la console combien de temps ça a mis
+5) On rajoute un test qui click sur le bouton et attend l'affichage du resultat
+
+## text
+Est-ce que c'est long
+> On compare avec test unitaire à l'oral en disant 10x
+
+## text
+quest-ce qui est long? 
+
+## text
+C'est le réseau !
+> On peut vous le prouver
+
+## barchart unit="ms" max="200"
+Overhead de playwright
+1 test : 200ms
+
+## text
+quelle solution
+
+## text
+La soufflerie
+
+
+## text
+La mock
+
+## ext-content
+> Montre API mock Playright
+
+## ext-content
+
+> POur aller plus loin, aller voir la prez de l'ami mathieu Mure
 
 <!--
 ## technophile (on fait du jest, du cypress...)
 On teste des usages, des comportements pas des outils
 Privilégier les happy path
-🚚 Mettez du lint dans vos tests
 BDD / ATDD
+🚚 Mettez du lint dans vos tests
 -->
 
 ## text
@@ -750,9 +773,8 @@ Mutation Testing - <strong>Loïc Knuchel</strong>
 
 > $AC$ Voilà une conférence que je recommande sur le mutation testing si vous voulez creuser c'est un sujet très intéressant
 
-## tip
+## tip todo <!-- reword nx est un exemple -->
 Ciblez les tests que vos changements impacts
-todo: reword
 on aura des effets de bords de temps en temps, mais le temps gagné vaut le coup de ne pas lancer toute la boucle de test à chaque fois
 > #JP# On a parlé de qualité de test, parlons maintenant de la quantité.
 > L'important, c'est d'avoir une feedback loop la plus courte possible.
@@ -789,7 +811,10 @@ Vous subissez mais vous avez une stratégie
 ## text todo
 Pour les <strong>good enough</strong>
 pour quelles raisons vous faites des tests, quelles sont les frictions
-Et voir avec les piliers qu'on a vu si la stratégie en place est pertinente
+Si vous avez une stratégie, c'est bien, pitié documentez là
+
+## tip
+Avoir un <strong>testing.md</strong>
 
 <!--
 ## pour tout le monde
@@ -806,11 +831,6 @@ rien n'est dogmatique
 établissez votre stratégie
 -->
 
-## text todo
-Pour vous comme pour tout le monde
-
-## tip
-Avoir un <strong>testing.md</strong>
 
 ## code todo
 ```markdown
