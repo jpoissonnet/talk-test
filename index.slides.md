@@ -432,12 +432,10 @@ xxxxxxx
 > On verra ensemble des techniques pour éviter ça.
 
 ## poster main
-Les Sceptiques
+Les good enough
 ==========
 _"On teste que cette partie là, le reste c'est pas important"_
-<img src="src/img/lena-taranenko-hCUA4xtxVTA-unsplash.jpg" style="object-position: top">
-xxxxxxxxxx
-xxxx
+<img src="src/img/david-goodenough.png" style="object-position: top; min-height: 300px">
 ==========
 xxxxxxxxxx
 xxxxxxxxxx
@@ -460,16 +458,13 @@ xxxxxxx
 Les good enough
 ==========
 _"On teste que cette partie là, le reste c'est pas important"_
-<img src="src/img/lena-taranenko-hCUA4xtxVTA-unsplash.jpg" style="object-position: top">
-xxxxxxxxxx
-xxxx
+<img src="src/img/david-goodenough.png" style="object-position: top; min-height: 300px">
 ==========
 xxxxxxxxxx
 xxxxxxxxxx
 Une approche pragmatique
 xxxxxxxxxx
 ------
-xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxx
@@ -645,7 +640,7 @@ Mutation Testing - <strong>Loïc Knuchel</strong>
 > $AC$ Voilà une conférence que je recommande sur le mutation testing si vous voulez creuser c'est un sujet très intéressant
 
 ## tip
-Soigne ta <em>testbase</em> comme ta codebase
+<strong>Soigne ta <em>testbase</em></strong> comme ta codebase
 
 ## ext-content
 <img src="src/img/how-you-do-one-thing.webp">
