@@ -558,6 +558,10 @@ xxxxxxxxx
 xxxxxxxxxx
 xxxxxxx
 ==========
+> #JP# Pour répondre aux différentes catégories de gens qu'on a vu dans le sondage, on a quelques conseils à vous donner.
+> On rappelle qu'on n'est pas en mesure de vous donner des solutions miracles pour vos cas, juste des conseils.
+> Il faut aussi garder en tête qu'on est des dev front javascript, donc on va vous donner des conseils qui sont orientés vers ce qu'on connait.
+
 <!--
 # présenter nos recos: vitest / playwright
 ## believer (ça prend trop de temps)
@@ -565,13 +569,99 @@ C'est plus aussi vrai qu'avant
 pour les tests unitaires -> vitest **REF** de l'article de Younes
 pour les tests UI -> playwright -> **DEMO** d'un test facile
 en plus c'est rapide -> **DEMO** playwright overhead
+-->
+## text
+Pour les <strong>believers</strong>
 
+> $AC$ Pour les believers, qui par _manque de temps_ ne testent pas, peut-être qu'ils pourraient bénéficier de se reposer la question.
+> Il faut voir dans leurs arguments quels sont les freins, si c'est à la conception qu'on ne prévoit pas le temps de tester.
+> Ou bien si c'est la mise en place de la stack de tests qui semble trop longue et compliquée aux premiers abords.
+> Ou encore si c'est la maintenance des tests qui semble trop lourde.
+> A ceux-là, on conseillerait de se pencher sur des outils modernes qui viennent en réponse aux problèmes de lenteur et de complexité.
+
+## text
+Vitest
+
+> #JP# On pense notamment à des outils comme Vitest, qui permettent de lancer des tests unitaires très rapidement avec une facilité déconcertante.
+> Pour ceux qui ont déjà entendu parler de Jest, il s'agit d'un outil qui se veut être son successeur.
+> Il est rapide, simple, bien documenté. 
+> Une migration de Jest à Vitest pourrait être une bonne idée, mais pas nécessaire.
+> Par contre pour tous ceux qui démarrent de rien, on déconseille de partir sur Jest plutôt que sur Vitest. 
+> Ce seront des tests qui seront proche du code avec une facilité de maintenance et qui offrent un feedback rapide.
+
+## ext-content contain
+<img src="src/img/marmicode_vitest.png">
+Why Vitest? - <strong>Younes "Marmicode" Jaaidi</strong>
+
+> $AC$ On vous conseille de regarder l'article de Marmicode sur Vitest, il explique très bien pourquoi il a fait le choix de cet outil.
+> Sur son blog, vous trouverez des articles très intéressants sur les tests et notamment sur la migration de Jest à Vitest.
+> Il faut voir que c'est une commande pour l'installer et une commande pour l'initialiser et hop, on est prêt à tester.
+> Pour les tests d'interfaces, ou un peu plus _wide_ on vous recommande...
+
+## text
+Playwright
+
+> #JP# Playwright, c'est le petit frère de Cypress, derrière lequel se cache Microsoft.
+> C'est un outil qui contrairement à Cypress, à pas un modèle économique qui veut vos sous.
+> Il a beaucoup de fonctionnalités, qui peuvent couvrir la plupart de vos cas d'usages.
+> Mais surtout, il est d'une simplicité déconcertante à mettre en place par rapport à ce qu'on peut penser.
+> La aussi, en 2 temps 3 mouvements, vous avez un test qui tourne.
+
+## code
+```js
+  test(`can fetch with 100ms delay`, async ({ page }) => {
+    await page.goto(`http://localhost:3000/100`);
+    const response = page.waitForResponse(/api/);
+    await page.getByRole("button").click();
+    await response;
+    await expect(page.getByTitle("status")).toHaveText("Request successful!");
+});
+```
+on fait un test simple
+
+## code
+```js
+[0, 100, 200, 400, 800, 1600, 3200, 6400, 12800].forEach((delay) => {
+    test(`can fetch with ${delay}ms delay`, async ({ page }) => {
+        await page.goto(`http://localhost:3000/${delay}`);
+        const response = page.waitForResponse(/api/);
+        await page.getByRole("button").click();
+        await response;
+        await expect(page.getByTitle("status")).toHaveText("Request successful!");
+    });
+});
+```
+on montre qu'on peut le paramétrer
+
+## demo
+faire la démo de playwright overhead
+
+
+<!--
 ## technophile (on fait du jest, du cypress...)
 On teste des usages, des comportements pas des outils
 Privilégier les happy path
 🚚 Mettez du lint dans vos tests
 BDD / ATDD
+-->
 
+## text
+Pour les <strong>technophiles</strong>
+
+> $AC$ Pour les technophiles, qui ont une stratégie de test très orientée outils, on leur conseillerait de se poser la question de ce qu'ils testent.
+> La tendance dans les outils de tests reflète ce qu'on recommande à savoir tester des usages et pas des outils.
+> On va recommander de tester qu'un utilisateur peut faire un clic sur votre bouton, pas que la fonction click de votre librairie est bien appelée.
+
+## text
+Happy path
+> $AC$ Regardez du côté des happy path, des parcours utilisateurs les plus simples. 
+> Les cas à la marge, c'est bien, mais c'est souvent là qu'on a des tests flaky, chers à maintenir.
+> Et c'est pas souvent là où la valeur business est la plus grande.
+
+## text
+move soigne ta testbase ici
+
+<!--
 ## sceptique (on teste tout, coverage à 100%)
 Mutation testing au lieu de coverage
 > Cool pour les juniors
