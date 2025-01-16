@@ -659,7 +659,45 @@ Happy path
 > Et c'est pas souvent là où la valeur business est la plus grande.
 
 ## text
-move soigne ta testbase ici
+BDD / ATDD
+expliquer que le code répond à des comportements, et ces comportements peuvent être définis par des _acceptances_.
+
+## tip
+<strong>Soigne ta <em>testbase</em></strong> comme ta codebase
+
+## ext-content
+<img src="src/img/how-you-do-one-thing.webp">
+<h3 style="width:100%">"How you do anything is how you do everything" - Le méchant dans <strong>John Wick 4</strong></h3>
+
+> #JP# Si vous aimez vos outils et votre code, alors donner autant d'amour à votre testbase qu'à votre codebase.
+> Tout d'abord par souci de cohérence, mais surtout parce que quand on y réfléchit un peu, on devrait avoir les mêmes contraintes dans une testbase que dans une codebase.
+> À savoir, le code des tests doit être lu, compris, maintenu dans le temps.
+
+## code
+```js
+describe('foo', () => {
+  it('should do bar', () => {});
+  it('should do bar', () => {}); // Has the same title as the previous test
+
+  describe('baz', () => {
+    // ...
+  });
+});
+```
+
+> $AC$ Si on ne se fixe pas de règle, on peut vite se retrouver avec des tests qui se ressemblent, qui se dupliquent, qui ne sont pas maintenables.
+> Comme ici !
+> Il existe pléthore de règles de lint pour les tests, pour les noms de tests, pour les expect, pour les describe, etc.
+> Si ces règles ont été mises en place, c'est pour faire faces aux erreurs les plus courantes.
+> Sachez que pour Eslint, l'outil de lint en JS le plus connu, il existe des tas.
+
+
+## ext-content contain
+<img src="src/img/expect-expect-light.png">
+Le readme dans le repo <strong>eslint-plugin-vitest</strong>
+
+> $AC$ Ma préférée étant la règle `expect-expect` de eslint-plugin-vitest.
+> Qui vérifie que pour chaque test, on vérifie bien au moins quelque chose ;)
 
 <!--
 ## sceptique (on teste tout, coverage à 100%)
@@ -728,47 +766,6 @@ https://www.youtube.com/watch?v=297tyPsXOm8
 Mutation Testing - <strong>Loïc Knuchel</strong>
 
 > $AC$ Voilà une conférence que je recommande sur le mutation testing si vous voulez creuser c'est un sujet très intéressant
-
-## tip
-<strong>Soigne ta <em>testbase</em></strong> comme ta codebase
-
-## ext-content
-<img src="src/img/how-you-do-one-thing.webp">
-<h3 style="width:100%">"How you do anything is how you do everything" - Le méchant dans <strong>John Wick 4</strong></h3>
-
-> #JP# De manière plus globale, ce qu'on vous recommande chaudement, c'est de soigner autant votre testbase que votre codebase. 
-> Tout d'abord par souci de cohérence, mais surtout parce que quand on y réfléchit un peu, on devrait avoir les mêmes contraintes dans une testbase que dans une codebase. 
-> À savoir, le code des tests doit être lu, compris, maintenu dans le temps.
-
-## code
-```js
-describe('foo', () => {
-  it('should do bar', () => {});
-  it('should do bar', () => {}); // Has the same title as the previous test
-
-  describe('baz', () => {
-    // ...
-  });
-});
-```
-
-> $AC$ Si on ne se fixe pas de règle, on peut vite se retrouver avec des tests qui se ressemblent, qui se dupliquent, qui ne sont pas maintenables.
-> Comme ici !
-
-## text todo
-Inserer screen npm eslint-plugin-vitest
-
-> Il existe pléthore de règles de lint pour les tests, pour les noms de tests, pour les expect, pour les describe, etc.
-> Si ces règles ont été mises en place, c'est pour faire faces aux erreurs les plus courantes.
-> Sachez que pour Eslint, l'outil de lint en JS le plus connu, il existe des tas.
-
-
-## ext-content contain
-<img src="src/img/expect-expect-light.png">
-Le readme dans le repo <strong>eslint-plugin-vitest</strong>
-
-> $AC$ Ma préférée étant la règle `expect-expect` de eslint-plugin-vitest.
-> Qui vérifie que pour chaque test, on vérifie bien au moins quelque chose ;)
 
 ## tip
 Ciblez les tests que vos changements impacts
