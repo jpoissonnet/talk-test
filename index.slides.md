@@ -689,8 +689,7 @@ describe('foo', () => {
 > Comme ici !
 > Il existe pléthore de règles de lint pour les tests, pour les noms de tests, pour les expect, pour les describe, etc.
 > Si ces règles ont été mises en place, c'est pour faire faces aux erreurs les plus courantes.
-> Sachez que pour Eslint, l'outil de lint en JS le plus connu, il existe des tas.
-
+> Sachez que dans Eslint, l'outil de lint en JS le plus connu, il en existe des tas.
 
 ## ext-content contain
 <img src="src/img/expect-expect-light.png">
@@ -704,28 +703,12 @@ Le readme dans le repo <strong>eslint-plugin-vitest</strong>
 Mutation testing au lieu de coverage
 > Cool pour les juniors
 🚚 nx affected
-
-## good enough (on test que ce qui est critique)
-Reprendre les raisons de pourquoi on teste et voir les frictions
-Et voir avec les piliers qu'on a vu si la stratégie en place est pertinente 
-Vous subissez mais vous avez une stratégie
-
-## pour tout le monde 
-
-Avoir un testing.md
-Mettre à plat, ce que vous testez, comment, comment vous répondez aux différents piliers.
-Bon pour l'onboarding, pour la maintenance
-
-**TEMPLATE** d'un fichier qui répond aux questions
-
-# Conclusion
-c'est de la triche mais on a pas de solution miracle pour vous tous
-rien n'est dogmatique
-à vous de cook
-établissez votre stratégie
-
 -->
-> #JP# Dans les conseils qu'on peut vous donner pour concevoir une stratégie de test, voilà quelques idées et astuces qu'on peut vous donner.
+
+## text
+Pour les <strong>sceptiques</strong>
+> #JP# Pour les sceptiques, qui testent tout, avec un coverage à 100%, un petit ajustement pourrait être de remplacer ou compléter le coverage.
+> Parce que le coverage, c'est bien, mais c'est pas suffisant.
 
 ## tip
 N'objectivez pas le <strong>coverage</strong>
@@ -744,12 +727,12 @@ it('should add two numbers and return the result', () => {
     let result = add(firstNumber, secondNumber);
 });
 ```
-> #JP# Regarde Antoine, j'ai trouvé un code avec 100% de coverage. 
+> #JP# Regarde Antoine, j'ai trouvé un code avec 100% de coverage.
 > C'est trop bien, mais là, il y a un souci évident non ?
 > _solicitation du public_
 > $AC$ Oui, il n'y a aucun expect. On a 100% de coverage mais on a pas de test.
-> #JP# Une mesure quantitative ne peut pas se soustraire d'une mesure qualitative si on veut garder du sens. 
-> Un principe intéressant pour compléter l'analyse de coverage, c'est le mutation testing. 
+> #JP# Une mesure quantitative ne peut pas se soustraire d'une mesure qualitative si on veut garder du sens.
+> Un principe intéressant pour compléter l'analyse de coverage, c'est le mutation testing.
 > L'idée en deux phrases, c'est de modifier le code source et de voir si les tests échouent.
 
 ## ext-content contain
@@ -769,7 +752,7 @@ Mutation Testing - <strong>Loïc Knuchel</strong>
 
 ## tip
 Ciblez les tests que vos changements impacts
-todo: reword 
+todo: reword
 on aura des effets de bords de temps en temps, mais le temps gagné vaut le coup de ne pas lancer toute la boucle de test à chaque fois
 > #JP# On a parlé de qualité de test, parlons maintenant de la quantité.
 > L'important, c'est d'avoir une feedback loop la plus courte possible.
@@ -788,7 +771,7 @@ on aura des effets de bords de temps en temps, mais le temps gagné vaut le coup
 <img src="src/img/changed.png"/>
 Le flag <strong>--changed</strong> de Vitest
 
-> $AC$ Chez vitest, on a le flag `--changed` auquel on peut passer un hash de commit pour run les tests sur les fichiers qui diffèrent depuis le HEAD. 
+> $AC$ Chez vitest, on a le flag `--changed` auquel on peut passer un hash de commit pour run les tests sur les fichiers qui diffèrent depuis le HEAD.
 
 ## ext-content contain white
 <img src="src/img/nxaffected.png">
@@ -797,8 +780,42 @@ todo: reword nx est un exemple
 
 > #JP# Dans un contexte _monorepo_, les outils de gestions permettent de run les tests sur les modules impactés par vos changements. Ici, on a `nx affected`....
 > Si on fait une modif dans le module "lib10", on va run les tests de "lib10" et des modules qui dépendent de "lib10", mais pas les autres.
+<!--
+## good enough (on test que ce qui est critique)
+Reprendre les raisons de pourquoi on teste et voir les frictions
+Et voir avec les piliers qu'on a vu si la stratégie en place est pertinente
+Vous subissez mais vous avez une stratégie
+-->
+## text todo
+Pour les <strong>good enough</strong>
+pour quelles raisons vous faites des tests, quelles sont les frictions
+Et voir avec les piliers qu'on a vu si la stratégie en place est pertinente
 
+<!--
+## pour tout le monde
+Avoir un testing.md
+Mettre à plat, ce que vous testez, comment, comment vous répondez aux différents piliers.
+Bon pour l'onboarding, pour la maintenance
 
+**TEMPLATE** d'un fichier qui répond aux questions
+
+# Conclusion
+c'est de la triche mais on a pas de solution miracle pour vous tous
+rien n'est dogmatique
+à vous de cook
+établissez votre stratégie
+-->
+
+## text todo
+Pour vous comme pour tout le monde
+
+## tip
+Avoir un <strong>testing.md</strong>
+
+## code todo
+```markdown
+# Testing.md
+```
 ## poster main
 Merci beaucoup !
 ==========
@@ -834,9 +851,10 @@ Liens :
 * Alister B Scott, Ice Cream model : https://alisterscott.github.io/TestingPyramids.html
 
 * Designing a Pragmatic Testing Strategy : https://cookbook.marmicode.io/angular/pragmatic-testing-strategy/
+* Why Vitest? : https://cookbook.marmicode.io/angular/why-vitest/
 Images :
 
-* photos des parapluie : https://www.neyrat.fr/
+* photos des parapluies : https://www.neyrat.fr/
 * pyramide des tests 1 : https://thumbs.dreamstime.com/b/pyramide-de-test-avec-interface-utilisateur-tests-d-int%C3%A9gration-et-unitaires-essai-vecteur-unitaire-282317017.jpg
 * pyramide des tests 2 : https://blog.atinternet.com/wp-content/uploads/2020/06/ROI-test.jpg
 * pyramide des tests 3 : https://miro.medium.com/v2/resize:fit:1400/format:webp/1*IA6N133_wkTin6DMq30u0w.png
