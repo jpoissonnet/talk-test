@@ -310,6 +310,15 @@ Ice cream modele - <strong>Alister B Scott</strong>
 > #JP# C'est souvent une stratégie de test très coûteuse, qui va ralentir le développement, qui va être source de frustration.
 > On ne dit pas que d'avoir des tests manuels c'est mal hein, on va juste dire que centraliser sa stratégie de tests dessus n'est pas pour nous une bonne idée.
 > Ça ne passera pas à l'échelle.
+> Il y a un vrai biais de perception du temps quand on dévéloppe sans automatiser ses tests.
+
+## ext-content contain
+<img src="src/img/testing-biais.png"/>
+https://cookbook.marmicode.io/angular/pragmatic-testing-strategy#development-time-perception-bias
+Development Time Perception Bias - <strong>Y Jaaidi</strong>
+
+> $AC$ Ici on voit bien qu'en implémentant pas de tests automatisés, on a une perception du temps de développement qui est faussée.
+> Sans même parler TDD, on est perpétuellement couper par une phase de vérification manuelle qu'on doit répéter à chaque itération.
 
 ## poster main
 Les technophiles
@@ -348,6 +357,43 @@ xxxxxxxx
 > Est-ce que ces outils, ces librairies vous aident ou au contraire vous infliges de l'aide.
 > Clairement vous ici dans la salle, si vous regardez vos tests, à quoi vous sont ils utiles ?
 > Qu'est-ce qu'ils vous apportent au jour le jour ?
+> $AC$ On observent alors de ces équipes des tests très liés au code source, ou bien des tests de très mauvaise qualité.
+> Quelques exemples:
+
+## code
+```gherkin
+
+Feature: 404 page
+  
+  Scenario: 404 page
+    When I access access to an non existing page
+    Then I should not see the homepage
+    And I should not see the homepage image
+    And I should not see my article description
+```
+> Vous avez surement rencontré des tests qui testent rien ? des tests qui font des non observations par exemple.
+> Inspiré de fait rééls...
+
+## code
+```js
+it('should do addition', () => {
+  expect(addition(1, 1)).toBe(2)
+})
+
+it('should do substraction', () => {
+  expect(substract(1, 1)).toBe(0)
+})
+```
+> Des tests mal nommés
+
+## code
+```js
+it('should render', () => {
+  const { container } = render(<MyComponent />)
+  expect(container).toMatchSnapshot()
+})
+```
+> Et mes préférés, les tests qui testent la librairie de test.
 
 ## poster main
 Les technophiles
@@ -362,11 +408,12 @@ xxxxxxxxxx
 ==========
 <img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 400px" />
 ==========
-> #JP# On a régulièrement cette réponse quand la stratégie de test semble imposée de manière très solutionniste.
+> #JP# Souvent dans ces cas la, la stratégie de test semble imposée de manière très solutionniste.
 > On fait des tests parce qu'on nous a dit d'en faire / qu'on nous a dit que c'était bien.
-> Est-ce que ces outils, ces librairies vous aident ou au contraire vous infliges de l'aide.
+> Est-ce que ces outils, ces librairies vous aident ou au contraire vous infligent de l'aide.
 > Clairement vous ici dans la salle, si vous regardez vos tests, à quoi vous sont ils utiles ?
 > Qu'est-ce qu'ils vous apportent au jour le jour ?
+> On verra des solutions ensemble si vous vous reconnaissez dans cette catégorie.
 
 ## poster main
 Les Sceptiques
@@ -413,6 +460,10 @@ xxxxxxx
 > Une stratégie quantitative va également vous apporter des problèmes de scalabilité de vos tests.
 > #AC# On se retrouve avec énormément de tests à faire tourner ce qui va ralentir votre CI, ralentir votre développement, le délai pour avoir du feedback en sera que plus long.
 
+## text
+<i>"Je push, je te dis dans 40min si c'est bon"</i>
+> #AC# Avoir beaucoup de tests ça peut devenir un enfer, attendre 40min pour avoir du feedback ça peut être très compliqué.
+
 ## poster main
 Les Sceptiques
 ==========
@@ -427,9 +478,9 @@ Le coverage n'est pas un indicateur de qualité de tests
 xxxxxxxxxx
 xxxxxxx
 ==========
-> #AC# Avoir beaucoup de tests ça peut devenir un enfer, attendre 40min pour avoir du feedback ça peut être très compliqué.
 > Est-ce que run **tous** les tests **tout le temps** est une bonne idée ?
 > On verra ensemble des techniques pour éviter ça.
+> Est-ce que toutes les features que vous testez méritent d'être testées avec la même rigueur ?
 
 ## poster main
 Les good enough
@@ -510,7 +561,8 @@ Quoi en penser ?
 
 ## kiosk
 > #JP# On va vous faire participer un peu ! On va voir si on peut retrouver ensemble ces 5 motivations.
-> Selon vous, pourquoi quelles sont les raisons qui nous poussent à automatiser nos tests ?
+> Selon vous, quelles sont les raisons qui nous poussent à automatiser nos tests ?
+> A vous de jouer !
 
 > Rouge : Conformité
 > On veut s'assurer que notre application respecte les spécifications et les contraintes, etc. En bref, que le code, il répond bien à nos attentes.
@@ -547,16 +599,23 @@ Trucs et astuces
 xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxxx
+xxxxxxxxxx
 xxxxxxxx
+----------
 xxxxxxxxxx
-xxxxxxxxxx
+xxxx
+==========
+<img src="src/img/patrick-notes.png" style="min-height: 18em"/>
 ==========
 xxxxxxxxxx
-xxxxxxxxx
 xxxxxxxxxx
-xxxxxxxxx
 xxxxxxxxxx
-xxxxxxx
+xxxxxxxx
+----------
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx
 ==========
 > #JP# Pour répondre aux groupes identifiés dans le sondage, on a plusieurs conseils à vous donner.
 > On rappelle qu'il n'y a pas de solution miracle pour vos cas, juste des conseils.
@@ -571,53 +630,62 @@ pour les tests UI -> playwright -> **DEMO** d'un test facile
 en plus c'est rapide -> **DEMO** playwright overhead
 -->
 ## text
-Pour les <strong>believers</strong>
+Pour les <strong>believers</strong> 🫵
 
-> $AC$ Pour les believers, qui par _manque de temps_ ne testent pas, peut-être qu'ils pourraient bénéficier de se reposer la question.
-> Il faut voir dans leurs arguments quels sont les freins, si c'est à la conception qu'on ne prévoit pas le temps de tester.
-> Ou bien si c'est la mise en place de la stack de tests qui semble trop longue et compliquée aux premiers abords.
-> Ou encore si c'est la maintenance des tests qui semble trop lourde.
-> A ceux-là, on conseillerait de se pencher sur des outils modernes qui viennent en réponse aux problèmes de lenteur et de complexité.
-
+> $AC$ Pour les believers, qui par _manque de temps_ ne testent pas.
+> En 2025 on a deux outils qui peuvent vous aider à tester plus rapidement.
+> La mise en place d'une stack de tests n'est plus si compliqué ou long.
 
 ## text
-2 categories d'outils wide / narrow
+Pour les tests <strong>unitaires</strong>...
 
-## Text
-Narrow
+> Pour les tests unitaires...
 
 ## text
+Pour les tests <strong><em>narrow</em></strong>...
+
+> qu'on préfèrerait appeler des tests <strong>narrow</strong> ou étroits, on vous conseille de regarder du côté de Vitest.
+
+## ext-content contain
+<img src="src/img/vitest.jpg">
 Vitest
+https://vitest.dev/
 
-> #JP# On pense notamment à des outils comme Vitest, qui permettent de lancer des tests unitaires très rapidement avec une facilité déconcertante.
+> #JP# On pense notamment à des outils comme Vitest, qui permettent de lancer des tests unitaires très rapidement.
 > Pour ceux qui ont déjà entendu parler de Jest, il s'agit d'un outil qui se veut être son successeur.
 > Il est rapide, simple, bien documenté. 
-> Une migration de Jest à Vitest pourrait être une bonne idée, mais pas nécessaire.
-> Par contre, pour les équipes qui démarrent de rien, on déconseille de partir sur Jest plutôt que sur Vitest. 
-> Ce seront des tests qui seront proche du code avec une facilité de maintenance et qui offrent un feedback rapide.
+> Compatible avec les écosystème JS récents contrairement à Jest.
+> Il en devient donc un peu son successeur.
+
+## ext-content contain
+Vitest: testing DX reimagined, <strong>Vladimir</strong>, ViteConf 2022
+https://www.youtube.com/watch?v=oB553Noerlc
+<img src="src/img/vitest-presentation.png">
+
+> $AC$ Je vous recommande cette conférence de Vladimir, qui explique très bien Vitest.
 
 ## ext-content contain
 <img src="src/img/marmicode_vitest.png">
 https://cookbook.marmicode.io/angular/why-vitest/
 Why Vitest? - <strong>Younes Jaaidi</strong>
 
-> $AC$ On vous conseille de regarder l'article de Younes Jaaidi sur Vitest, il explique très bien pourquoi il a fait le choix de cet outil.
-> Sur son blog, vous trouverez des articles très intéressants sur les tests et notamment sur la migration de Jest à Vitest.
-> Il faut voir que c'est une commande pour l'installer et une commande pour l'initialiser et hop, on est prêt à tester.
-> Pour les tests d'interfaces, ou un peu plus _wide_ on vous recommande...
+> $JP$ On vous conseille de regarder l'article de Younes sur Vitest, 
+> il y explique très bien pourquoi il est préférable de choisir Vitest à Jest en 2025.
+
 
 ## text
-wide
+Pour vos tests <strong>UI</strong>...
+> $AC$ Pour vos tests d'UI il existe plusieurs outils maintenant sur le marché pour piloter des navigateurs.
+> Vous connaissez peut-être WebdriverIo, Puppeteer, Cypress, Selenium, etc.
+> Celui qu'on a décidé de vous recommander en 2025 c'est...
 
 ## text 
-Playwright
+<strong>Playwright</strong>
 
-> #JP# Playwright, c'est une alternative à Cypress, Selenium, Puppeteer, WebdriverIO, derrière laquelle se cache Microsoft.
-> C'est un outil qui contrairement à Cypress, à pas un modèle économique qui veut vos sous.
-> Il a beaucoup de fonctionnalités, qui peuvent couvrir la plupart de vos cas d'usages.
-> Mais surtout, il est d'une simplicité déconcertante à mettre en place par rapport à ce qu'on peut penser.
-> La aussi, en 2 temps 3 mouvements, vous avez un test qui tourne.
-
+> #JP# Playwright
+> Il a pas mal de fonctionnalités, qui peuvent couvrir la plupart de vos cas d'usages.
+> Mais surtout, il est très simple à mettre en place.
+> La aussi, en 2 temps 3 mouvements, vous avez un test d'UI qui tourne sur votre ordinateur mais également dans une CI.
 
 ## demo
 demo de la facilité de mise en place de playwright
@@ -656,9 +724,11 @@ La mock
 ## ext-content
 > Montre API mock Playright
 
-## ext-content
-
-> POur aller plus loin, aller voir la prez de l'ami mathieu Mure
+## ext-content contain
+https://www.youtube.com/watch?v=UDyBHzoMpV4
+Playwright 🎭, the Cypress killer by <strong>Mathieu Mure</strong>
+<img src="src/img/playright-mathieu.jpg">
+> Si vous voulez aller plus loin, note ami Mathieu Mure a fait une conférence sur Playwright lors d'un LyonJS où il montre plus en détails Playright.
 
 <!--
 ## technophile (on fait du jest, du cypress...)
