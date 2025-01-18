@@ -8,7 +8,7 @@ const app = new Hono();
 app.use(trimTrailingSlash());
 
 app.get("/api/:delay?", async (c) => {
-  const delay = c.req.param("delay") ?? "0";
+  const delay = c.req.param("delay") ?? "200";
   await new Promise((resolve) => setTimeout(resolve, +delay));
 
   return c.text("Blazingly fast!");
