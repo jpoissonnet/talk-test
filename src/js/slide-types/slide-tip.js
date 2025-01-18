@@ -5,11 +5,9 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 defineSlideType("slide-tip", {
   render({ attrs, content }) {
-    const count = attrs.count || NaN;
-
     return html`
       <div class="background">
-        <div class="title">Conseil numéro ${count}:</div>
+        <div class="title">Conseil:</div>
         <div class="tip-text">${unsafeHTML(content)}</div>
       </div>
     `;

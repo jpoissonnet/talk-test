@@ -372,6 +372,7 @@ Feature: 404 page
     And I should not see my article description
 ```
 > Vous avez surement rencontré des tests qui testent rien ? des tests qui font des non observations par exemple.
+> Ici avec un test écrit en Gherkin, qui ne vérifie rien, j'étais content de voir qu'il marchait encore quand j'ai supprimé le code de la page 404.
 > Inspiré de fait rééls...
 
 ## code
@@ -384,7 +385,7 @@ it('should do substraction', () => {
   expect(substract(1, 1)).toBe(0)
 })
 ```
-> Des tests mal nommés
+> Des tests mal nommés, "Aller hop je copie ce test et je modifie juste le code et on est bon."
 
 ## code
 ```js
@@ -393,7 +394,9 @@ it('should render', () => {
   expect(container).toMatchSnapshot()
 })
 ```
-> Et mes préférés, les tests qui testent la librairie de test.
+> Et mes préférés, les tests qui testent la librairie de test, super! 
+> Le composant il pourrait afficher une page vide, un site web ou autre on sait même pas.
+> Qu'est-ce qu'on regarde là ?
 
 ## poster main
 Les technophiles
@@ -664,6 +667,11 @@ https://www.youtube.com/watch?v=oB553Noerlc
 
 > $AC$ Je vous recommande cette conférence de Vladimir, qui explique très bien Vitest.
 
+## tip
+<strong>Préfère Vitest</strong> à Jest en 2025
+
+> #JP# Préférez donc Vitest à Jest en 2025, vous ne serez pas déçu.
+
 ## ext-content contain
 <img src="src/img/marmicode_vitest.png">
 https://cookbook.marmicode.io/angular/why-vitest/
@@ -679,8 +687,8 @@ Pour vos tests <strong>UI</strong>...
 > Vous connaissez peut-être WebdriverIo, Puppeteer, Cypress, Selenium, etc.
 > Celui qu'on a décidé de vous recommander en 2025 c'est...
 
-## text 
-<strong>Playwright</strong>
+## tip
+Adopter <strong>Playright</strong> en 2025
 
 > #JP# Playwright
 > Il a pas mal de fonctionnalités, qui peuvent couvrir la plupart de vos cas d'usages.
@@ -735,46 +743,66 @@ La mock
 ## ext-content
 > Montre API mock Playright
 
+## tip
+<strong>Boostez</strong> vos tests UI en mockant vos APIs
+
 ## ext-content contain
 https://www.youtube.com/watch?v=UDyBHzoMpV4
 Playwright 🎭, the Cypress killer by <strong>Mathieu Mure</strong>
 <img src="src/img/playright-mathieu.jpg">
-> Si vous voulez aller plus loin, note ami Mathieu Mure a fait une conférence sur Playwright lors d'un LyonJS où il montre plus en détails Playright.
+> Si vous voulez aller plus loin, note ami Mathieu Mure a fait une conférence sur Playwright lors d'un LyonJS où il montre plus en détails l'outils.
 
-<!--
-## technophile (on fait du jest, du cypress...)
-On teste des usages, des comportements pas des outils
-Privilégier les happy path
-BDD / ATDD
-🚚 Mettez du lint dans vos tests
--->
+## blank white
+> Bon... maintenant quels conseils pour les technofiles !
 
 ## text
-Pour les <strong>technophiles</strong>
+Pour les <strong>technophiles</strong> 🫵
 
-> $AC$ Pour les technophiles, qui ont une stratégie de test très orientée outils, on leur conseillerait de se poser la question de ce qu'ils testent.
-> La tendance dans les outils de tests reflète ce qu'on recommande à savoir tester des usages et pas des outils.
-> On va recommander de tester qu'un utilisateur peut faire un clic sur votre bouton, pas que la fonction click de votre librairie est bien appelée.
-
-## text
-Happy path
-> $AC$ Regardez du côté des happy path, des parcours utilisateurs les plus simples. 
-> Les cas à la marge, c'est bien, mais c'est souvent là qu'on a des tests flaky, chers à maintenir.
-> Et c'est pas souvent là où la valeur business est la plus grande.
-
-## text
-BDD / ATDD
-expliquer que le code répond à des comportements, et ces comportements peuvent être définis par des _acceptances_.
+> $AC$ Essayez une approche plus à proximité du métiers de vos applications / outils.
+> Pensez d'abord à vos it de tests plutot qu'à comment les implémenter.
+> Vous avez des tests en place, c'est super cool mais essayons d'en améliorer la qualité et d'éloigner un peu leur implémentation du code source
+> C'est souvent l'aspect de documentation présenter plus haut qui peut vous manquer.
 
 ## tip
-<strong>Soigne ta <em>testbase</em></strong> comme ta codebase
+Essayer le <strong>BDD</strong> ou l'<strong>ATDD</strong>
+
+> Essayer de décrire par vos tests, le comportement de votre application, behavior driven development, ou acceptance test driven development.
+> Des outils comme Gherkin, Cucumber, Specflow, etc. peuvent vous aider à écrire des tests plus lisibles, plus compréhensibles, plus maintenables.
+
+## code
+```gherkin
+Feature: Blog Homepage
+  
+  Scenario: Should display 3 articles
+    Given the user is on the blog homepage
+    Then the user should see 3 articles
+    When the user clicks on the first article
+    Then the user should be redirected to the article page
+```
+> Dans cet exemple-ci on voit qu'on décrit juste le métier et chaque ligne appelée Step Definition va être implémentée dans un test.
+> En gros, c'est un fichier test avec un language naturel qui pilote le test.
+> Cela force à décrire le métier.
+> L'ensemble de vos fichier Gherkin vont devenir une documentation vivante de votre application.
+
+## ext-content contain
+<img src="src/img/cucumber.png">
+https://cucumber.io/
+Cucumber
+
+> Jeter donc un oeil à Cucumber, qui remplira très bien cette fonction pour vous.
+> Bon pour les technophiles, on a un autre conseil pour vous.
+
+## tip
+Soignez votre <strong><em>testbase</em></strong> comme votre codebase
+
+> Et oui, clairement les techno c'est bien, bien s'en servir c'est mieux.
 
 ## ext-content
 <img src="src/img/how-you-do-one-thing.webp">
 <h3 style="width:100%">"How you do anything is how you do everything" - Le méchant dans <strong>John Wick 4</strong></h3>
 
-> #JP# Si vous aimez vos outils et votre code, alors donner autant d'amour à votre testbase qu'à votre codebase.
-> Tout d'abord par souci de cohérence, mais surtout parce que quand on y réfléchit un peu, on devrait avoir les mêmes contraintes dans une testbase que dans une codebase.
+> #JP# Si vous aimez vos outils et votre code, alors donner autant d'amour à votre testbase.
+> Tout d'abord par souci de cohérence, mais surtout parce que quand on y réfléchit un peu, on devrait avoir des contraintes, des règles similaires.
 > À savoir, le code des tests doit être lu, compris, maintenu dans le temps.
 
 ## code
@@ -800,31 +828,39 @@ describe('foo', () => {
 Le readme dans le repo <strong>eslint-plugin-vitest</strong>
 
 > $AC$ Ma préférée étant la règle `expect-expect` de eslint-plugin-vitest.
-> Qui vérifie que pour chaque test, on vérifie bien au moins quelque chose ;)
+> Qui vérifie que pour chaque test, on vérifie bien au moins quelque chose.
+> Il existe pleins de set de règles de lint pour vos fichiers de tests qui vont vous aider à en maintenir la qualité.
 
-<!--
-## sceptique (on teste tout, coverage à 100%)
-Mutation testing au lieu de coverage
-> Cool pour les juniors
-🚚 nx affected
--->
+
+## tip
+<strong>Lintez</strong> vos tests
+
+> Appliquer du lint sur vos tests si ce n'est pas déjà le cas.
+> $AC$: Je me rappelle avoir appliquer Gherkin-lint sur une base d'un projet, ça a été sport mais bénéfique.
+> J'ai pu faire le ménage de plein de tests qui testaient rien ou étaient mal écrits.
+
+## blank white
+> #JP# Bon et pour les sceptiques...
 
 ## text
-Pour les <strong>sceptiques</strong>
-> #JP# Pour les sceptiques, qui testent tout, avec un coverage à 100%, un petit ajustement pourrait être de remplacer ou compléter le coverage.
-> Parce que le coverage, c'est bien, mais c'est pas suffisant.
+Pour les <strong>sceptiques</strong> 🫵
+> #JP# Pour les sceptiques, qui testent tout, avec un coverage à 100%, à 90% à 70%...
+> Comment vous dire.... le coverage n'est pas un indicateur pertinent de la qualité de vos tests.
+> C'est un indicateur quantitatif mais il peut vous donner une fausse indication de la qualité de vos tests.
 
 ## tip
 N'objectivez pas le <strong>coverage</strong>
 
-> $AC$ "N'objectivez pas le coverage". Le coverage pour rappel, c'est le ratio de ligne exécutée lors de vos tests. Ca ne mesure en rien la qualité de vos tests.
+> $AC$ "N'objectivez pas le coverage".
 
 ## code
 ```js
+// Source
 function add(a, b) {
   return a + b;
 }
 
+// Test  
 it('should add two numbers and return the result', () => {
     const firstNumber = 1;
     const secondNumber = 2;
@@ -837,90 +873,112 @@ it('should add two numbers and return the result', () => {
 > $AC$ Oui, il n'y a aucun expect. On a 100% de coverage mais on a pas de test.
 > #JP# Une mesure quantitative ne peut pas se soustraire d'une mesure qualitative si on veut garder du sens.
 > Un principe intéressant pour compléter l'analyse de coverage, c'est le mutation testing.
-> L'idée en deux phrases, c'est de modifier le code source et de voir si les tests échouent.
+> L'idée en deux phrases, c'est de modifier le code source et de voir si les tests vos tests détectent en échouant.
 
 ## ext-content contain
 <img src="src/img/strykerJS.png">
 https://stryker-mutator.io/
 Optez pour du <strong>mutation testing</strong>
 
-> #JP# Si les tests passent même avec des modifications dans votre code, alors ce sont des tests inutiles.
-> $AC$ Le sujet en lui est très vaste et on aurait pu passer la conférence entière dessus. On vous invite à regarder des outils comme Stryker, PIT, etc.
+> #JP# Si les tests passent même avec des modifications dans votre code, alors ce sont des tests ne testent pas grand chose.
+> $AC$ Le sujet en lui est très vaste et on aurait pu passer la conférence entière dessus. 
+> On vous invite à regarder des outils comme Stryker, PIT, etc.
 
 ## ext-content
 <img src="src/img/mutationtesting.jpg"/>
 https://www.youtube.com/watch?v=297tyPsXOm8
 Mutation Testing - <strong>Loïc Knuchel</strong>
 
-> $AC$ Voilà une conférence que je recommande sur le mutation testing si vous voulez creuser c'est un sujet très intéressant
+> $AC$ Voilà une conférence que je recommande sur le mutation testing si vous voulez creuser c'est un sujet très intéressant.
+> Qui pose également quelques questions sur la performance de vos tests et le ciblage.
 
-## tip todo <!-- reword nx est un exemple -->
-Ciblez les tests que vos changements impacts
-on aura des effets de bords de temps en temps, mais le temps gagné vaut le coup de ne pas lancer toute la boucle de test à chaque fois
-> #JP# On a parlé de qualité de test, parlons maintenant de la quantité.
-> L'important, c'est d'avoir une feedback loop la plus courte possible.
-> Un bon moyen de gagner du temps sur la CI est de réduire la quantité de test qu'on run à chaque fois.
-> L'idée est de ne faire tourner que les tests du code que vous avez changé sans faire tourner le reste.
-> Parce que...
-
-## text
-<i>Le test le plus rapide, c'est celui qu'on ne <strong>lance pas</strong></i>
-
+## tip
+<strong>Ciblez</strong> vos tests
+> $AC$ Est-il pertinent de lancer tous vos tests à tous les coups ? 
+> Si votre CI met 40min a vous donner un feedback positif ou negatif, clairement c'est dommage.
 > #JP# _le test le plus rapide, c'est celui qu'on ne lance pas_.
 > Si votre architecture le permet, configurez votre projet pour qu'il ne run que les tests impactés par vos changements.
-> $AC$ Les runners de tests, en tout cas côté javascript, comme Jest et Vitest proposent des outils pour run les tests sur votre diff git.
+> $AC$ Les outils de tests, en tout cas côté javascript, comme Jest et Vitest proposent des outils pour run les tests sur votre diff git.
+> Vous allez me dire "Oui mais justement je voudrais lancer tous mes tests pour voir les impacts transverses".
+> Dans les fait, il est assez rare de casser une application en transersal quand on touche à une ligne de code (mais ça peut arriver).
 
 ## ext-content contain white
 <img src="src/img/changed.png"/>
 Le flag <strong>--changed</strong> de Vitest
 
 > $AC$ Chez vitest, on a le flag `--changed` auquel on peut passer un hash de commit pour run les tests sur les fichiers qui diffèrent depuis le HEAD.
+> Utiliser ce flag dans vos CI quand vous ne modifier que des sources ou des tests.
+> Et lancer tous vos tests pour certaines opérations comme des montées de version de dépendances ou sur la branch principale.
 
 ## ext-content contain white
 <img src="src/img/nxaffected.png">
 Nx affected project graph when <strong>lib10</strong> is changed - Nx docs
-todo: reword nx est un exemple
 
-> #JP# Dans un contexte _monorepo_, les outils de gestions permettent de run les tests sur les modules impactés par vos changements. Ici, on a `nx affected`....
+> #JP# Dans un contexte _monorepo_, les outils de gestions permettent de run les tests sur les modules impactés par vos changements. 
+> Ici, on a `nx affected`....
 > Si on fait une modif dans le module "lib10", on va run les tests de "lib10" et des modules qui dépendent de "lib10", mais pas les autres.
-<!--
-## good enough (on test que ce qui est critique)
-Reprendre les raisons de pourquoi on teste et voir les frictions
-Et voir avec les piliers qu'on a vu si la stratégie en place est pertinente
-Vous subissez mais vous avez une stratégie
--->
+> Cette option vous la retrouverez dans la plupart de ces outils.
+
+## blank white
+> $AC$ dans la plupart des cas vous n'avez pas besoin de run tous les tests dans votre CI.
+
+## text
+<strong>--bail</strong>
+> Ce que vous voulez, c'est être prévenu au premier tests qui casse pour rapidement intervenir.
+> C'est ce que fait l'option --bail que vous retrouverez dans la plupart des outils de tests.
+
+## blank white
+> Ok et pour les good enough ?
+
 ## text todo
-Pour les <strong>good enough</strong>
-pour quelles raisons vous faites des tests, quelles sont les frictions
-Si vous avez une stratégie, c'est bien, pitié documentez là
+Pour les <strong>good enough</strong> 🫵
+> #JP# Pour les good enough, qui testent que certaines parties de leur codebase, qui ont une stratégie de test très ciblée.
+> Vous avez une stratégie de test, ok c'est cool ! 
+> Mais est-ce qu'il est facile pour une nouvelle personne à onboarder de comprendre votre stratégie de test ?
+> Etes-vous sur que votre stratégie répond bien aux 5 raisons évoquées plus tôt ?
+> $AC$ pour les "good enough" et même tous les autres, on vous conseille de documenter votre stratégie de test.
+
+## tip 
+<strong>Documentez</strong> votre stratégie de test
+> $AC$ Ok vous me direz c'est cool mais comment ?
+> On vous propose un nouveau Standard.
+> #JP# Vous connaissez peut-être les standard dans l'open source
+
+## text
+<strong>README</strong>.md
+> Comme Readme.md pour décrire l'essentiel de votre projet
+
+## text
+<strong>CONTRIBUTING</strong>.md
+> Comme CONTRIBUTING.md pour décrire comment installer votre projet from scratch et proposer une contribution
+> On vous propose donc de rajouter un
 
 ## tip
-Avoir un <strong>testing.md</strong>
+Ajouter un <strong>TESTING</strong>.md
+> TESTING.md
 
-<!--
-## pour tout le monde
-Avoir un testing.md
-Mettre à plat, ce que vous testez, comment, comment vous répondez aux différents piliers.
-Bon pour l'onboarding, pour la maintenance
-
-**TEMPLATE** d'un fichier qui répond aux questions
-
-# Conclusion
-c'est de la triche mais on a pas de solution miracle pour vous tous
-rien n'est dogmatique
-à vous de cook
-établissez votre stratégie
--->
-
-
-## code todo
-```markdown
+## demo
+```txt
 # Testing.md
 ```
+> Définir dans un document des explications sur votre stratégie de test.
+> Versionné avec votre code, évolutif et surtout lié à votre projet spécifiquement.
+
+## text
+Bon, au final...
+> Au final, on a vu qu'il n'y a pas de solution miracle pour vos tests ni votre stratégie de tests.
+> Tout va dépendre du context que vous avez, de votre équipe, de votre projet, de votre entreprise.
+> L'automatisation est un vrai plus pour vous aider à itérer mieux et plus vite.
+> Mais la mise en place dépendra de votre stratégie, de vos choix.
+> Si une personne porte un Kway sous son parapluie, elle n'est pas forcément folle, elle a peut-être juste une bonne raison.
+> $JP$ On vous invite à réfléchir à vos tests, à votre stratégie de tests, à vos outils, à vos librairies.
+> Ne prenez pas les modèles de tests pour des vérités absolues, adaptez les à votre contexte.
+> Gardez juste en tete les 5 raisons pour lesquelles on souhaite automatiser les tests, et vous devriez vous en sortir.
+
 ## poster main
 Merci beaucoup !
 ==========
-Oubliez pas de donner du feedback !
+xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxxx
 xxxx
@@ -936,8 +994,6 @@ xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxxx
 xxxxx
-==========
-<img class="contain" src="src/img/qrcode.png"/>
 ==========
 > @00:45:00@
 
