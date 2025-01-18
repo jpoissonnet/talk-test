@@ -59,6 +59,15 @@ importers:
         specifier: ^4.19.2
         version: 4.19.2
 
+  demo/playwright-tests:
+    devDependencies:
+      '@playwright/test':
+        specifier: ^1.49.1
+        version: 1.49.1
+      '@types/node':
+        specifier: ^22.0.0
+        version: 22.10.2
+
   demo/vitest-container:
     dependencies:
       prettier:

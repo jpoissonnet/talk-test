@@ -687,29 +687,40 @@ Pour vos tests <strong>UI</strong>...
 > Mais surtout, il est très simple à mettre en place.
 > La aussi, en 2 temps 3 mouvements, vous avez un test d'UI qui tourne sur votre ordinateur mais également dans une CI.
 
-## demo
-demo de la facilité de mise en place de playwright
+# demo
 
-1) Montrer le site, Site avec le bouton, ou on fait juste une observation
-2) Pour montrer package.json vide, presque pas de config, une ligne de commande et 6 lignes de test (on a déjà un test qui fait une observation et qui échoue)
-3) On live code, la correction.
-4) On montre dans la console combien de temps ça a mis
-5) On rajoute un test qui click sur le bouton et attend l'affichage du resultat
+> #JP# Si je prends un exemple, voilà un site de démo, qui a un bouton qui au clic affiche un résultat.
+> J'ai un dossier dans le quel j'ai simplement fait initialisé playwright avec `pnpm create playwright`.
+> Allons voir le test dans `simple.spec.js`.
+> On a un test qui va sur la page, cherche un élément avec un role titre et vérifie le contenu.
+> On voit qu'il n'est pas bon, on peut facilement le corriger en arrageant le titre.
+> Là c'est peut-être un peu léger, on pourrait décider de rajouter un test qui clic sur notre bouton.
+> Créeons un nouveau fichier `button.spec.js` qui: va sur la page, clic sur le bouton et vérifie le contenu.
 
 ## text
-Est-ce que c'est long
+Est-ce que c'est long ?
 > On compare avec test unitaire à l'oral en disant 10x
 
 ## text
-quest-ce qui est long? 
+quest-ce qui est long ?
 
 ## text
 C'est le réseau !
 > On peut vous le prouver
 
-## barchart unit="ms" max="200"
+## barchart unit="ms" max=25810 tiny
 Overhead de playwright
-1 test : 200ms
+0ms : 190
+100ms : 197
+200ms : 295
+400ms : 503
+800ms : 933
+1.6s : 1716
+3.2s : 3328
+6.4s : 6537
+12.8s : 12966
+25.6s : 25810
+moyenne = 134ms de overhead
 
 ## text
 quelle solution
