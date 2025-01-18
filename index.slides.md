@@ -720,7 +720,7 @@ Overhead de playwright
 6.4s : 6537
 12.8s : 12966
 25.6s : 25810
-moyenne = 134ms de overhead
+<!-- moyenne = 134ms de overhead -->
 
 ## text
 quelle solution
