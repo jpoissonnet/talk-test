@@ -11,11 +11,11 @@ date: 23 janvier 2025
 
 ## blank black
 > @00:00:00@
-> #JP# Dis voir Antoine, tu devrais peut-être leur expliquer pourquoi tu te trimbale avec un parapluie alors qu'il ne pleut pas ici.
-> $AC$ tu sais, on est jamais trop prudent, imagine il pleut et bien tu ferais pas le malin.
-> #JP# T'as pensé à porter un Kway dessous histoire d'être sur ?
+> #JP# Dis voir Antoine, tu devrais peut-être leur expliquer pourquoi tu te trimbales avec un parapluie alors qu'il ne pleut pas ici.
+> $AC$ Tu sais, on n'est jamais trop prudent, imagine il pleut et bien tu ferais pas le malin.
+> #JP# T'as pensé à porter un K-way dessous, histoire d'être sur ?
 > $AC$ Malin j'y avais pas trop pensé...
-> Bon aller, on est pas la pour ça.
+> Bon aller, on est pas là pour ça.
 
 ## poster fade-from main
 Tester c'est tricher
@@ -47,21 +47,21 @@ xxxxxxxxx
 > $AC$ On espère avec cette présentation ouvrir un peu vos chakras sur la notion de testing.
 > Souvent abordé de manière dogmatique, on va essayer une approche plus pragmatique
 > #JP# Que vous fassiez du frontend, du backend, du mobile ou de l'embarqué, des "tests" ou pas, on souhaite vous proposer quelques réfléxions / conseils et approches qui pourraient être utiles et concrètes.
-> $AC$ Alors pourquoi "Tester c'est tricher", tricher c'est enfreindre des règles établis, des conventions, des normes.
-> Pour nous il existe des normes, des stratégies de tests qui sont souvent mal comprises, mal appliquées, mal interprétées.
-> #JP# On va essayer de vous montrer que les tests c'est pas juste une question de techno, c'est aussi une question de réflexion, de culture, de priorité.
+> $AC$ Alors pourquoi "Tester c'est tricher", tricher c'est enfreindre des règles établies, des conventions, des normes.
+> Pour nous, il existe des normes, des stratégies de tests qui sont souvent mal comprises, mal appliquées, mal interprétées.
+> #JP# On va essayer de vous montrer que les tests, c'est pas juste une question de techno, c'est aussi une question de réflexion, de culture, de priorité.
 
 ## blank white 
 > $AC$ ...Bon, plongeons nous dans un univers qui n'est pas le dévelopment pour voir ce qu'on peut en tirer
 > Il nous faudrait un objet, par exemple.
-> #JP# Un parapluie tient, au moins il sera utile.
+> #JP# Un parapluie tiens, au moins il sera utile.
 
 ## media fade-from contain
 <img src="src/img/parapluie-ouvert.jpg"/>
 
 > $AC$ Super idée, j'adore les parapluies, c'est tellement pratique.
 > Mais attends, on est dev front, j'ai aucune idée des techno de test de parapluie.
-> #JP# La première chose que tu te demande c'est "Quelles sont les techno ?"
+> #JP# La première chose que tu te demandes c'est "Quelles sont les techno ?"
 > Perso, je préfère me demander...
 
 ## text fade-from
@@ -76,34 +76,34 @@ Qu'est-ce qu'on teste ?
 ## media fade-from contain
 <img src="src/img/toile.png"/>
 
-> #JP# Déjà il nous faut donc un procédé qui nous permet de tester unitairement la toile du parapluie.
+> #JP# Il nous faut un procédé qui nous permet de tester unitairement la toile du parapluie.
 > $AC$ Ah oui je vois où tu veux en venir, un genre de test unitaire où on s'occupe uniquement de la toile.
 > Ça nous permettrait d'éviter de fabriquer un parapluie qui nous protège pas du tout de la pluie.
 
 ## text white
 <strong>Test unitaire</strong> de la toile
-> $AC$ Clairement ce serait déjà bien, mais toi comme moi, on sait que le principale souci des parapluies...
+> $AC$ Clairement ce serait déjà bien, mais toi comme moi, on sait que le principal souci des parapluies...
 > #JP# C'est que le mécanisme est souvent fragile et fini par casser, le rendant inutilisable.
 > Il nous faudrait un procédé pour tester la robustesse du mécanisme.
 
 ## media fade-from contain
 <img src="src/img/mechanisme.png"/>
 
-> Il nous faudrait ouvrir et fermer le mécanisme un grand nombre de fois pour s'assurer qu'il ne casse pas.
+> Il faudrait qu'on puisse ouvrir et fermer le mécanisme un grand nombre de fois pour s'assurer qu'il ne casse pas.
 > $AC$ Un peu comme un test d'intégration, on vérifie qu'un ensemble des pièces fonctionnent bien ensemble.
 
 ## text white
 <strong>Test d'intégration</strong> du mécanisme
-> #JP# Oui completement, ce serait déjà pas mal, mais on sait tous que le vent est l'ennemi numéro 1 des parapluies.
-> $AC$ Mais comment on fait pour tester ça ? On va pas arreter la production tant qu'il n'y a pas de vent.
-> #JP# On peut surement faire passer les parapluies en soufflerie, pour s'assurer qu'il tiennent le coup.
+> #JP# Oui complètement, ce serait déjà pas mal, mais on sait tous que le vent est l'ennemi numéro 1 des parapluies.
+> $AC$ Mais comment on fait pour tester ça ? On va pas arrêter la production tant qu'il n'y a pas de vent.
+> #JP# On peut surement faire passer les parapluies en soufflerie, pour s'assurer qu'ils tiennent le coup.
 > $AC$ Ah oui, la soufflerie, ce serait comme un test avec des mocks.
 
 ## text white
 On <strong>mock</strong> le vent avec la soufflerie
 > #JP# Tout ça, ça nous donne un parapluie hydrophobe, robuste et résistant au vent.
-> Mais ça nous assure toujours pas qu'on soit à l'abris de la pluie.
-> $AC$ En effet, en testant morceaux par morceaux notre parapluie, on n'est pas à l'abris de ne pas l'être.
+> Mais ça nous assure toujours pas qu'on est à l'abri de la pluie.
+> $AC$ En effet, en testant morceaux par morceaux notre parapluie, on n'est pas à l'abri de ne pas l'être.
 
 ## media fade-from logo
 <iframe src="https://giphy.com/embed/BmQPKjwhScjdK" frameBorder="0" allowFullScreen></iframe>
@@ -132,7 +132,7 @@ Du <strong>canary testing</strong> sur les nouveaux modèles
 
 ## text
 Quelle <strong>stratégie</strong> alors pour mes tests ?
-> #JP# Maintenant qu'on a fait les zozo avec notre parapluie, quel stratégie de test on peut appliquer à nos projets ? 
+> #JP# Maintenant qu'on a fait les zozo avec notre parapluie, quelle stratégie de test on peut appliquer à nos projets ? 
 > Quand on vous parle de conception / structuration des tests, vous avez certainement un modèle en tête.
 > Vous avez probablement entendu parlé de la pyramide des tests.
 > C'est le modèle le plus connu, mais le connaissez-vous vraiment ?
@@ -154,7 +154,7 @@ Pyramide des tests modèle 1
 <img src="src/img/pyramide/pyramide-2.png" />
 Pyramide des tests modèle 2
 
-> $AC$ Ici on voit des "solutions tests", qui ne sont pas définis dans l'article connexe.
+> $AC$ Ici on voit des "solutions tests", qui ne sont pas définies dans l'article connexe.
 > Pourquoi pas des "Problem tests" ?
 
 ## ext-content white
@@ -165,7 +165,7 @@ Pyramide des tests modèle 3 / 10000
 > Ici E2E pour end-to-end
 > #JP# Bon on pourrait jouer des heures à vous montrer des pyramides, mais on va pas le faire.
 > 3 étages, parfois 2 étages, plusieurs dimensions, clairement le modèle est fortement interpreté.
-> Alors sur quoi pouvons-nous nous baser pour le modele de la pyramide des tests ?
+> Alors sur quoi pouvons-nous nous baser pour le modèle de la pyramide des tests ?
 
 ## text white
 Mais en vrai ça vient d'où ?
@@ -179,12 +179,13 @@ Mais en vrai ça vient <strong>de qui</strong> ?
 
 ## media contain logo
 <img src="src/img/mike-cohn.png">
+
 > #JP# C'est Mike Cohn, dans son livre "Succeeding with Agile: Software Development using Scrum".
 
 ## ext-content
 <img src="src/img/succeeding-with-agile.png">
 
->  #JP# Dans ce livre il défini un modèle en forme de pyramide pour comparer 3 typologies de tests tout en comparant leur facilité de mise en oeuvre et leur capaciter à apporter du feedback rapidement. 
+> #JP# Dans ce livre il défini un modèle en forme de pyramide pour comparer 3 typologies de tests tout en comparant leur facilité de mise en oeuvre et leur capacité à apporter du feedback rapidement. 
 > Voyons ça un peu de plus près.
 
 ## ext-content contain
@@ -204,31 +205,33 @@ Pyramide des tests de <strong>Mike Cohn</strong>
 ## text
 Les limites de ce modèle
 > #JP# Ce modèle qui connait beaucoup de dérives nous parait un peu dépassé.
-> Pour plusieurs raisons qu'on justifiera par la suite.
+> Pour plusieures raisons qu'on justifiera par la suite.
 > $AC$ Déjà en 2025 il est bien plus facile de setup des tests d'UI.
-> Voir même aussi facile que des Test unitaires.
+> Voire même aussi facile que des Test unitaires.
 > Que les tests unitaires peuvent être rapide à setup mais qu'ils souffrent souvent d'overspecifying.
 
 ## text
 Un modèle de <strong>2009</strong>
-> #JP# On ne va pas jeter la pierre à Mike Cohn, lui même reconnait dans son livre que cette pyramide fait sens notamment lié au contexte technologique.
-> $AC$ Pour autant on voit encore ce modèle exposé, transformé, avec plus où moins d'étages sans pour autant qu'on se préoccupe du message initiale.
+> #JP# On ne va pas jeter la pierre à Mike Cohn, lui même reconnait dans son livre que cette pyramide fait sens en le liant au contexte technologique.
+> $AC$ Pour autant on voit encore ce modèle exposé, transformé, avec plus ou moins d'étages sans pour autant qu'on se préoccupe du message initial.
 
 ## ext-content contain
 <img src="src/img/honeycomb-test-model-033e461521df0d8b1cf5bf7dc22e1380.png">
 https://cookbook.marmicode.io/angular/pragmatic-testing-strategy/
 Designing a Pragmatic Testing Strategy - <strong>Y Jaaidi</strong>
 
-> $AC$ Pour nous, une façon de modéliser qui nous semble pertinente aujourd'hui, c'est le modèle exprimé dans un article de Younes Jaaidi de Marmicode avec un hexagone des tests.
+> $AC$ Pour nous, une façon de modéliser qui nous semble pertinente aujourd'hui, c'est le modèle exprimé dans un article de Younes Jaaidi avec un hexagone des tests.
 > Ce modèle règle deux parties floues de la pyramide des tests qu'on a pu voir.
-> #JP# D'abord, il lève l'ambiguïté entre les tests d'intégration et les tests unitaires, en les regroupant sous le terme de tests "narrow". Ensuite, il déplace ces tests unitaires vers le centre de l'hexagone, pour montrer qu'ils sont au cœur de la stratégie de test, mais qu'ils ne sont pas la base de tout et qu'ils ne sont pas suffisants.
+> #JP# D'abord, il lève l'ambiguïté entre les tests d'intégration et les tests unitaires, en les regroupant sous le terme de tests "narrow".
+> Ensuite, il déplace ces tests unitaires vers le centre de l'hexagone, pour montrer qu'ils sont au cœur de la stratégie de test.
+> Mais qu'ils ne sont pas la base de tout et qu'ils ne sont pas suffisants.
 
 ## text white
 🔬
 > $AC$ Maintenant voyons un peu ce qui se passe dans le monde réel, en sortant du modèle de Mike Cohn.
-> J'ai monté un institut de sondage Pipo forgé par nos biais de confirmation et quelques échanges que nous avons eu depuis plusieurs années quand on pose la question.
-> Soit en meetup, en conférence, en menant des audits, on faisant des entretiens, en regardant les résultats de sondages et d'enquêtes.
-> #JP# On a souvent posé la questions: "Et vous, comment vous testez ?"
+> J'ai monté un institut de sondage Pipo forgé par nos biais de confirmation et quelques échanges que nous avons eus depuis plusieurs années quand on pose la question.
+> Soit en meetup, en conférence, en menant des audits, en faisant des entretiens, en regardant les résultats de sondages et d'enquêtes.
+> #JP# On a souvent posé la question: "Et vous, comment vous testez ?"
 > Voici donc quelques typologies de réponses observées, on va essayer de sainement les critiquer au sens propre du terme.
 > En essayant de montrer les limites de ces approches.
 
@@ -253,7 +256,7 @@ xxxxxx
 > Souvent elle est teinté de frustration, de manque de temps, de pression, de manque de compétence, de manque de ressource, etc.
 > Régulièrement je réponds pour détendre un peu "Mais du coup vous faites que du code qui marche du premier coup ?".
 > #JP# Vous allez nous dire, on abuse, il y en a pas tant que ça des équipes qui ne testent pas.
-> Alors pour s'y intéresser, il y a relativement peu d'étude statistique fiable sur le sujet.
+> Alors pour s'y être intéressé, il y a relativement peu d'étude statistique fiable sur le sujet.
 > Mais il y en a une déjà qu'on pourrait citer.
 > Vous connaissez le State of JS ? 
 
@@ -274,7 +277,7 @@ O outil : 21 red
 4 outils : 10
 5+ outils : 40
 
-> Voici ce que déclarent les répondants à l'étude.
+> Ca, c'est ce que déclarent les répondants à l'étude.
 > Déja on peut se rassurer, les équipes qui ne testent pas sont minoritaires.
 > On a cependant presque un quart qui n'utilise aucun outil de test.
 
@@ -293,7 +296,7 @@ xxxxxxxxxx
 xxxxxxxxxx
 xxxxxx
 ==========
-> Ne pas automatiser ses tests c'est souvent privéliégier du temps humain de vérification.
+> Ne pas automatiser ses tests c'est souvent privilégier du temps humain de vérification.
 > Il n'y a pas de magie, les équipes de devs vont manuellement tester lors de leur développement, les équipes produits, les équipes de tests parfois.
 > #JP# C'est souvent une question de priorité, de culture, de compétence, de ressource, de maturité, etc.
 > Ces approches sans automatisations peuvent paraitre de prime abord plus rapide, mais elles sont souvent plus couteuses à long terme.
