@@ -17,7 +17,7 @@ date: 23 janvier 2025
 > $AC$ Malin j'y avais pas trop pensé...
 > Bon aller, on est pas là pour ça.
 
-## poster fade-from main
+## poster main
 Tester c'est tricher
 ==========
 Antoine Caron _Engineering Manager @Scaleway_ !
@@ -42,19 +42,43 @@ xxxxxxxxx
 > $AC$ Bonjour à toutes et tous, j'espère que vous allez bien et que cette journée se déroule comme vous l'espériez.
 > Je m'appelle Antoine Caron et je suis Engineering manager Frontend chez Scaleway, vous m'avez peut-être vu l'année passée vous parler de Gzip.
 > #JP# Et moi c'est Jules Poissonnet, Frontend Dev chez Bedrock Streaming.
-> Si l'autre malin avec son parapluie et moi-même sommes ici aujourd'hui, c'est pour vous parler de tests.
+> Si l'autre malin et moi-même sommes ici aujourd'hui, c'est pour vous parler de tests.
 > C'est un sujet qui nous intéresse beaucoup et qu'on trouve souvent mal abordé.
 > $AC$ On espère avec cette présentation ouvrir un peu vos chakras sur la notion de testing.
+
+## poster fade-from main
+Tester c'est tricher
+==========
+Antoine Caron _Engineering Manager @Scaleway_ !
+xxxxxxxxxx
+xxxxxxxxxx
+xxxx
+xxxxxxxxxx
+xxxxxxxx
+==========
+xxxxxxxxxx
+xxxxxx
+------
+Jules Poissonnet _Frontend Dev @Bedrock&nbsp;Streaming_
+xxxxxxxxxx
+xxxxxxxxxx
+==========
+xxxxxxxxxx
+<img src="src/img/grenoble.png"/>
+xxxxxxxxxx
+xxxxxxxxx
+==========
+
 > Souvent abordé de manière dogmatique, on va essayer une approche plus pragmatique
 > #JP# Que vous fassiez du frontend, du backend, du mobile ou de l'embarqué, des "tests" ou pas, on souhaite vous proposer quelques réfléxions / conseils et approches qui pourraient être utiles et concrètes.
 > $AC$ Alors pourquoi "Tester c'est tricher", tricher c'est enfreindre des règles établies, des conventions, des normes.
 > Pour nous, il existe des normes, des stratégies de tests qui sont souvent mal comprises, mal appliquées, mal interprétées.
-> #JP# On va essayer de vous montrer que les tests, c'est pas juste une question de techno, c'est aussi une question de réflexion, de culture, de priorité.
+> Certain penseront, qu'à l'image d'un parapluie qui nous protègent de la pluie, les tests ne servent à qu'à nous protéger des bugs et des regressions. On verra ensemble qu'une stratégie de tests ne se limite pas qu'à ce simple besoin.
 
 ## blank white 
-> $AC$ ...Bon, plongeons nous dans un univers qui n'est pas le dévelopment pour voir ce qu'on peut en tirer
-> Il nous faudrait un objet, par exemple.
-> #JP# Un parapluie tiens, au moins il sera utile.
+> @00:01:30@ ±00:45
+> $JP$ ...Bon, prenons un objet du quotidien pour voir comment on le testerait...
+> ...ton parapluie tiens ! Au moins il servira.
 
 ## media fade-from contain
 <img src="src/img/parapluie-ouvert.jpg"/>
@@ -62,12 +86,11 @@ xxxxxxxxx
 > $AC$ Super idée, j'adore les parapluies, c'est tellement pratique.
 > Mais attends, on est dev front, j'ai aucune idée des techno de test de parapluie.
 > #JP# La première chose que tu te demandes c'est "Quelles sont les techno ?"
-> Perso, je préfère me demander...
+> Perso, je préfère me demander... _Comment on teste un parapluie_
 
 ## text fade-from
 🤔 Comment on teste un parapluie ? 
-> $AC$ C'est pas bête ça, on pourrait même se poser la question de ...
-> #JP# Et même aller plus loin
+> $AC$ C'est pas bête ça, on pourrait même se poser la question de ... _Qu'est-ce qu'on teste ?_
 
 ## text
 Qu'est-ce qu'on teste ?
@@ -82,15 +105,15 @@ Qu'est-ce qu'on teste ?
 
 ## text white
 <strong>Test unitaire</strong> de la toile
-> $AC$ Clairement ce serait déjà bien, mais toi comme moi, on sait que le principal souci des parapluies...
-> #JP# C'est que le mécanisme est souvent fragile et fini par casser, le rendant inutilisable.
+> $JP$ Clairement ce serait déjà bien, mais toi comme moi, on sait que le principal souci des parapluies...
+> #AC# C'est que le mécanisme est souvent fragile et fini par casser, le rendant inutilisable.
 > Il nous faudrait un procédé pour tester la robustesse du mécanisme.
 
 ## media fade-from contain
 <img src="src/img/mechanisme.png"/>
 
 > Il faudrait qu'on puisse ouvrir et fermer le mécanisme un grand nombre de fois pour s'assurer qu'il ne casse pas.
-> $AC$ Un peu comme un test d'intégration, on vérifie qu'un ensemble des pièces fonctionnent bien ensemble.
+> $JP$ Un peu comme un test d'intégration, on vérifie qu'un ensemble des pièces fonctionnent bien ensemble.
 
 ## text white
 <strong>Test d'intégration</strong> du mécanisme
@@ -120,6 +143,7 @@ Du <strong>canary testing</strong> sur les nouveaux modèles
 > _#JP#_ Yes, on appelle en général ça du canary testing, on envoie un petit groupe de personnes pour tester un nouveau produit.
 
 ## text
+@00:03:00@ ±01:00
 🤔
 > $AC$ Normalement vous devriez vous demander "Pourquoi ces deux là me parlent de parapluie ?"
 > #JP# C'est une très bonne question.
