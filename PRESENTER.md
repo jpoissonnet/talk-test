@@ -17,13 +17,13 @@ docker run -d -p 6379:6379 redis # Run a Redis container for the vitest without 
 
 ### Run the demo app for playwright-overhead in another terminal
 ```bash
-pnpm --dir demo/playwright-overhead exec dev # Run the Playwright Overhead demo
+pnpm --dir demo/dummy-app exec dev # Run the Playwright Overhead demo
 ```
 
 # Commands to run the demos
 ## Playwright Overhead demo
 ```bash
-pnpm --dir demo/playwright-overhead exec playwright test --ui # run the tests with the playwright UI
+pnpm --dir demo/dummy-app exec playwright test --ui # run the tests with the playwright UI
 ```
 
 ## Vitest-container
