@@ -146,14 +146,12 @@ Du <strong>canary testing</strong> sur les nouveaux modèles
 🤔
 > @00:04:30@ ±01:00
 > $AC$ Normalement vous devriez vous demander "Pourquoi ces deux là me parlent de parapluie ?"
-> #JP# C'est une très bonne question.
-> $AC$ On a voulu vous montrer que les tests, c'est pas juste une question de techno, c'est aussi une réflexion et une stratégie.
+> On a voulu vous montrer que les tests, c'est pas juste une question de techno, c'est aussi une réflexion et une stratégie.
 > Par cette parabole....douteuse... on vous a partagé quelques définitions sur des procédés de tests qui répondent à différents besoin.
-> #JP# Il est possible que les définitions qu'on vient de donner ne vous plaisent pas.
 > Les définitions de tests unitaires, d'intégration et d'end-to-end, de mock varient beaucoup de techno en techno, de personne en personne, de projet en projet.
-> $AC$ On ne cherche pas ici à donner des définitions universelles, on se met juste d'accord sur ce qu'on entend par ces termes et sur les besoins auxquels ils répondent.
+> On ne cherche pas ici à donner des définitions universelles, on se met juste d'accord sur ce qu'on entend par ces termes et sur les besoins auxquels ils répondent.
 > Clairement, si vous les appelez autrement, il n'y a pas de soucis.
-> #JP# Maintenant qu'on a fait les zozo avec nos parapluie, quelle stratégie de test on peut appliquer à nos projets, dans la vrai vie. ?
+> Maintenant qu'on a fait les zozo avec nos parapluie, quelle stratégie de test on peut appliquer à nos projets, dans la vrai vie. ?
 
 ## text
 Quelle <strong>stratégie</strong> alors pour mes tests ?
@@ -207,12 +205,12 @@ Mais en vrai ça vient <strong>de qui</strong> ?
 ## media contain logo
 <img src="src/img/mike-cohn.png">
 
-> #JP# C'est Mike Cohn, dans son livre "Succeeding with Agile: Software Development using Scrum".
+> $AC$ C'est Mike Cohn, dans son livre "Succeeding with Agile: Software Development using Scrum".
 
 ## ext-content
 <img src="src/img/succeeding-with-agile.png">
 
-> #JP# Dans ce livre il défini un modèle en forme de pyramide pour comparer 3 typologies de tests tout en comparant leur facilité de mise en oeuvre et leur capacité à apporter du feedback rapidement. 
+> $AC$ Dans ce livre il défini un modèle en forme de pyramide pour comparer 3 typologies de tests tout en comparant leur facilité de mise en oeuvre et leur capacité à apporter du feedback rapidement. 
 > Voyons ça un peu de plus près.
 
 ## ext-content contain
@@ -223,17 +221,17 @@ Pyramide des tests de <strong>Mike Cohn</strong>
 > Dans le modèle de base il ne compare pas les tests à la main avec des tests automatisés.
 > Il place en haut de la pyramide les tests UI, il ne parle pas spécifiquement de test E2E, il parle juste de tests d'interface.
 > Ensuite il place les tests de service, et enfin les tests unitaires.
-> #JP# Il explique que les tests UI sont les plus couteux à mettre en place, les plus lents, les plus fragiles.
-> Rappel, en 2009 je suis en CE1, et clairement pour tester de manière automatisée une interface graphique c'est pas la joie.
+> Il explique que les tests UI sont les plus couteux à mettre en place, les plus lents, les plus fragiles.
+> Rappel, en 2009 jules est en CE1, et clairement pour tester de manière automatisée une interface graphique c'est pas la joie.
 > On est pas loin de taper deux silex entre eux pour faire du feu.
-> $AC$ J'ai commencé a faire des tests automatisés en 2014, et même à cette époque là, on galérait.
+> J'ai commencé a faire des tests automatisés en 2014, et même à cette époque là, on galérait.
 > Si je vous parle de Selenium, il y a peut-être quelques frissons qui vont se propager dans la salle.
 
 ## text
 Les limites de ce modèle
-> #JP# Ce modèle qui connait beaucoup de dérives nous parait un peu dépassé.
-> Pour plusieures raisons qu'on justifiera par la suite.
-> $AC$ Déjà en 2025 il est bien plus facile de setup des tests d'UI.
+> Ce modèle qui connait beaucoup de dérives nous parait un peu dépassé.
+> Pour plusieures raisons.
+> Déjà en 2025 il est bien plus facile de setup des tests d'UI.
 > Voire même aussi facile que des Test unitaires.
 > Que les tests unitaires peuvent être rapide à setup mais qu'ils souffrent souvent d'overspecifying.
 
@@ -260,7 +258,7 @@ Designing a Pragmatic Testing Strategy - <strong>Y Jaaidi</strong>
 > $JP$ Maintenant voyons un peu ce qui se passe dans le monde réel, en sortant du modèle de Mike Cohn.
 > J'ai monté un institut de sondage Pipo forgé par nos biais de confirmation et quelques échanges que nous avons eus depuis plusieurs années quand on pose la question.
 > Soit en meetup, en conférence, en menant des audits, en faisant des entretiens, en regardant les résultats de sondages et d'enquêtes.
-> #JP# On a souvent posé la question: "Et vous, comment vous testez ?"
+> On a souvent posé la question: "Et vous, comment vous testez ?"
 > Voici donc quelques typologies de réponses observées, on va essayer de sainement les critiquer au sens propre du terme.
 > En essayant de montrer les limites de ces approches.
 
@@ -294,7 +292,7 @@ xxxxxx
 https://stateofjs.com/en-US
 State of JS 2024
 
-> #JP# C'est une étude qui est menée chaque année sur l'écosystème JS.
+> C'est une étude qui est menée chaque année sur l'écosystème JS.
 > Il y a un chapitre qui s'intéresse aux outils de tests voici donc quelques résultats.
 
 ## barchart unit="%" max="50"
@@ -339,7 +337,7 @@ xxxxxx
 https://alisterscott.github.io/TestingPyramids.html
 Ice cream modele - <strong>Alister B Scott</strong>
 
-> #JP# C'est souvent une stratégie de test très coûteuse, qui va ralentir le développement, qui va être source de frustration.
+> #AC# C'est souvent une stratégie de test très coûteuse, qui va ralentir le développement, qui va être source de frustration.
 > On ne dit pas que d'avoir des tests manuels c'est mal hein, on va juste dire que centraliser sa stratégie de tests dessus n'est pas pour nous une bonne idée.
 > Ça ne passera pas à l'échelle.
 > Il y a un vrai biais de perception du temps quand on dévéloppe sans automatiser ses tests.
@@ -367,7 +365,7 @@ xxxxxxxx
 <img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 400px" />
 ==========
 > @00:20:00@ (06:40)
-> $AC$ En deuxième position des réponses à la question "Comment vous testez ?" on a souvent des réponses plus techniques.
+> $JP$ En deuxième position des réponses à la question "Comment vous testez ?" on a souvent des réponses plus techniques.
 > On nous répond des technos de tests, des outils, des librairies, des frameworks.
 > Comme si ces outils étaient une fin en soi. 
 > Soyons clair des outils de tests c'est bien, mais savoir clairement "Qu'est-ce qu'on teste ?" est mieux.
@@ -390,7 +388,7 @@ xxxxxxxx
 > Est-ce que ces outils, ces librairies vous aident ou au contraire vous infliges de l'aide.
 > Clairement vous ici dans la salle, si vous regardez vos tests, à quoi vous sont ils utiles ?
 > Qu'est-ce qu'ils vous apportent au jour le jour ?
-> $AC$ On observe alors de ces équipes des tests très liés au code source, ou bien des tests de très mauvaise qualité.
+> On observe alors de ces équipes des tests très liés au code source, ou bien des tests de très mauvaise qualité.
 > Quelques exemples:
 
 ## code
@@ -431,22 +429,8 @@ it('should render', () => {
 > Le composant il pourrait afficher une page vide, un site web ou autre on sait même pas.
 > Qu'est-ce qu'on regarde là ?
 
-## poster main
-Les technophiles
-==========
-_"On fait du Jest / Testing Library / Cypress / ..."_
-xxxxxxxxxx
-----------
-Faire des tests, juste pour en faire
-xxxxxxxxxx
-Qu'est-ce que vous testez ?
-xxxxxxxxxx
-==========
-<img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 400px" />
-==========
+## blank white
 > @00:22:30@ ±01:00
-> Les technophiles globalement, c'est des devs qui font des tests pour en faire. 
-> Ils sont content de faire des tests, des tests qui en plus sont verts.
 
 ## poster main
 Les Sceptiques
@@ -465,9 +449,9 @@ xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxx
 ==========
-> #JP# En troisième position, on va retrouver des équipes qui ont une stratégie de test très quantitative.
+> $AC$ En troisième position, on va retrouver des équipes qui ont une stratégie de test très quantitative.
 > Pas forcément associé à des pratiques TDD, BDD, on retrouve cependant de plus en plus d'équipe qui utilisent des indicateurs de coverage de test pour objectiver leur stratégie de tests.
-> $AC$ On a souvent des équipes qui vont se fixer des objectifs de coverage de test, 80%, 90%, 100%.
+> On a souvent des équipes qui vont se fixer des objectifs de coverage de test, 80%, 90%, 100%.
 > Le coverage c'est comptabiliser le ratio de lignes de code qui sont exécutées par vos tests.
 > Ça ne vous dit pas du tout si vos tests sont bons, si ils sont pertinents, si ils sont efficaces.
 > Est-ce que cependant le coverage est une bonne métrique ?
@@ -488,10 +472,10 @@ Le coverage n'est pas un indicateur de qualité de tests
 xxxxxxxxxx
 xxxxxxx
 ==========
-> #JP# Le coverage n'est qu'un indicateur de quantité et de ratio, il ne donne aucune indication sur la qualité des tests.
+> #AC# Le coverage n'est qu'un indicateur de quantité et de ratio, il ne donne aucune indication sur la qualité des tests.
 > Il est très facile de faire des tests qui couvrent 100% d'une fonction / class / module mais qui ne font aucun expect par exemple.
 > Une stratégie quantitative va également vous apporter des problèmes de scalabilité de vos tests.
-> #AC# On se retrouve avec énormément de tests à faire tourner ce qui va ralentir votre CI, ralentir votre développement, le délai pour avoir du feedback en sera que plus long.
+> On se retrouve avec énormément de tests à faire tourner ce qui va ralentir votre CI, ralentir votre développement, le délai pour avoir du feedback en sera que plus long.
 
 ## text
 <i>"Je push, je te dis dans 40min si c'est bon"</i>
@@ -511,7 +495,7 @@ Le coverage n'est pas un indicateur de qualité de tests
 xxxxxxxxxx
 xxxxxxx
 ==========
-> Est-ce que run **tous** les tests **tout le temps** est une bonne idée ?
+> #AC# Est-ce que run **tous** les tests **tout le temps** est une bonne idée ?
 > On verra ensemble des techniques pour éviter ça.
 > Est-ce que toutes les features que vous testez méritent d'être testées avec la même rigueur ?
 
@@ -535,7 +519,7 @@ xxxxxxx
 > #JP# Enfin, et c'est beaucoup plus rare, on a des équipes qui vont avoir une stratégie de test avec du focus.
 > Ou avec une quantité de tests très limitée.
 > Est-ce critiquable ? Est-ce que c'est une bonne idée ?
-> $AC$ Clairement, on a souvent des équipes qui vont se concentrer sur des parties de leur codebase, souvent les plus critiques.
+> Clairement, on a souvent des équipes qui vont se concentrer sur des parties de leur codebase, souvent les plus critiques.
 > On pourrait se dire que c'est une mauvaise idée, mais en fait c'est une stratégie qui peut être très pertinente.
 
 ## poster main
@@ -554,7 +538,7 @@ xxxxxxxxxx
 xxxxxxx
 ==========
 
-> Cette vision pragmatique, si elle repose bien sur une analyse de risque, peut être très pertinente.
+> #JP# Cette vision pragmatique, si elle repose bien sur une analyse de risque, peut être très pertinente.
 > Si clairement on a peu de tests parce qu'on a la flemme où qu'on a pas le temps, c'est pas une bonne idée.
 > Mais si on peut fragmenter son application, identifier les parties les plus critiques, les plus risquées, et les tester en priorité.
 > _Choisir c'est aussi renoncer_, si on choisi de ne pas tester certaines parties, c'est qu'on a fait le choix de ne pas les tester.
@@ -575,7 +559,7 @@ https://xkcd.com/1205/
 <img src="src/img/gain_perte.jpg" />
 Automate Within the sprint - <strong>Mike Cohn</strong>
 
-> $AC$ Ces questions de coût et de gain sur l'automatisation on se les pose depuis longtemps.
+> #JP# Ces questions de coût et de gain sur l'automatisation on se les pose depuis longtemps.
 > Avec le temps, le cout de maintenance, de run d'un test automatisé risque de dépasser son gain.
 > Mike Cohn dans son livre exposait déjà son point de vue avec ce graphique.
 > Pausons nous quelques secondes pour réfléchir à ce qu'on a vu.
@@ -675,7 +659,7 @@ Pour les tests <strong><em>narrow</em></strong>...
 Vitest
 https://vitest.dev/
 
-> #JP# On pense notamment à des outils comme Vitest, qui permettent de lancer des tests unitaires très rapidement.
+> #AC# On pense notamment à des outils comme Vitest, qui permettent de lancer des tests unitaires très rapidement.
 > Pour ceux qui ont déjà entendu parler de Jest, il s'agit d'un outil qui se veut être son successeur.
 > Il est rapide, simple, bien documenté. 
 > Compatible avec les écosystème JS récents contrairement à Jest.
@@ -691,16 +675,7 @@ https://www.youtube.com/watch?v=oB553Noerlc
 ## tip
 <strong>Préfèrez Vitest</strong> à Jest en 2025
 
-> #JP# Préférez donc Vitest à Jest en 2025, vous ne serez pas déçu.
-
-## ext-content contain
-<img src="src/img/marmicode_vitest.png">
-https://cookbook.marmicode.io/angular/why-vitest/
-Why Vitest? - <strong>Younes Jaaidi</strong>
-
-> $JP$ On vous conseille de regarder l'article de Younes sur Vitest, 
-> il y explique très bien pourquoi il est préférable de choisir Vitest à Jest en 2025.
-
+> #AC# Préférez donc Vitest à Jest en 2025, vous ne serez pas déçu.
 
 ## text
 Pour vos tests <strong>UI</strong>...
@@ -710,6 +685,7 @@ Pour vos tests <strong>UI</strong>...
 
 ## tip
 Adopter <strong>Playwright</strong> en 2025
+> @00:33:30@ 
 
 > #JP# Playwright
 > Il a pas mal de fonctionnalités, qui peuvent couvrir la plupart de vos cas d'usages.
@@ -727,7 +703,7 @@ Adopter <strong>Playwright</strong> en 2025
 > Créeons un nouveau fichier `button.spec.js` qui: va sur la page, clic sur le bouton et vérifie le contenu.
 
 ## text
-⏱ 300ms
+⏱ 650ms
 > #JP# Mon test ne fait que cliquer sur un bouton... c'est un peu long non ?
 > Il faut imaginer que devant un test unitaire, c'est à peu près 10 fois plus...
 > Bon, bah c'est pas génial comme nouvelle, peut être qu'on peut se demander... _qu'est ce qui est long ?_
@@ -741,7 +717,7 @@ Qu est-ce qui est long ? 🐢
 
 ## stackedchart unit="ms" 
 Temps des tests
-295ms : 200,#4285f4;95,#34a853;
+664ms : 200,#4285f4;464,#34a853;
 > #JP# En paramétrant l'API à 200ms, on voit que le test prend 295ms.
 
 
@@ -751,15 +727,11 @@ Temps des tests
 913ms : 800,#4285f4;133,#34a853;
 1716ms : 1600,#4285f4;116,#34a853;
 
-
 ## text
 Comment y remédier ?
 
-## text
-La soufflerie
-
-## text
-Les mocks ?
+## tip
+<strong>Mockez</strong> les APIs de vos tests UI
 
 ## ext-content contain
 <img src="src/img/playwright.png">
@@ -768,17 +740,9 @@ Playwright - <strong>Mocking</strong>
 
 > Montre API mock Playright
 
-## tip
-<strong>Boostez</strong> vos tests UI en mockant vos APIs
-
-## ext-content contain
-https://www.youtube.com/watch?v=UDyBHzoMpV4
-Playwright 🎭, the Cypress killer by <strong>Mathieu Mure</strong>
-<img src="src/img/playright-mathieu.jpg">
-> Si vous voulez aller plus loin, note ami Mathieu Mure a fait une conférence sur Playwright lors d'un LyonJS où il montre plus en détails l'outils.
 
 ## blank white
-> Bon... maintenant quels conseils pour les technofiles !
+> Bon... maintenant quels conseils pour les technophiles !
 
 ## text
 Pour les <strong>technophiles</strong> 🫵
@@ -826,26 +790,10 @@ Soignez votre <strong><em>testbase</em></strong> comme votre codebase
 <img src="src/img/how-you-do-one-thing.webp">
 <h3 style="width:100%">"How you do anything is how you do everything" - Le méchant dans <strong>John Wick 4</strong></h3>
 
-> #JP# Si vous aimez vos outils et votre code, alors donner autant d'amour à votre testbase.
+> #AC# Si vous aimez vos outils et votre code, alors donner autant d'amour à votre testbase.
 > Tout d'abord par souci de cohérence, mais surtout parce que quand on y réfléchit un peu, on devrait avoir des contraintes, des règles similaires.
 > À savoir, le code des tests doit être lu, compris, maintenu dans le temps.
-
-## code
-```js
-describe('foo', () => {
-  it('should do bar', () => {});
-  it('should do bar', () => {}); // Has the same title as the previous test
-
-  describe('baz', () => {
-    // ...
-  });
-});
-```
-
-> $AC$ Si on ne se fixe pas de règle, on peut vite se retrouver avec des tests qui se ressemblent, qui se dupliquent, qui ne sont pas maintenables.
-> Comme ici !
-> Il existe pléthore de règles de lint pour les tests, pour les noms de tests, pour les expect, pour les describe, etc.
-> Si ces règles ont été mises en place, c'est pour faire faces aux erreurs les plus courantes.
+> $AC$ Si on ne se fixe pas de règle, on peut vite se retrouver avec des tests qui se ressemblent, qui se dupliquent.
 > Sachez que dans Eslint, l'outil de lint en JS le plus connu, il en existe des tas.
 
 ## ext-content contain
@@ -855,11 +803,6 @@ Le readme dans le repo <strong>eslint-plugin-vitest</strong>
 > $AC$ Ma préférée étant la règle `expect-expect` de eslint-plugin-vitest.
 > Qui vérifie que pour chaque test, on vérifie bien au moins quelque chose.
 > Il existe pleins de set de règles de lint pour vos fichiers de tests qui vont vous aider à en maintenir la qualité.
-
-
-## tip
-<strong>Lintez</strong> vos tests
-
 > Appliquer du lint sur vos tests si ce n'est pas déjà le cas.
 > $AC$: Je me rappelle avoir appliquer Gherkin-lint sur une base d'un projet, ça a été sport mais bénéfique.
 > J'ai pu faire le ménage de plein de tests qui testaient rien ou étaient mal écrits.
@@ -869,34 +812,16 @@ Le readme dans le repo <strong>eslint-plugin-vitest</strong>
 
 ## text
 Pour les <strong>sceptiques</strong> 🫵
-> #JP# Pour les sceptiques, qui testent tout, avec un coverage à 100%, à 90% à 70%...
+> @temps d'avant + @00:02:00 ±00:30
+> #JP# Pour les sceptiques, qui testent tout, avec un $objectif de coverage$.
 > Comment vous dire.... le coverage n'est pas un indicateur pertinent de la qualité de vos tests.
 > C'est un indicateur quantitatif mais il peut vous donner une fausse indication de la qualité de vos tests.
 
 ## tip
 N'objectivez pas le <strong>coverage</strong>
 
-> $AC$ "N'objectivez pas le coverage".
-
-## code
-```js
-// Source
-function add(a, b) {
-  return a + b;
-}
-
-// Test  
-it('should add two numbers and return the result', () => {
-    const firstNumber = 1;
-    const secondNumber = 2;
-    let result = add(firstNumber, secondNumber);
-});
-```
-> #JP# Regarde Antoine, j'ai trouvé un code avec 100% de coverage.
-> C'est trop bien, mais là, il y a un souci évident non ?
-> _solicitation du public_
-> $AC$ Oui, il n'y a aucun expect. On a 100% de coverage mais on a pas de test.
-> #JP# Une mesure quantitative ne peut pas se soustraire d'une mesure qualitative si on veut garder du sens.
+> #JP# "N'objectivez pas le coverage".
+> Une mesure quantitative ne peut pas se soustraire d'une mesure qualitative si on veut garder du sens.
 > Un principe intéressant pour compléter l'analyse de coverage, c'est le mutation testing.
 > L'idée en deux phrases, c'est de modifier le code source et de voir si les tests vos tests détectent en échouant.
 
@@ -906,7 +831,7 @@ https://stryker-mutator.io/
 Optez pour du <strong>mutation testing</strong>
 
 > #JP# Si les tests passent même avec des modifications dans votre code, alors ce sont des tests ne testent pas grand chose.
-> $AC$ Le sujet en lui est très vaste et on aurait pu passer la conférence entière dessus. 
+> Le sujet en lui est très vaste et on aurait pu passer la conférence entière dessus. 
 > On vous invite à regarder des outils comme Stryker, PIT, etc.
 
 ## ext-content
@@ -914,16 +839,16 @@ Optez pour du <strong>mutation testing</strong>
 https://www.youtube.com/watch?v=297tyPsXOm8
 Mutation Testing - <strong>Loïc Knuchel</strong>
 
-> $AC$ Voilà une conférence que je recommande sur le mutation testing si vous voulez creuser c'est un sujet très intéressant.
+> $JP$ Voilà une conférence que je recommande sur le mutation testing si vous voulez creuser c'est un sujet très intéressant.
 > Qui pose également quelques questions sur la performance de vos tests et le ciblage.
 
 ## tip
 <strong>Ciblez</strong> vos tests
-> $AC$ Est-il pertinent de lancer tous vos tests à tous les coups ? 
+> $JP$ Est-il pertinent de lancer tous vos tests à tous les coups ? 
 > Si votre CI met 40min a vous donner un feedback positif ou negatif, clairement c'est dommage.
-> #JP# _le test le plus rapide, c'est celui qu'on ne lance pas_.
+> _le test le plus rapide, c'est celui qu'on ne lance pas_.
 > Si votre architecture le permet, configurez votre projet pour qu'il ne run que les tests impactés par vos changements.
-> $AC$ Les outils de tests, en tout cas côté javascript, comme Jest et Vitest proposent des outils pour run les tests sur votre diff git.
+> Les outils de tests, en tout cas côté javascript, comme Jest et Vitest proposent des outils pour run les tests sur votre diff git.
 > Vous allez me dire "Oui mais justement je voudrais lancer tous mes tests pour voir les impacts transverses".
 > Dans les fait, il est assez rare de casser une application en transersal quand on touche à une ligne de code (mais ça peut arriver).
 
@@ -931,7 +856,7 @@ Mutation Testing - <strong>Loïc Knuchel</strong>
 <img src="src/img/changed.png"/>
 Le flag <strong>--changed</strong> de Vitest
 
-> $AC$ Chez vitest, on a le flag `--changed` auquel on peut passer un hash de commit pour run les tests sur les fichiers qui diffèrent depuis le HEAD.
+> $JP$ Chez vitest, on a le flag `--changed` auquel on peut passer un hash de commit pour run les tests sur les fichiers qui diffèrent depuis le HEAD.
 > Utiliser ce flag dans vos CI quand vous ne modifier que des sources ou des tests.
 > Et lancer tous vos tests pour certaines opérations comme des montées de version de dépendances ou sur la branch principale.
 
@@ -939,25 +864,24 @@ Le flag <strong>--changed</strong> de Vitest
 <img src="src/img/nxaffected.png">
 Nx affected project graph when <strong>lib10</strong> is changed - Nx docs
 
-> #JP# Dans un contexte _monorepo_, les outils de gestions permettent de run les tests sur les modules impactés par vos changements. 
+> $JP$ Dans un contexte _monorepo_, les outils de gestions permettent de run les tests sur les modules impactés par vos changements. 
 > Ici, on a `nx affected`....
 > Si on fait une modif dans le module "lib10", on va run les tests de "lib10" et des modules qui dépendent de "lib10", mais pas les autres.
 > Cette option vous la retrouverez dans la plupart de ces outils.
-
-## blank white
-> $AC$ dans la plupart des cas vous n'avez pas besoin de run tous les tests dans votre CI.
+> dans la plupart des cas vous n'avez pas besoin de run tous les tests dans votre CI.
 
 ## text
 <strong>--bail</strong>
-> Ce que vous voulez, c'est être prévenu au premier tests qui casse pour rapidement intervenir.
+> $JP$ Ce que vous voulez, c'est être prévenu au premier tests qui casse pour rapidement intervenir.
 > C'est ce que fait l'option --bail que vous retrouverez dans la plupart des outils de tests.
 
 ## blank white
 > Ok et pour les good enough ?
 
-## text todo
+## text
 Pour les <strong>good enough</strong> 🫵
-> #JP# Pour les good enough, qui testent que certaines parties de leur codebase, qui ont une stratégie de test très ciblée.
+> @temps + 00:02:00 ±00:30
+> $AC$ Pour les good enough, qui testent que certaines parties de leur codebase, qui ont une stratégie de test très ciblée.
 > Vous avez une stratégie de test, ok c'est cool ! 
 > Mais est-ce qu'il est facile pour une nouvelle personne à onboarder de comprendre votre stratégie de test ?
 > Etes-vous sur que votre stratégie répond bien aux 5 raisons évoquées plus tôt ?
@@ -971,16 +895,16 @@ Pour les <strong>good enough</strong> 🫵
 
 ## text
 <strong>README</strong>.md
-> Comme Readme.md pour décrire l'essentiel de votre projet
+> $AC$ Comme Readme.md pour décrire l'essentiel de votre projet
 
 ## text
 <strong>CONTRIBUTING</strong>.md
-> Comme CONTRIBUTING.md pour décrire comment installer votre projet from scratch et proposer une contribution
+> $AC$ Comme CONTRIBUTING.md pour décrire comment installer votre projet from scratch et proposer une contribution
 > On vous propose donc de rajouter un
 
 ## tip
 Ajouter un <strong>TESTING</strong>.md
-> TESTING.md
+> $AC$ TESTING.md
 
 ## demo
 ```txt
@@ -991,6 +915,7 @@ Ajouter un <strong>TESTING</strong>.md
 
 ## text
 Bon, au final...
+> @temps d'avant + 00:01:20 ±00:30@
 > Au final, on a vu qu'il n'y a pas de solution miracle pour vos tests ni votre stratégie de tests.
 > Tout va dépendre du context que vous avez, de votre équipe, de votre projet, de votre entreprise.
 > L'automatisation est un vrai plus pour vous aider à itérer mieux et plus vite.
