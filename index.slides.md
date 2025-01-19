@@ -12,9 +12,9 @@ date: 23 janvier 2025
 ## blank black
 > @00:00:00@
 > #JP# Dis voir Antoine, tu devrais peut-être leur expliquer pourquoi tu te trimbales avec un parapluie alors qu'il ne pleut pas ici.
-> $AC$ Tu sais, on n'est jamais trop prudent, imagine il pleut et bien tu ferais pas le malin.
+> #AC# Tu sais, on n'est jamais trop prudent, imagine il pleut et bien tu ferais pas le malin.
 > #JP# T'as pensé à porter un K-way dessous, histoire d'être sur ?
-> $AC$ Malin j'y avais pas trop pensé...
+> #AC# Malin j'y avais pas trop pensé...
 > Bon aller, on est pas là pour ça.
 
 ## poster main
@@ -39,12 +39,12 @@ xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxx
 ==========
-> $AC$ Bonjour à toutes et tous, j'espère que vous allez bien et que cette journée se déroule comme vous l'espériez.
+> #AC# Bonjour à toutes et tous, j'espère que vous allez bien et que cette journée se déroule comme vous l'espériez.
 > Je m'appelle Antoine Caron et je suis Engineering manager Frontend chez Scaleway, vous m'avez peut-être vu l'année passée vous parler de Gzip.
 > #JP# Et moi c'est Jules Poissonnet, Frontend Dev chez Bedrock Streaming.
 > Si l'autre malin et moi-même sommes ici aujourd'hui, c'est pour vous parler de tests.
 > C'est un sujet qui nous intéresse beaucoup et qu'on trouve souvent mal abordé.
-> $AC$ On espère avec cette présentation ouvrir un peu vos chakras sur la notion de testing.
+> #AC# On espère avec cette présentation ouvrir un peu vos chakras sur la notion de testing.
 
 ## poster fade-from main
 Tester c'est tricher
@@ -71,41 +71,41 @@ xxxxxxxxx
 
 > Souvent abordé de manière dogmatique, on va essayer une approche plus pragmatique
 > #JP# Que vous fassiez du frontend, du backend, du mobile ou de l'embarqué, des "tests" ou pas, on souhaite vous proposer quelques réfléxions / conseils et approches qui pourraient être utiles et concrètes.
-> $AC$ Alors pourquoi "Tester c'est tricher", tricher c'est enfreindre des règles établies, des conventions, des normes.
+> #AC# Alors pourquoi "Tester c'est tricher", tricher c'est enfreindre des règles établies, des conventions, des normes.
 > Pour nous, il existe des normes, des stratégies de tests qui sont souvent mal comprises, mal appliquées, mal interprétées.
 > Certain penseront, qu'à l'image d'un parapluie qui nous protègent de la pluie, les tests ne servent à qu'à nous protéger des bugs et des regressions. On verra ensemble qu'une stratégie de tests ne se limite pas qu'à ce simple besoin.
 
 ## blank white 
 > @00:01:30@ ±00:45
-> $JP$ ...Bon, prenons un objet du quotidien pour voir comment on le testerait...
+> #JP# ...Bon, prenons un objet du quotidien pour voir comment on le testerait...
 > ...ton parapluie tiens ! Au moins il servira.
 
 ## media fade-from contain
 <img src="src/img/parapluie-ouvert.jpg"/>
 
-> $AC$ Super idée, j'adore les parapluies, c'est tellement pratique.
+> #AC# Super idée, j'adore les parapluies, c'est tellement pratique.
 > Mais attends, on est dev front, j'ai aucune idée des techno de test de parapluie.
 > #JP# La première chose que tu te demandes c'est "Quelles sont les techno ?"
 > Perso, je préfère me demander... _Comment on teste un parapluie_
 
 ## text fade-from
 🤔 Comment on teste un parapluie ? 
-> $AC$ C'est pas bête ça, on pourrait même se poser la question de ... _Qu'est-ce qu'on teste ?_
+> #AC# C'est pas bête ça, on pourrait même se poser la question de ... _Qu'est-ce qu'on teste ?_
 
 ## text
 Qu'est-ce qu'on teste ?
-> $AC$ Déjà, il nous faut une matière imperméable, sinon c'est pas très utile.
+> #AC# Déjà, il nous faut une matière imperméable, sinon c'est pas très utile.
 
 ## media fade-from contain
 <img src="src/img/toile.png"/>
 
 > #JP# Il nous faut un procédé qui nous permet de tester unitairement la toile du parapluie.
-> $AC$ Ah oui je vois où tu veux en venir, un genre de test unitaire où on s'occupe uniquement de la toile.
+> #AC# Ah oui je vois où tu veux en venir, un genre de test unitaire où on s'occupe uniquement de la toile.
 > Ça nous permettrait d'éviter de fabriquer un parapluie qui nous protège pas du tout de la pluie.
 
 ## text white
 <strong>Test unitaire</strong> de la toile
-> $JP$ Clairement ce serait déjà bien, mais toi comme moi, on sait que le principal souci des parapluies...
+> #JP# Clairement ce serait déjà bien, mais toi comme moi, on sait que le principal souci des parapluies...
 > #AC# C'est que le mécanisme est souvent fragile et fini par casser, le rendant inutilisable.
 > Il nous faudrait un procédé pour tester la robustesse du mécanisme.
 
@@ -113,30 +113,30 @@ Qu'est-ce qu'on teste ?
 <img src="src/img/mechanisme.png"/>
 
 > Il faudrait qu'on puisse ouvrir et fermer le mécanisme un grand nombre de fois pour s'assurer qu'il ne casse pas.
-> $JP$ Un peu comme un test d'intégration, on vérifie qu'un ensemble des pièces fonctionnent bien ensemble.
+> #JP# Un peu comme un test d'intégration, on vérifie qu'un ensemble des pièces fonctionnent bien ensemble.
 
 ## text white
 <strong>Test d'intégration</strong> du mécanisme
 > #JP# Oui complètement, ce serait déjà pas mal, mais on sait tous que le vent est l'ennemi numéro 1 des parapluies.
-> $AC$ Mais comment on fait pour tester ça ? On va pas arrêter la production tant qu'il n'y a pas de vent.
+> #AC# Mais comment on fait pour tester ça ? On va pas arrêter la production tant qu'il n'y a pas de vent.
 > #JP# On peut surement faire passer les parapluies en soufflerie, pour s'assurer qu'ils tiennent le coup.
-> $AC$ Ah oui, la soufflerie, ce serait comme un test avec des mocks.
+> #AC# Ah oui, la soufflerie, ce serait comme un test avec des mocks.
 
 ## text white
 On <strong>mock</strong> le vent avec la soufflerie
 > #JP# Tout ça, ça nous donne un parapluie hydrophobe, robuste et résistant au vent.
 > Mais ça nous assure toujours pas qu'on est à l'abri de la pluie.
-> $AC$ En effet, en testant morceaux par morceaux notre parapluie, on n'est pas à l'abri de ne pas l'être.
+> #AC# En effet, en testant morceaux par morceaux notre parapluie, on n'est pas à l'abri de ne pas l'être.
 
 ## media fade-from logo
 <iframe src="https://giphy.com/embed/BmQPKjwhScjdK" frameBorder="0" allowFullScreen></iframe>
-> $AC$ Pour ça, il nous faudrait un test end-to-end, un test qui nous assure que le parapluie remplit bien sa fonction première.
+> #AC# Pour ça, il nous faudrait un test end-to-end, un test qui nous assure que le parapluie remplit bien sa fonction première.
 > On pourrait simuler de la pluie pour vérifier que le parapluie nous protège bien.
 
 ## text white
 De <strong>bout en bout (e2e)</strong> l'usage du parapluie
 > #JP# Ok, maintenant on est encore plus sûr que notre parapluie est de qualité.
-> $AC$ On pourrait envoyer des nouveaux modèles de parapluie pour voir si on a des retours positifs / négatifs.
+> #AC# On pourrait envoyer des nouveaux modèles de parapluie pour voir si on a des retours positifs / négatifs.
 
 ## text white
 Du <strong>canary testing</strong> sur les nouveaux modèles
@@ -145,7 +145,7 @@ Du <strong>canary testing</strong> sur les nouveaux modèles
 ## text
 🤔
 > @00:04:30@ ±01:00
-> $AC$ Normalement vous devriez vous demander "Pourquoi ces deux là me parlent de parapluie ?"
+> #AC# Normalement vous devriez vous demander "Pourquoi ces deux là me parlent de parapluie ?"
 > On a voulu vous montrer que les tests, c'est pas juste une question de techno, c'est aussi une réflexion et une stratégie.
 > Par cette parabole....douteuse... on vous a partagé quelques définitions sur des procédés de tests qui répondent à différents besoin.
 > Les définitions de tests unitaires, d'intégration et d'end-to-end, de mock varient beaucoup de techno en techno, de personne en personne, de projet en projet.
@@ -155,13 +155,13 @@ Du <strong>canary testing</strong> sur les nouveaux modèles
 
 ## text
 Quelle <strong>stratégie</strong> alors pour mes tests ?
-> $AC$ Quand on vous parle de conception / structuration des tests, vous avez certainement un modèle en tête.
+> #AC# Quand on vous parle de conception / structuration des tests, vous avez certainement un modèle en tête.
 > Vous avez probablement entendu parlé de la pyramide des tests.
 > C'est le modèle le plus connu, mais le connaissez-vous vraiment ?
 
 ## text white
 La pyramide des tests
-> $AC$ La pyramide des tests dans votre tête c'est quoi ?
+> #AC# La pyramide des tests dans votre tête c'est quoi ?
 > Quand on a fouillé avec Jules, on a trouvé énormément de représentation de celle-ci et vous aller voir c'est assez surprenant.
 > Aller, soirée diapositives, voici donc 3 exemples trouvés sur internet.
 
@@ -169,21 +169,21 @@ La pyramide des tests
 <img src="src/img/pyramide/pyramide-1.png" />
 Pyramide des tests modèle 1
 
-> $AC$ Bel arc en ciel n'est-ce pas ? 
+> #AC# Bel arc en ciel n'est-ce pas ? 
 > On voit une notion de vitesse et peut-être de scope.
 
 ## ext-content
 <img src="src/img/pyramide/pyramide-2.png" />
 Pyramide des tests modèle 2
 
-> $AC$ Ici on voit des "solutions tests", qui ne sont pas définies dans l'article connexe.
+> #AC# Ici on voit des "solutions tests", qui ne sont pas définies dans l'article connexe.
 > Pourquoi pas des "Problem tests" ?
 
 ## ext-content white
 <img src="src/img/pyramide/pyramide-3.png" />
 Pyramide des tests modèle 3 / ?
 
-> $AC$ Celle-là je l'aime bien, elle a le bon goût du fait maison.
+> #AC# Celle-là je l'aime bien, elle a le bon goût du fait maison.
 > Ici E2E pour end-to-end
 > #JP# Bon on pourrait jouer des heures à vous montrer des pyramides, mais on va pas le faire.
 > 3 étages, parfois 2 étages, plusieurs dimensions, clairement le modèle est fortement interpreté.
@@ -191,7 +191,7 @@ Pyramide des tests modèle 3 / ?
 
 ## text white
 Mais en vrai ça vient d'où ?
-> $AC$ Le réflexe qu'on devrait avoir ce serait de savoir d'où ça vient au départ.
+> #AC# Le réflexe qu'on devrait avoir ce serait de savoir d'où ça vient au départ.
 > Je suis assez dérangé de toutes les interprétations qu'on peut voir.
 > J'ai le sentiment que tout le monde réinterprete un modèle sans avoir fait l'effort d'aller chercher la source.
 > Ou même sans dire que c'est une variante du modèle initiale.
@@ -199,18 +199,18 @@ Mais en vrai ça vient d'où ?
 
 ## text white
 Mais en vrai ça vient <strong>de qui</strong> ?
-> $AC$ de qui !
+> #AC# de qui !
 > Déjà, contrairement à ce qu'on peut lire dans beaucoup d'article, non ce n'est pas Martin Fowler.
 
 ## media contain logo
 <img src="src/img/mike-cohn.png">
 
-> $AC$ C'est Mike Cohn, dans son livre "Succeeding with Agile: Software Development using Scrum".
+> #AC# C'est Mike Cohn, dans son livre "Succeeding with Agile: Software Development using Scrum".
 
 ## ext-content
 <img src="src/img/succeeding-with-agile.png">
 
-> $AC$ Dans ce livre il défini un modèle en forme de pyramide pour comparer 3 typologies de tests tout en comparant leur facilité de mise en oeuvre et leur capacité à apporter du feedback rapidement. 
+> #AC# Dans ce livre il défini un modèle en forme de pyramide pour comparer 3 typologies de tests tout en comparant leur facilité de mise en oeuvre et leur capacité à apporter du feedback rapidement. 
 > Voyons ça un peu de plus près.
 
 ## ext-content contain
@@ -238,14 +238,14 @@ Les limites de ce modèle
 ## text
 Un modèle de <strong>2009</strong>
 > #JP# On ne va pas jeter la pierre à Mike Cohn, lui même reconnait dans son livre que cette pyramide fait sens en le liant au contexte technologique.
-> $AC$ Pour autant on voit encore ce modèle exposé, transformé, avec plus ou moins d'étages sans pour autant qu'on se préoccupe du message initial.
+> #AC# Pour autant on voit encore ce modèle exposé, transformé, avec plus ou moins d'étages sans pour autant qu'on se préoccupe du message initial.
 
 ## ext-content contain
 <img src="src/img/honeycomb-test-model-033e461521df0d8b1cf5bf7dc22e1380.png">
 https://cookbook.marmicode.io/angular/pragmatic-testing-strategy/
 Designing a Pragmatic Testing Strategy - <strong>Y Jaaidi</strong>
 
-> $AC$ Pour nous, une façon de modéliser qui nous semble pertinente aujourd'hui, c'est le modèle exprimé dans un article de Younes Jaaidi avec un hexagone des tests.
+> #AC# Pour nous, une façon de modéliser qui nous semble pertinente aujourd'hui, c'est le modèle exprimé dans un article de Younes Jaaidi avec un hexagone des tests.
 > _Sur cette slide on référence son article, dont le lien est dans le qrcode en bas_
 > Ce modèle règle deux parties floues de la pyramide des tests qu'on a pu voir.
 > #JP# D'abord, il lève l'ambiguïté entre les tests d'intégration et les tests unitaires, en les regroupant sous le terme de tests "narrow".
@@ -255,7 +255,7 @@ Designing a Pragmatic Testing Strategy - <strong>Y Jaaidi</strong>
 ## text white
 🔬
 > @00:14:30@ ±03:00
-> $JP$ Maintenant voyons un peu ce qui se passe dans le monde réel, en sortant du modèle de Mike Cohn.
+> #JP# Maintenant voyons un peu ce qui se passe dans le monde réel, en sortant du modèle de Mike Cohn.
 > J'ai monté un institut de sondage Pipo forgé par nos biais de confirmation et quelques échanges que nous avons eus depuis plusieurs années quand on pose la question.
 > Soit en meetup, en conférence, en menant des audits, en faisant des entretiens, en regardant les résultats de sondages et d'enquêtes.
 > On a souvent posé la question: "Et vous, comment vous testez ?"
@@ -278,7 +278,7 @@ xxxxxxxxxx
 xxxxxxxxxx
 xxxxxx
 ==========
-> $AC$ Malheureusement la réponse qu'on entend le plus souvent.
+> #AC# Malheureusement la réponse qu'on entend le plus souvent.
 > Nous on teste pas, celle-ci, je l'aime particulièrement.
 > Souvent elle est teinté de frustration, de manque de temps, de pression, de manque de compétence, de manque de ressource, etc.
 > Régulièrement je réponds pour détendre un peu "Mais du coup vous faites que du code qui marche du premier coup ?".
@@ -328,7 +328,7 @@ xxxxxx
 > #JP# C'est souvent une question de priorité, de culture, de compétence, de ressource, de maturité, etc.
 > Ces approches sans automatisations peuvent paraitre de prime abord plus rapide, mais elles sont souvent plus couteuses à long terme.
 > La confiance sur le code va reposer sur la mémoire humaine, la documentation, la communication.
-> $AC$ Clairement la stratégie du **rien** ne nous parait pas viable mis à part dans un mode draft ou on sait qu'on va jeter explicitement ce qu'on produit.
+> #AC# Clairement la stratégie du **rien** ne nous parait pas viable mis à part dans un mode draft ou on sait qu'on va jeter explicitement ce qu'on produit.
 > On entend parfois des équipes qui font reposer le test manuels sur des équipe QA qui ont toute la charge de la qualité.
 > C'est le modèle qu'on appelle parfois le "Ice Cream Cone" posé par **Alister B Scott**.
 
@@ -347,7 +347,7 @@ Ice cream modele - <strong>Alister B Scott</strong>
 https://cookbook.marmicode.io/angular/pragmatic-testing-strategy#development-time-perception-bias
 Development Time Perception Bias - <strong>Y Jaaidi</strong>
 
-> $AC$ Ici on voit bien qu'en implémentant pas de tests automatisés, on a une perception du temps de développement qui est faussée.
+> #AC# Ici on voit bien qu'en implémentant pas de tests automatisés, on a une perception du temps de développement qui est faussée.
 > Sans même parler TDD, on est perpétuellement couper par une phase de vérification manuelle qu'on doit répéter à chaque itération.
 
 ## poster main
@@ -365,7 +365,7 @@ xxxxxxxx
 <img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 400px" />
 ==========
 > @00:20:00@ (06:40)
-> $JP$ En deuxième position des réponses à la question "Comment vous testez ?" on a souvent des réponses plus techniques.
+> #JP# En deuxième position des réponses à la question "Comment vous testez ?" on a souvent des réponses plus techniques.
 > On nous répond des technos de tests, des outils, des librairies, des frameworks.
 > Comme si ces outils étaient une fin en soi. 
 > Soyons clair des outils de tests c'est bien, mais savoir clairement "Qu'est-ce qu'on teste ?" est mieux.
@@ -449,7 +449,7 @@ xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxx
 ==========
-> $AC$ En troisième position, on va retrouver des équipes qui ont une stratégie de test très quantitative.
+> #AC# En troisième position, on va retrouver des équipes qui ont une stratégie de test très quantitative.
 > Pas forcément associé à des pratiques TDD, BDD, on retrouve cependant de plus en plus d'équipe qui utilisent des indicateurs de coverage de test pour objectiver leur stratégie de tests.
 > On a souvent des équipes qui vont se fixer des objectifs de coverage de test, 80%, 90%, 100%.
 > Le coverage c'est comptabiliser le ratio de lignes de code qui sont exécutées par vos tests.
@@ -570,12 +570,12 @@ Quoi en penser ?
 <br/>
 🤔
 > @00:27:45@ ±00:30
-> $AC$ Bon, d'après ce sondage DIY il nous laisse l'impression que les dev ont pas tous en tête toutes les raisons et les bénéfices qu'on tire du fait de tester.
+> #AC# Bon, d'après ce sondage DIY il nous laisse l'impression que les dev ont pas tous en tête toutes les raisons et les bénéfices qu'on tire du fait de tester.
 
 ## media contain white
 <img onclick="this.src+=''" src="src/img/unzoom.gif"/>
 
-> $AC$ En fait, si on dézoome et qu'on se demande **pourquoi** on teste, on compte 5 raisons de pourquoi on devrait automatiser des tests.
+> #AC# En fait, si on dézoome et qu'on se demande **pourquoi** on teste, on compte 5 raisons de pourquoi on devrait automatiser des tests.
 
 ## kiosk
 > #JP# On va vous faire participer un peu ! On va voir si on peut retrouver ensemble ces 5 motivations.
@@ -640,7 +640,7 @@ en plus c'est rapide -> **DEMO** playwright overhead
 ## text
 Pour les <strong>believers</strong> 🫵
 
-> $AC$ Pour les believers, qui par _manque de temps_ ne testent pas.
+> #AC# Pour les believers, qui par _manque de temps_ ne testent pas.
 > En 2025 on a deux outils qui peuvent vous aider à tester plus rapidement.
 > La mise en place d'une stack de tests n'est plus si compliqué ou long.
 
@@ -670,7 +670,7 @@ Vitest: testing DX reimagined, <strong>Vladimir</strong>, ViteConf 2022
 https://www.youtube.com/watch?v=oB553Noerlc
 <img src="src/img/vitest-presentation.png">
 
-> $AC$ Je vous recommande cette conférence de Vladimir, qui explique très bien Vitest.
+> #AC# Je vous recommande cette conférence de Vladimir, qui explique très bien Vitest.
 
 ## tip
 <strong>Préfèrez Vitest</strong> à Jest en 2025
@@ -679,7 +679,7 @@ https://www.youtube.com/watch?v=oB553Noerlc
 
 ## text
 Pour vos tests <strong>UI</strong>...
-> $AC$ Pour vos tests d'UI il existe plusieurs outils maintenant sur le marché pour piloter des navigateurs.
+> #AC# Pour vos tests d'UI il existe plusieurs outils maintenant sur le marché pour piloter des navigateurs.
 > Vous connaissez peut-être WebdriverIo, Puppeteer, Cypress, Selenium, etc.
 > Celui qu'on a décidé de vous recommander en 2025 c'est...
 
@@ -747,7 +747,7 @@ Playwright - <strong>Mocking</strong>
 ## text
 Pour les <strong>technophiles</strong> 🫵
 
-> $AC$ Essayez une approche plus à proximité du métiers de vos applications / outils.
+> #AC# Essayez une approche plus à proximité du métiers de vos applications / outils.
 > Pensez d'abord à vos it de tests plutot qu'à comment les implémenter.
 > Vous avez des tests en place, c'est super cool mais essayons d'en améliorer la qualité et d'éloigner un peu leur implémentation du code source
 > C'est souvent l'aspect de documentation présenter plus haut qui peut vous manquer.
@@ -793,18 +793,18 @@ Soignez votre <strong><em>testbase</em></strong> comme votre codebase
 > #AC# Si vous aimez vos outils et votre code, alors donner autant d'amour à votre testbase.
 > Tout d'abord par souci de cohérence, mais surtout parce que quand on y réfléchit un peu, on devrait avoir des contraintes, des règles similaires.
 > À savoir, le code des tests doit être lu, compris, maintenu dans le temps.
-> $AC$ Si on ne se fixe pas de règle, on peut vite se retrouver avec des tests qui se ressemblent, qui se dupliquent.
+> #AC# Si on ne se fixe pas de règle, on peut vite se retrouver avec des tests qui se ressemblent, qui se dupliquent.
 > Sachez que dans Eslint, l'outil de lint en JS le plus connu, il en existe des tas.
 
 ## ext-content contain
 <img src="src/img/expect-expect-light.png">
 Le readme dans le repo <strong>eslint-plugin-vitest</strong>
 
-> $AC$ Ma préférée étant la règle `expect-expect` de eslint-plugin-vitest.
+> #AC# Ma préférée étant la règle `expect-expect` de eslint-plugin-vitest.
 > Qui vérifie que pour chaque test, on vérifie bien au moins quelque chose.
 > Il existe pleins de set de règles de lint pour vos fichiers de tests qui vont vous aider à en maintenir la qualité.
 > Appliquer du lint sur vos tests si ce n'est pas déjà le cas.
-> $AC$: Je me rappelle avoir appliquer Gherkin-lint sur une base d'un projet, ça a été sport mais bénéfique.
+> #AC#: Je me rappelle avoir appliquer Gherkin-lint sur une base d'un projet, ça a été sport mais bénéfique.
 > J'ai pu faire le ménage de plein de tests qui testaient rien ou étaient mal écrits.
 
 ## blank white
@@ -839,12 +839,12 @@ Optez pour du <strong>mutation testing</strong>
 https://www.youtube.com/watch?v=297tyPsXOm8
 Mutation Testing - <strong>Loïc Knuchel</strong>
 
-> $JP$ Voilà une conférence que je recommande sur le mutation testing si vous voulez creuser c'est un sujet très intéressant.
+> #JP# Voilà une conférence que je recommande sur le mutation testing si vous voulez creuser c'est un sujet très intéressant.
 > Qui pose également quelques questions sur la performance de vos tests et le ciblage.
 
 ## tip
 <strong>Ciblez</strong> vos tests
-> $JP$ Est-il pertinent de lancer tous vos tests à tous les coups ? 
+> #JP# Est-il pertinent de lancer tous vos tests à tous les coups ? 
 > Si votre CI met 40min a vous donner un feedback positif ou negatif, clairement c'est dommage.
 > _le test le plus rapide, c'est celui qu'on ne lance pas_.
 > Si votre architecture le permet, configurez votre projet pour qu'il ne run que les tests impactés par vos changements.
@@ -856,7 +856,7 @@ Mutation Testing - <strong>Loïc Knuchel</strong>
 <img src="src/img/changed.png"/>
 Le flag <strong>--changed</strong> de Vitest
 
-> $JP$ Chez vitest, on a le flag `--changed` auquel on peut passer un hash de commit pour run les tests sur les fichiers qui diffèrent depuis le HEAD.
+> #JP# Chez vitest, on a le flag `--changed` auquel on peut passer un hash de commit pour run les tests sur les fichiers qui diffèrent depuis le HEAD.
 > Utiliser ce flag dans vos CI quand vous ne modifier que des sources ou des tests.
 > Et lancer tous vos tests pour certaines opérations comme des montées de version de dépendances ou sur la branch principale.
 
@@ -864,7 +864,7 @@ Le flag <strong>--changed</strong> de Vitest
 <img src="src/img/nxaffected.png">
 Nx affected project graph when <strong>lib10</strong> is changed - Nx docs
 
-> $JP$ Dans un contexte _monorepo_, les outils de gestions permettent de run les tests sur les modules impactés par vos changements. 
+> #JP# Dans un contexte _monorepo_, les outils de gestions permettent de run les tests sur les modules impactés par vos changements. 
 > Ici, on a `nx affected`....
 > Si on fait une modif dans le module "lib10", on va run les tests de "lib10" et des modules qui dépendent de "lib10", mais pas les autres.
 > Cette option vous la retrouverez dans la plupart de ces outils.
@@ -872,7 +872,7 @@ Nx affected project graph when <strong>lib10</strong> is changed - Nx docs
 
 ## text
 <strong>--bail</strong>
-> $JP$ Ce que vous voulez, c'est être prévenu au premier tests qui casse pour rapidement intervenir.
+> #JP# Ce que vous voulez, c'est être prévenu au premier tests qui casse pour rapidement intervenir.
 > C'est ce que fait l'option --bail que vous retrouverez dans la plupart des outils de tests.
 
 ## blank white
@@ -881,30 +881,30 @@ Nx affected project graph when <strong>lib10</strong> is changed - Nx docs
 ## text
 Pour les <strong>good enough</strong> 🫵
 > @temps + 00:02:00 ±00:30
-> $AC$ Pour les good enough, qui testent que certaines parties de leur codebase, qui ont une stratégie de test très ciblée.
+> #AC# Pour les good enough, qui testent que certaines parties de leur codebase, qui ont une stratégie de test très ciblée.
 > Vous avez une stratégie de test, ok c'est cool ! 
 > Mais est-ce qu'il est facile pour une nouvelle personne à onboarder de comprendre votre stratégie de test ?
 > Etes-vous sur que votre stratégie répond bien aux 5 raisons évoquées plus tôt ?
-> $AC$ pour les "good enough" et même tous les autres, on vous conseille de documenter votre stratégie de test.
+> #AC# pour les "good enough" et même tous les autres, on vous conseille de documenter votre stratégie de test.
 
 ## tip 
 <strong>Documentez</strong> votre stratégie de test
-> $AC$ Ok vous me direz c'est cool mais comment ?
+> #AC# Ok vous me direz c'est cool mais comment ?
 > On vous propose un nouveau Standard.
 > #JP# Vous connaissez peut-être les standard dans l'open source
 
 ## text
 <strong>README</strong>.md
-> $AC$ Comme Readme.md pour décrire l'essentiel de votre projet
+> #AC# Comme Readme.md pour décrire l'essentiel de votre projet
 
 ## text
 <strong>CONTRIBUTING</strong>.md
-> $AC$ Comme CONTRIBUTING.md pour décrire comment installer votre projet from scratch et proposer une contribution
+> #AC# Comme CONTRIBUTING.md pour décrire comment installer votre projet from scratch et proposer une contribution
 > On vous propose donc de rajouter un
 
 ## tip
 Ajouter un <strong>TESTING</strong>.md
-> $AC$ TESTING.md
+> #AC# TESTING.md
 
 ## demo
 ```txt
@@ -921,7 +921,7 @@ Bon, au final...
 > L'automatisation est un vrai plus pour vous aider à itérer mieux et plus vite.
 > Mais la mise en place dépendra de votre stratégie, de vos choix.
 > Si une personne porte un Kway sous son parapluie, elle n'est pas forcément folle, elle a peut-être juste une bonne raison.
-> $JP$ On vous invite à réfléchir à vos tests, à votre stratégie de tests, à vos outils, à vos librairies.
+> #JP# On vous invite à réfléchir à vos tests, à votre stratégie de tests, à vos outils, à vos librairies.
 > Ne prenez pas les modèles de tests pour des vérités absolues, adaptez les à votre contexte.
 > Gardez juste en tete les 5 raisons pour lesquelles on souhaite automatiser les tests, et vous devriez vous en sortir.
 
