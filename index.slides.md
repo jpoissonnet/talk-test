@@ -266,7 +266,7 @@ Designing a Pragmatic Testing Strategy - <strong>Y Jaaidi</strong>
 Les believers
 ==========
 _"Nous on ne test pas, on a pas le temps."_
-<img src="src/img/chaplin.gif" style="max-height: 300px;" />
+<img src="src/img/chaplin.gif" style="max-height: 12em;" />
 ==========
 xxxxxxxxxx
 xxxxxxxxxx
@@ -312,7 +312,7 @@ O outil : 21 red
 Les believers
 ==========
 _"Nous on ne test pas, on a pas le temps."_
-<img src="src/img/chaplin.gif" style="max-height: 300px;" />
+<img src="src/img/chaplin.gif" style="max-height: 12em;" />
 ==========
 xxxxxxxxxx
 xxxxxxxxxx
@@ -362,7 +362,7 @@ xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxx
 ==========
-<img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 400px" />
+<img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 15em;" />
 ==========
 > @00:20:00@ (06:40)
 > #JP# En deuxième position des réponses à la question "Comment vous testez ?" on a souvent des réponses plus techniques.
@@ -381,7 +381,7 @@ Faire des tests, juste pour en faire
 xxxxxxxxxx
 xxxxxxxx
 ==========
-<img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 400px" />
+<img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 15em;" />
 ==========
 > #JP# On a régulièrement cette réponse quand la stratégie de test semble imposée de manière très solutionniste.
 > On fait des tests parce qu'on nous a dit d'en faire / qu'on nous a dit que c'était bien.
@@ -503,7 +503,7 @@ xxxxxxx
 Les good enough
 ==========
 _"On teste que cette partie là, le reste c'est pas important"_
-<img src="src/img/david-goodenough.png" style="object-position: top; min-height: 300px">
+<img src="src/img/david-goodenough.png" style="object-position: top; min-height: 12em;">
 ==========
 xxxxxxxxxx
 xxxxxxxxxx
@@ -526,7 +526,7 @@ xxxxxxx
 Les good enough
 ==========
 _"On teste que cette partie là, le reste c'est pas important"_
-<img src="src/img/david-goodenough.png" style="object-position: top; min-height: 300px">
+<img src="src/img/david-goodenough.png" style="object-position: top; min-height: 12em;">
 ==========
 xxxxxxxxxx
 xxxxxxxxxx
