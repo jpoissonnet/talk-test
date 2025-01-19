@@ -718,14 +718,14 @@ Pour vos tests <strong>UI</strong>...
 > Celui qu'on a décidé de vous recommander en 2025 c'est...
 
 ## tip
-Adopter <strong>Playright</strong> en 2025
+Adopter <strong>Playwright</strong> en 2025
 
 > #JP# Playwright
 > Il a pas mal de fonctionnalités, qui peuvent couvrir la plupart de vos cas d'usages.
 > Mais surtout, il est très simple à mettre en place.
 > La aussi, en 2 temps 3 mouvements, vous avez un test d'UI qui tourne sur votre ordinateur mais également dans une CI.
 
-# demo
+## demo
 
 > #JP# Si je prends un exemple, voilà un site de démo, qui a un bouton qui au clic affiche un résultat.
 > J'ai un dossier dans le quel j'ai simplement fait initialisé playwright avec `pnpm create playwright`.
@@ -736,32 +736,39 @@ Adopter <strong>Playright</strong> en 2025
 > Créeons un nouveau fichier `button.spec.js` qui: va sur la page, clic sur le bouton et vérifie le contenu.
 
 ## text
-Est-ce que c'est long ?
-> On compare avec test unitaire à l'oral en disant 10x
+⏱ 300ms
+> #JP# Mon test ne fait que cliquer sur un bouton... c'est un peu long non ?
+> Il faut imaginer que devant un test unitaire, c'est à peu près 10 fois plus...
+> Bon, bah c'est pas génial comme nouvelle, peut être qu'on peut se demander... _qu'est ce qui est long ?_
 
 ## text
-quest-ce qui est long ?
+Qu est-ce qui est long ? 🐢
+> #JP#... peut être que vous avez des idées... mais j'aime bien expérimenter pour être sur.
+> Alors j'ai fait en sorte que le delai de l'API que j'appelle soit paramétrable.
+> Comme ça je peux mesurer la différence entre la réponse de l'API et le temps total du test.
+> Ca me donne une idée de l'overhead de mon test.
+
+## stackedchart unit="ms" 
+Temps des tests
+295ms : 200,#4285f4;95,#34a853;
+> #JP# En paramétrant l'API à 200ms, on voit que le test prend 295ms.
+
+
+## stackedchart unit="ms" 
+Temps des tests
+503ms : 400,#4285f4;103,#34a853;
+913ms : 800,#4285f4;133,#34a853;
+1716ms : 1600,#4285f4;116,#34a853;
+
+## stackedchart unit="ms" 
+Temps des tests
+503ms : 400,#4285f4;103,#34a853;
+913ms : 800,#4285f4;133,#34a853;
+1716ms : 1600,#4285f4;116,#34a853;
+0ms : 196,#34a853;
 
 ## text
-C'est le réseau !
-> On peut vous le prouver
-
-## barchart unit="ms" max=25810 tiny
-Overhead de playwright
-0ms : 190
-100ms : 197
-200ms : 295
-400ms : 503
-800ms : 933
-1.6s : 1716
-3.2s : 3328
-6.4s : 6537
-12.8s : 12966
-25.6s : 25810
-<!-- moyenne = 134ms de overhead -->
-
-## text
-quelle solution
+Comment y remédier ?
 
 ## text
 La soufflerie
