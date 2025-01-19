@@ -742,6 +742,7 @@ Playwright - <strong>Mocking</strong>
 
 
 ## blank white
+> @00:38:30@ ±01:00
 > Bon... maintenant quels conseils pour les technophiles !
 
 ## text
@@ -812,7 +813,7 @@ Le readme dans le repo <strong>eslint-plugin-vitest</strong>
 
 ## text
 Pour les <strong>sceptiques</strong> 🫵
-> @temps d'avant + @00:02:00 ±00:30
+> @00:40:30@ ±00:30
 > #JP# Pour les sceptiques, qui testent tout, avec un $objectif de coverage$.
 > Comment vous dire.... le coverage n'est pas un indicateur pertinent de la qualité de vos tests.
 > C'est un indicateur quantitatif mais il peut vous donner une fausse indication de la qualité de vos tests.
@@ -880,7 +881,7 @@ Nx affected project graph when <strong>lib10</strong> is changed - Nx docs
 
 ## text
 Pour les <strong>good enough</strong> 🫵
-> @temps + 00:02:00 ±00:30
+> @00:42:30@ ±00:30
 > #AC# Pour les good enough, qui testent que certaines parties de leur codebase, qui ont une stratégie de test très ciblée.
 > Vous avez une stratégie de test, ok c'est cool ! 
 > Mais est-ce qu'il est facile pour une nouvelle personne à onboarder de comprendre votre stratégie de test ?
@@ -915,7 +916,7 @@ Ajouter un <strong>TESTING</strong>.md
 
 ## text
 Bon, au final...
-> @temps d'avant + 00:01:20 ±00:30@
+> @00:43:50@ ±00:30
 > Au final, on a vu qu'il n'y a pas de solution miracle pour vos tests ni votre stratégie de tests.
 > Tout va dépendre du context que vous avez, de votre équipe, de votre projet, de votre entreprise.
 > L'automatisation est un vrai plus pour vous aider à itérer mieux et plus vite.
