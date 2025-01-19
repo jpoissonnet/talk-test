@@ -248,12 +248,14 @@ https://cookbook.marmicode.io/angular/pragmatic-testing-strategy/
 Designing a Pragmatic Testing Strategy - <strong>Y Jaaidi</strong>
 
 > $AC$ Pour nous, une façon de modéliser qui nous semble pertinente aujourd'hui, c'est le modèle exprimé dans un article de Younes Jaaidi avec un hexagone des tests.
+> _Sur cette slide on référence son article, dont le lien est dans le qrcode en bas_
 > Ce modèle règle deux parties floues de la pyramide des tests qu'on a pu voir.
 > #JP# D'abord, il lève l'ambiguïté entre les tests d'intégration et les tests unitaires, en les regroupant sous le terme de tests "narrow".
 > Ensuite, il déplace ces tests unitaires vers le centre de l'hexagone, pour montrer qu'ils sont au cœur de la stratégie de test.
 > Mais qu'ils ne sont pas la base de tout et qu'ils ne sont pas suffisants.
 
 ## text white
+@00:10:00@ ±03:00
 🔬
 > $AC$ Maintenant voyons un peu ce qui se passe dans le monde réel, en sortant du modèle de Mike Cohn.
 > J'ai monté un institut de sondage Pipo forgé par nos biais de confirmation et quelques échanges que nous avons eus depuis plusieurs années quand on pose la question.
