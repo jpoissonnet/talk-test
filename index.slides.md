@@ -143,8 +143,8 @@ Du <strong>canary testing</strong> sur les nouveaux modèles
 > _#JP#_ Yes, on appelle en général ça du canary testing, on envoie un petit groupe de personnes pour tester un nouveau produit.
 
 ## text
-@00:03:00@ ±01:00
 🤔
+> @00:03:00@ ±01:00
 > $AC$ Normalement vous devriez vous demander "Pourquoi ces deux là me parlent de parapluie ?"
 > #JP# C'est une très bonne question.
 > $AC$ On a voulu vous montrer que les tests, c'est pas juste une question de techno, c'est aussi une question de réflexion.
