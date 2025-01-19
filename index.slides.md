@@ -444,7 +444,9 @@ xxxxxxxxxx
 ==========
 <img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 400px" />
 ==========
-
+> @00:22:30@ ±01:00
+> Les technophiles globalement, c'est des devs qui font des tests pour en faire. 
+> Ils sont content de faire des tests, des tests qui en plus sont verts.
 
 ## poster main
 Les Sceptiques
@@ -529,7 +531,7 @@ xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxx
 ==========
-
+> @00:25:30@ ±01:00
 > #JP# Enfin, et c'est beaucoup plus rare, on a des équipes qui vont avoir une stratégie de test avec du focus.
 > Ou avec une quantité de tests très limitée.
 > Est-ce critiquable ? Est-ce que c'est une bonne idée ?
@@ -583,6 +585,7 @@ Quoi en penser ?
 <br/>
 <br/>
 🤔
+> @00:27:45@ ±00:30
 > $AC$ Bon, d'après ce sondage DIY il nous laisse l'impression que les dev ont pas tous en tête toutes les raisons et les bénéfices qu'on tire du fait de tester.
 
 ## media contain white
@@ -596,30 +599,19 @@ Quoi en penser ?
 > A vous de jouer !
 
 > Rouge : Conformité
-> On veut s'assurer que notre application respecte les spécifications et les contraintes, etc. En bref, que le code, il répond bien à nos attentes.
-> Que ce soit au moment du développement comme après.
+> On veut s'assurer que notre application respecte les spécifications et les contraintes, etc. 
 > Bleu : Documenter
-> Les tests sont une forme de documentation, ils laissent une trace des comportements de notre code dans différentes situations.
-> Tout ce dont on veut se souvenir.
+> Les tests sont une forme de documentation.
 > Magenta : Reproductibilité
-> Les tests permettent de reproduire des comportements, de s'assurer que le code fonctionne toujours comme prévu même dans des cas complexes.
-> Reproduire un parcours utilisateur complexe, ou bien impossible. Par exemple un disaster case, on a besoin de pouvoir tester
+> Les tests permettent de reproduire des comportements. 
+> Par exemple un disaster case, on a besoin de pouvoir tester
 > mon code dans des conditions non triviales. _Echec de paiement_
 > Jaune : Intégrité
-> Ils permettent d'assurer un état stable de l'application, dans l'historique du code, dans les branches, dans les environnements, etc.
-> **Observabilité** de l'état de l'application. Feedback rapide de l'état de l'application.
+> Ils permettent d'assurer un état stable de l'application, dans l'historique du code.
+> $Observabilité$ de l'état de l'application. Feedback rapide de l'état de l'application.
 > Vert : Stabilité
 > **Non-regression**
 > Est-ce que le diff que j'apporte répond bien à tous les tests déjà en place ? Est-ce que je casse pas quelque chose ? 
- 
-> $AC$ Pour nous voilà les 5 raisons qui nous poussent à écrire des tests. Il faut garder à l'esprit qu'on met en place
-> tout ça pour accélerer notre développement. D'ailleurs, si vous sentez qu'un ou plusieurs de ces points sont des sujets
-> dans vos projets, c'est peut-être le moment pour voir s'il n'y pas un besoin de voir ou revoir la stratégie de vos tests.
-> Si vous avez des tests qui :
-> - ne décrivent pas votre produit: peut etre qu'ils sont trop liés à l'implémentation
-> - ne sont fait qu'a la main: et vous en écrivez par obligation
-> - sont flaky: vous passez plus de temps à les réparer qu'à les écrire
-> - n'apportent aucune confiance
 
 ## poster main
 Nos conseils
@@ -648,6 +640,7 @@ xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxxx
 ==========
+> @00:32:00@ ±01:00
 > #JP# Pour répondre aux groupes identifiés dans le sondage, on a plusieurs conseils à vous donner.
 > On rappelle qu'il n'y a pas de solution miracle pour vos cas, juste des conseils.
 > Il faut aussi garder en tête qu'on est des dev front javascript, donc on va vous apporter des conseils qui sont orientés vers ce qu'on connait.
@@ -696,7 +689,7 @@ https://www.youtube.com/watch?v=oB553Noerlc
 > $AC$ Je vous recommande cette conférence de Vladimir, qui explique très bien Vitest.
 
 ## tip
-<strong>Préfère Vitest</strong> à Jest en 2025
+<strong>Préfèrez Vitest</strong> à Jest en 2025
 
 > #JP# Préférez donc Vitest à Jest en 2025, vous ne serez pas déçu.
 
@@ -758,12 +751,6 @@ Temps des tests
 913ms : 800,#4285f4;133,#34a853;
 1716ms : 1600,#4285f4;116,#34a853;
 
-## stackedchart unit="ms" 
-Temps des tests
-503ms : 400,#4285f4;103,#34a853;
-913ms : 800,#4285f4;133,#34a853;
-1716ms : 1600,#4285f4;116,#34a853;
-0ms : 196,#34a853;
 
 ## text
 Comment y remédier ?
@@ -771,11 +758,14 @@ Comment y remédier ?
 ## text
 La soufflerie
 
-
 ## text
-La mock
+Les mocks ?
 
-## ext-content
+## ext-content contain
+<img src="src/img/playwright.png">
+https://playwright.dev/docs/mock
+Playwright - <strong>Mocking</strong>
+
 > Montre API mock Playright
 
 ## tip
