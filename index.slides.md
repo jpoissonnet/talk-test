@@ -257,7 +257,7 @@ Designing a Pragmatic Testing Strategy - <strong>Y Jaaidi</strong>
 ## text white
 🔬
 > @00:14:30@ ±03:00
-> $AC$ Maintenant voyons un peu ce qui se passe dans le monde réel, en sortant du modèle de Mike Cohn.
+> $JP$ Maintenant voyons un peu ce qui se passe dans le monde réel, en sortant du modèle de Mike Cohn.
 > J'ai monté un institut de sondage Pipo forgé par nos biais de confirmation et quelques échanges que nous avons eus depuis plusieurs années quand on pose la question.
 > Soit en meetup, en conférence, en menant des audits, en faisant des entretiens, en regardant les résultats de sondages et d'enquêtes.
 > #JP# On a souvent posé la question: "Et vous, comment vous testez ?"
@@ -366,6 +366,7 @@ xxxxxxxx
 ==========
 <img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 400px" />
 ==========
+> @00:20:00@ (06:40)
 > $AC$ En deuxième position des réponses à la question "Comment vous testez ?" on a souvent des réponses plus techniques.
 > On nous répond des technos de tests, des outils, des librairies, des frameworks.
 > Comme si ces outils étaient une fin en soi. 
@@ -389,7 +390,7 @@ xxxxxxxx
 > Est-ce que ces outils, ces librairies vous aident ou au contraire vous infliges de l'aide.
 > Clairement vous ici dans la salle, si vous regardez vos tests, à quoi vous sont ils utiles ?
 > Qu'est-ce qu'ils vous apportent au jour le jour ?
-> $AC$ On observent alors de ces équipes des tests très liés au code source, ou bien des tests de très mauvaise qualité.
+> $AC$ On observe alors de ces équipes des tests très liés au code source, ou bien des tests de très mauvaise qualité.
 > Quelques exemples:
 
 ## code
@@ -413,7 +414,7 @@ it('should do addition', () => {
   expect(addition(1, 1)).toBe(2)
 })
 
-it('should do substraction', () => {
+it('should do addition', () => {
   expect(substract(1, 1)).toBe(0)
 })
 ```
@@ -443,12 +444,7 @@ xxxxxxxxxx
 ==========
 <img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 400px" />
 ==========
-> #JP# Souvent dans ces cas la, la stratégie de test semble imposée de manière très solutionniste.
-> On fait des tests parce qu'on nous a dit d'en faire / qu'on nous a dit que c'était bien.
-> Est-ce que ces outils, ces librairies vous aident ou au contraire vous infligent de l'aide.
-> Clairement vous ici dans la salle, si vous regardez vos tests, à quoi vous sont ils utiles ?
-> Qu'est-ce qu'ils vous apportent au jour le jour ?
-> On verra des solutions ensemble si vous vous reconnaissez dans cette catégorie.
+
 
 ## poster main
 Les Sceptiques
