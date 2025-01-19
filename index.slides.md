@@ -147,24 +147,24 @@ Du <strong>canary testing</strong> sur les nouveaux modèles
 > @00:03:00@ ±01:00
 > $AC$ Normalement vous devriez vous demander "Pourquoi ces deux là me parlent de parapluie ?"
 > #JP# C'est une très bonne question.
-> $AC$ On a voulu vous montrer que les tests, c'est pas juste une question de techno, c'est aussi une question de réflexion.
+> $AC$ On a voulu vous montrer que les tests, c'est pas juste une question de techno, c'est aussi une réflexion et une stratégie.
 > Par cette parabole....douteuse... on vous a partagé quelques définitions sur des procédés de tests qui répondent à différents besoin.
 > #JP# Il est possible que les définitions qu'on vient de donner ne vous plaisent pas.
-> On constate qu'il existe souvent des grandes différences entre les définitions de tests unitaires, d'intégration et d'end-to-end, de mock etc.
+> Les définitions de tests unitaires, d'intégration et d'end-to-end, de mock varient beaucoup de techno en techno, de personne en personne, de projet en projet.
 > $AC$ On ne cherche pas ici à donner des définitions universelles, on se met juste d'accord sur ce qu'on entend par ces termes et sur les besoins auxquels ils répondent.
-> Clairement, si vous les appelez autrement, il y a pas de soucis.
+> Clairement, si vous les appelez autrement, il n'y a pas de soucis.
+> #JP# Maintenant qu'on a fait les zozo avec nos parapluie, quelle stratégie de test on peut appliquer à nos projets, dans la vrai vie. ?
 
 ## text
 Quelle <strong>stratégie</strong> alors pour mes tests ?
-> #JP# Maintenant qu'on a fait les zozo avec notre parapluie, quelle stratégie de test on peut appliquer à nos projets ? 
-> Quand on vous parle de conception / structuration des tests, vous avez certainement un modèle en tête.
+> $AC$ Quand on vous parle de conception / structuration des tests, vous avez certainement un modèle en tête.
 > Vous avez probablement entendu parlé de la pyramide des tests.
 > C'est le modèle le plus connu, mais le connaissez-vous vraiment ?
 
 ## text white
 La pyramide des tests
 > $AC$ La pyramide des tests dans votre tête c'est quoi ?
-> Quand on a fouillé avec Jules, on a trouvé énormément de représentation de celle-ci et vous aller voir c'est assez comique.
+> Quand on a fouillé avec Jules, on a trouvé énormément de représentation de celle-ci et vous aller voir c'est assez surprenant.
 > Aller, soirée diapositives, voici donc 3 exemples trouvés sur internet.
 
 ## ext-content
@@ -183,7 +183,7 @@ Pyramide des tests modèle 2
 
 ## ext-content white
 <img src="src/img/pyramide/pyramide-3.png" />
-Pyramide des tests modèle 3 / 10000
+Pyramide des tests modèle 3 / ?
 
 > $AC$ Celle-là je l'aime bien, elle a le bon goût du fait maison.
 > Ici E2E pour end-to-end
@@ -194,6 +194,9 @@ Pyramide des tests modèle 3 / 10000
 ## text white
 Mais en vrai ça vient d'où ?
 > $AC$ Le réflexe qu'on devrait avoir ce serait de savoir d'où ça vient au départ.
+> Je suis assez dérangé de toutes les interprétations qu'on peut voir.
+> J'ai le sentiment que tout le monde réinterprete un modèle sans avoir fait l'effort d'aller chercher la source.
+> Ou même sans dire que c'est une variante du modèle initiale.
 > Et même...
 
 ## text white
