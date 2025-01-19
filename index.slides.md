@@ -144,7 +144,7 @@ Du <strong>canary testing</strong> sur les nouveaux modèles
 
 ## text
 🤔
-> @00:03:00@ ±01:00
+> @00:04:30@ ±01:00
 > $AC$ Normalement vous devriez vous demander "Pourquoi ces deux là me parlent de parapluie ?"
 > #JP# C'est une très bonne question.
 > $AC$ On a voulu vous montrer que les tests, c'est pas juste une question de techno, c'est aussi une réflexion et une stratégie.
@@ -255,8 +255,8 @@ Designing a Pragmatic Testing Strategy - <strong>Y Jaaidi</strong>
 > Mais qu'ils ne sont pas la base de tout et qu'ils ne sont pas suffisants.
 
 ## text white
-@00:10:00@ ±03:00
 🔬
+> @00:14:30@ ±03:00
 > $AC$ Maintenant voyons un peu ce qui se passe dans le monde réel, en sortant du modèle de Mike Cohn.
 > J'ai monté un institut de sondage Pipo forgé par nos biais de confirmation et quelques échanges que nous avons eus depuis plusieurs années quand on pose la question.
 > Soit en meetup, en conférence, en menant des audits, en faisant des entretiens, en regardant les résultats de sondages et d'enquêtes.
