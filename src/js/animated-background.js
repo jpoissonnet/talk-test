@@ -46,11 +46,12 @@ export class AnimatedBackground extends LitElement {
           }
 
           :host {
+              height: 100vh;
+              width: 100vw;
               --icon-size: 10rem;
           }
 
           .background {
-              position: absolute;
               inset: 0;
               background: var(--color-bb);
               display: flex;
