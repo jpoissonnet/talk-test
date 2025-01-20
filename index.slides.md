@@ -129,7 +129,7 @@ On <strong>mock</strong> le vent avec la soufflerie
 > #AC# En effet, en testant morceaux par morceaux notre parapluie, on n'est pas à l'abri de ne pas l'être.
 
 ## media fade-from logo
-<iframe src="https://giphy.com/embed/BmQPKjwhScjdK" frameBorder="0" allowFullScreen></iframe>
+<img src="src/img/singin_rain.gif"/>
 > #AC# Pour ça, il nous faudrait un test end-to-end, un test qui nous assure que le parapluie remplit bien sa fonction première.
 > On pourrait simuler de la pluie pour vérifier que le parapluie nous protège bien.
 
