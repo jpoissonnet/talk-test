@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  ensuite-present:
+    hash: m77fnpdqjxgwee2xa2vubcvbwi
+    path: patches/ensuite-present.patch
+
 importers:
 
   .:
@@ -26,7 +31,7 @@ importers:
         version: 3.6.0
       ensuite-present:
         specifier: 0.1.0
-        version: 0.1.0
+        version: 0.1.0(patch_hash=m77fnpdqjxgwee2xa2vubcvbwi)
       fs-extra:
         specifier: ^10.1.0
         version: 10.1.0
@@ -2897,7 +2902,7 @@ snapshots:
     dependencies:
       once: 1.4.0
 
-  ensuite-present@0.1.0:
+  ensuite-present@0.1.0(patch_hash=m77fnpdqjxgwee2xa2vubcvbwi):
     dependencies:
       node-static: 0.7.11
 
