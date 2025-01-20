@@ -704,12 +704,14 @@ Adopter <strong>Playwright</strong> en 2025
 
 ## text
 ⏱ 650ms
+
 > #JP# Mon test ne fait que cliquer sur un bouton... c'est un peu long non ?
 > Il faut imaginer que devant un test unitaire, c'est à peu près 10 fois plus...
 > Bon, bah c'est pas génial comme nouvelle, peut être qu'on peut se demander... _qu'est ce qui est long ?_
 
 ## text
 Qu est-ce qui est long ? 🐢
+
 > #JP#... peut être que vous avez des idées... mais j'aime bien expérimenter pour être sur.
 > Alors j'ai fait en sorte que le delai de l'API que j'appelle soit paramétrable.
 > Comme ça je peux mesurer la différence entre la réponse de l'API et le temps total du test.
@@ -717,21 +719,58 @@ Qu est-ce qui est long ? 🐢
 
 ## stackedchart unit="ms" 
 Temps des tests
-664ms : 200,#4285f4;464,#34a853;
-> #JP# En paramétrant l'API à 200ms, on voit que le test prend 295ms.
+640ms  : 640,#8a2be2;
 
+> #JP# En paramétrant l'API à 200ms, on voit que le test prend 295ms.
 
 ## stackedchart unit="ms" 
 Temps des tests
-503ms : 400,#4285f4;103,#34a853;
-913ms : 800,#4285f4;133,#34a853;
-1716ms : 1600,#4285f4;116,#34a853;
+640ms : 490,#8a2be2;150,#4285f4;
+> #JP# 150ms de lancement du browser
+
+## stackedchart unit="ms" 
+Temps des tests
+640ms : 390,#8a2be2;100,#34a853;150,#4285f4;
+> #JP# 100ms d'init de nouvelle page
+
+## stackedchart unit="ms" 
+Temps des tests
+640ms : 330,#8a2be2;60,#fbbc05;100,#34a853;150,#4285f4;
+> #JP# 60ms de clic sur le bouton
+
+## stackedchart unit="ms" 
+Temps des tests
+640ms : 130,#8a2be2;200,#ea4335;60,#fbbc05;100,#34a853;150,#4285f4;
+> #JP# 200ms de réponse de l'API
+
+## stackedchart unit="ms" 
+Temps des tests
+640ms : 130,#e38de0;200,#ea4335;60,#fbbc05;100,#34a853;150,#4285f4;
+> #JP# 130ms d'observation
+
+## stackedchart unit="ms"
+Temps des tests
+640ms : 130,#e38de0;200,#ea4335;60,#fbbc05;100,#34a853;150,#4285f4;
+640ms : 130,#e38de0;200,#ea4335;60,#fbbc05;100,#34a853;150,#4285f4;
+> #JP# 130ms d'observation
+
+## stackedchart unit="ms"
+Temps des tests
+640ms : 130,#e38de0;200,#ea4335;60,#fbbc05;100,#34a853;150,#4285f4;
+540ms : 130,#e38de0;200,#ea4335;60,#fbbc05;100,#34a853;
+> #JP# Ca je l'ai qu'une fois par fichier
+
+## stackedchart unit="ms"
+Temps des tests
+640ms : 130,#e38de0;200,#ea4335;60,#fbbc05;100,#34a853;150,#4285f4;
+410ms : 200,#ea4335;60,#fbbc05;100,#34a853;
+> #JP# Le expect je peux l'optimiser avec un poll
 
 ## text
-Comment y remédier ?
+Comment encore plus optimiser ? 🚀
 
 ## tip
-<strong>Mockez</strong> les APIs de vos tests UI
+<strong>Mockez</strong> les APIs de vos tests
 
 ## ext-content contain
 <img src="src/img/playwright.png">
