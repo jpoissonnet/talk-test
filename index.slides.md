@@ -730,44 +730,46 @@ Temps des tests
 
 ## stackedchart unit="ms" 
 Temps des tests
-640ms : 390,#8a2be2;100,#34a853;150,#4285f4;
-> #JP# 100ms d'init de nouvelle page
+640ms : 330,#8a2be2;160,#34a853;150,#4285f4;
+> #JP# 160ms de mon test
 
 ## stackedchart unit="ms" 
 Temps des tests
-640ms : 330,#8a2be2;60,#fbbc05;100,#34a853;150,#4285f4;
-> #JP# 60ms de clic sur le bouton
+640ms : 130,#8a2be2;200,#ea4335;160,#34a853;150,#4285f4;
+> #JP# 200ms d'appel réseau
 
 ## stackedchart unit="ms" 
 Temps des tests
-640ms : 130,#8a2be2;200,#ea4335;60,#fbbc05;100,#34a853;150,#4285f4;
-> #JP# 200ms de réponse de l'API
-
-## stackedchart unit="ms" 
-Temps des tests
-640ms : 130,#e38de0;200,#ea4335;60,#fbbc05;100,#34a853;150,#4285f4;
+640ms : 130,#e38de0;200,#ea4335;160,#34a853;150,#4285f4;
 > #JP# 130ms d'observation
 
 ## stackedchart unit="ms"
 Temps des tests
-640ms : 130,#e38de0;200,#ea4335;60,#fbbc05;100,#34a853;150,#4285f4;
-640ms : 130,#e38de0;200,#ea4335;60,#fbbc05;100,#34a853;150,#4285f4;
+640ms : 130,#e38de0;200,#ea4335;160,#34a853;150,#4285f4;
+640ms   : 130,#e38de0;200,#ea4335;160,#34a853;150,#4285f4;
 > #JP# 130ms d'observation
 
 ## stackedchart unit="ms"
 Temps des tests
-640ms : 130,#e38de0;200,#ea4335;60,#fbbc05;100,#34a853;150,#4285f4;
-540ms : 130,#e38de0;200,#ea4335;60,#fbbc05;100,#34a853;
+640ms : 130,#e38de0;200,#ea4335;160,#34a853;150,#4285f4;
+540ms   : 130,#e38de0;200,#ea4335;160,#34a853;
 > #JP# Ca je l'ai qu'une fois par fichier
 
 ## stackedchart unit="ms"
 Temps des tests
-640ms : 130,#e38de0;200,#ea4335;60,#fbbc05;100,#34a853;150,#4285f4;
-410ms : 200,#ea4335;60,#fbbc05;100,#34a853;
+640ms : 130,#e38de0;200,#ea4335;160,#34a853;150,#4285f4;
+410ms   : 200,#ea4335;160,#34a853;
 > #JP# Le expect je peux l'optimiser avec un poll
 
 ## text
 Comment encore plus optimiser ? 🚀
+
+## stackedchart unit="ms"
+Temps des tests
+640ms  : 130,#e38de0;200,#ea4335;60,#fbbc05;100,#34a853;150,#4285f4;
+210ms?? : 60,#fbbc05;100,#34a853;
+> #JP# Le expect je peux l'optimiser avec un poll
+
 
 ## tip
 <strong>Mockez</strong> les APIs de vos tests
