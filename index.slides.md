@@ -42,7 +42,7 @@ xxxxxxxxx
 > #AC# Bonjour à toutes et tous, j'espère que vous allez bien et que cette journée se déroule comme vous l'espériez.
 > Je m'appelle Antoine Caron et je suis Engineering manager Frontend chez Scaleway, vous m'avez peut-être vu l'année passée vous parler de Gzip.
 > #JP# Et moi c'est Jules Poissonnet, Frontend Dev chez Bedrock Streaming.
-> Si l'autre malin et moi-même sommes ici aujourd'hui, c'est pour vous parler de tests.
+> $Si l'autre malin et moi-même sommes ici aujourd'hui, c'est pour vous parler de tests$.
 > C'est un sujet qui nous intéresse beaucoup et qu'on trouve souvent mal abordé.
 > #AC# On espère avec cette présentation ouvrir un peu vos chakras sur la notion de testing.
 
@@ -70,7 +70,7 @@ xxxxxxxxx
 ==========
 
 > Souvent abordé de manière dogmatique, on va essayer une approche plus pragmatique
-> #JP# Que vous fassiez du frontend, du backend, du mobile ou de l'embarqué, des "tests" ou pas, on souhaite vous proposer quelques réfléxions / conseils et approches qui pourraient être utiles et concrètes.
+> #JP# Que vous fassiez du $frontend$, $du backend$, du mobile ou de l'embarqué, $des "tests" ou pas$, on souhaite vous proposer quelques réfléxions / conseils et approches qui pourraient être utiles et concrètes.
 > #AC# Alors pourquoi "Tester c'est tricher", tricher c'est enfreindre des règles établies, des conventions, des normes.
 > Pour nous, il existe des normes, des stratégies de tests qui sont souvent mal comprises, mal appliquées, mal interprétées.
 > Certain penseront, qu'à l'image d'un parapluie qui nous protègent de la pluie, les tests ne servent à qu'à nous protéger des bugs et des regressions. On verra ensemble qu'une stratégie de tests ne se limite pas qu'à ce simple besoin.
@@ -85,8 +85,8 @@ xxxxxxxxx
 
 > #AC# Super idée, j'adore les parapluies, c'est tellement pratique.
 > Mais attends, on est dev front, j'ai aucune idée des techno de test de parapluie.
-> #JP# La première chose que tu te demandes c'est "Quelles sont les techno ?"
-> Perso, je préfère me demander... _Comment on teste un parapluie_
+> #JP# $La première chose$ que tu te demandes c'est "Quelles sont les techno ?"
+> Perso, je préfère me demander... $_Comment on teste un parapluie_$
 
 ## text fade-from
 🤔 Comment on teste un parapluie ? 
@@ -99,13 +99,13 @@ Qu'est-ce qu'on teste ?
 ## media fade-from contain
 <img src="src/img/toile.png"/>
 
-> #JP# Il nous faut un procédé qui nous permet de tester unitairement la toile du parapluie.
+> #JP# Il nous faut un procédé qui nous permet de $tester unitairement la toile$ du parapluie.
 > #AC# Ah oui je vois où tu veux en venir, un genre de test unitaire où on s'occupe uniquement de la toile.
 > Ça nous permettrait d'éviter de fabriquer un parapluie qui nous protège pas du tout de la pluie.
 
 ## text white
 <strong>Test unitaire</strong> de la toile
-> #JP# Clairement ce serait déjà bien, mais toi comme moi, on sait que le principal souci des parapluies...
+> #JP# Clairement ce serait déjà bien, mais toi comme moi, on sait que $le principal souci des parapluies...$
 > #AC# C'est que le mécanisme est souvent fragile et fini par casser, le rendant inutilisable.
 > Il nous faudrait un procédé pour tester la robustesse du mécanisme.
 
@@ -113,19 +113,19 @@ Qu'est-ce qu'on teste ?
 <img src="src/img/mechanisme.png"/>
 
 > Il faudrait qu'on puisse ouvrir et fermer le mécanisme un grand nombre de fois pour s'assurer qu'il ne casse pas.
-> #JP# Un peu comme un test d'intégration, on vérifie qu'un ensemble des pièces fonctionnent bien ensemble.
+> #JP# Un peu comme un $test d'intégration$, on vérifie qu'un ensemble des pièces fonctionnent bien ensemble.
 
 ## text white
 <strong>Test d'intégration</strong> du mécanisme
-> #JP# Oui complètement, ce serait déjà pas mal, mais on sait tous que le vent est l'ennemi numéro 1 des parapluies.
+> #JP# Oui complètement, ce serait déjà pas mal, mais on sait tous que $le vent est l'ennemi numéro 1 des parapluies$.
 > #AC# Mais comment on fait pour tester ça ? On va pas arrêter la production tant qu'il n'y a pas de vent.
-> #JP# On peut surement faire passer les parapluies en soufflerie, pour s'assurer qu'ils tiennent le coup.
+> #JP# On peut surement faire passer les parapluies en $soufflerie$, pour s'assurer qu'ils tiennent le coup.
 > #AC# Ah oui, la soufflerie, ce serait comme un test avec des mocks.
 
 ## text white
 On <strong>mock</strong> le vent avec la soufflerie
 > #JP# Tout ça, ça nous donne un parapluie hydrophobe, robuste et résistant au vent.
-> Mais ça nous assure toujours pas qu'on est à l'abri de la pluie.
+> Mais $ça nous assure toujours pas$ qu'on est à l'abri de la pluie.
 > #AC# En effet, en testant morceaux par morceaux notre parapluie, on n'est pas à l'abri de ne pas l'être.
 
 ## media fade-from logo
@@ -140,7 +140,7 @@ De <strong>bout en bout (e2e)</strong> l'usage du parapluie
 
 ## text white
 Du <strong>canary testing</strong> sur les nouveaux modèles
-> _#JP#_ Yes, on appelle en général ça du canary testing, on envoie un petit groupe de personnes pour tester un nouveau produit.
+> #JP# Yes, on appelle en général ça du $canary testing$, on envoie un petit groupe de personnes pour tester un nouveau produit.
 
 ## text
 🤔
@@ -282,10 +282,10 @@ xxxxxx
 > Nous on teste pas, celle-ci, je l'aime particulièrement.
 > Souvent elle est teinté de frustration, de manque de temps, de pression, de manque de compétence, de manque de ressource, etc.
 > Régulièrement je réponds pour détendre un peu "Mais du coup vous faites que du code qui marche du premier coup ?".
-> #JP# Vous allez nous dire, on abuse, il y en a pas tant que ça des équipes qui ne testent pas.
+> #JP# Vous allez nous dire, on abuse, $il y en a pas tant d'équipes qui ne testent pas$.
 > Alors pour s'y être intéressé, il y a relativement peu d'étude statistique fiable sur le sujet.
 > Mais il y en a une déjà qu'on pourrait citer.
-> Vous connaissez le State of JS ? 
+> Vous connaissez $le State of JS$ ? 
 
 ## ext-content contain
 <img src="src/img/state-of-js.jpg" screenshot-url="https://stateofjs.com/en-US"/>
@@ -306,7 +306,7 @@ O outil : 21 red
 
 > Ca, c'est ce que déclarent les répondants à l'étude.
 > Déja on peut se rassurer, les équipes qui ne testent pas sont minoritaires.
-> On a cependant presque un quart qui n'utilise aucun outil de test.
+> On a cependant presque $un cinquieme qui n'utilise aucun outil de test$.
 
 ## poster main
 Les believers
@@ -323,11 +323,11 @@ xxxxxxxxxx
 xxxxxxxxxx
 xxxxxx
 ==========
-> Ne pas automatiser ses tests c'est souvent privilégier du temps humain de vérification.
+> Ne pas automatiser ses tests c'est souvent privilégier $du temps humain$ de vérification.
 > Il n'y a pas de magie, les équipes de devs vont manuellement tester lors de leur développement, les équipes produits, les équipes de tests parfois.
 > #JP# C'est souvent une question de priorité, de culture, de compétence, de ressource, de maturité, etc.
-> Ces approches sans automatisations peuvent paraitre de prime abord plus rapide, mais elles sont souvent plus couteuses à long terme.
-> La confiance sur le code va reposer sur la mémoire humaine, la documentation, la communication.
+> Ces approches sans automatisations $peuvent paraitre de prime abord plus rapide$, mais elles sont souvent plus couteuses à long terme.
+> La confiance sur le code va reposer sur $la mémoire humaine, la documentation, la communication$.
 > #AC# Clairement la stratégie du **rien** ne nous parait pas viable mis à part dans un mode draft ou on sait qu'on va jeter explicitement ce qu'on produit.
 > On entend parfois des équipes qui font reposer le test manuels sur des équipe QA qui ont toute la charge de la qualité.
 > C'est le modèle qu'on appelle parfois le "Ice Cream Cone" posé par **Alister B Scott**.
@@ -365,10 +365,10 @@ xxxxxxxx
 <img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 15em;" />
 ==========
 > @00:20:00@ (06:40)
-> #JP# En deuxième position des réponses à la question "Comment vous testez ?" on a souvent des réponses plus techniques.
-> On nous répond des technos de tests, des outils, des librairies, des frameworks.
+> #JP# En deuxième position des réponses à la question "Comment vous testez ?" on a souvent des $réponses plus techniques$.
+> On nous répond des $technos$ de tests, des outils, des librairies, des frameworks.
 > Comme si ces outils étaient une fin en soi. 
-> Soyons clair des outils de tests c'est bien, mais savoir clairement "Qu'est-ce qu'on teste ?" est mieux.
+> Soyons clair des outils de tests c'est bien, mais $savoir clairement "Qu'est-ce qu'on teste ?" est mieux$.
 
 ## poster main
 Les technophiles
@@ -383,12 +383,12 @@ xxxxxxxx
 ==========
 <img src="src/img/scott-blake-wq7oyx_Kx-4-unsplash.jpg" style="min-height: 15em;" />
 ==========
-> #JP# On a régulièrement cette réponse quand la stratégie de test semble imposée de manière très solutionniste.
+> #JP# On a régulièrement cette réponse quand la stratégie de test semble imposée de manière très $solutionniste$.
 > On fait des tests parce qu'on nous a dit d'en faire / qu'on nous a dit que c'était bien.
 > Est-ce que ces outils, ces librairies vous aident ou au contraire vous infliges de l'aide.
 > Clairement vous ici dans la salle, si vous regardez vos tests, à quoi vous sont ils utiles ?
 > Qu'est-ce qu'ils vous apportent au jour le jour ?
-> On observe alors de ces équipes des tests très liés au code source, ou bien des tests de très mauvaise qualité.
+> On observe alors de ces équipes des tests $très liés au code source$, ou bien des tests de très mauvaise qualité.
 > Quelques exemples:
 
 ## code
@@ -402,7 +402,7 @@ Feature: 404 page
     And I should not see the homepage image
     And I should not see my article description
 ```
-> Vous avez surement rencontré des tests qui testent rien ? des tests qui font des non observations par exemple.
+> Vous avez surement rencontré des tests qui testent rien ? des tests qui font des $non observations$ par exemple.
 > Ici avec un test écrit en Gherkin, qui ne vérifie rien, j'étais content de voir qu'il marchait encore quand j'ai supprimé le code de la page 404.
 > Inspiré de fait rééls...
 
@@ -583,16 +583,12 @@ Quoi en penser ?
 > A vous de jouer !
 
 > Rouge : Conformité
-> On veut s'assurer que notre application respecte les spécifications et les contraintes, etc. 
+> respecte les spécs et les contraintes, etc. 
 > Bleu : Documenter
-> Les tests sont une forme de documentation.
 > Magenta : Reproductibilité
-> Les tests permettent de reproduire des comportements. 
-> Par exemple un disaster case, on a besoin de pouvoir tester
-> mon code dans des conditions non triviales. _Echec de paiement_
+> disaster case / _Echec de paiement_
 > Jaune : Intégrité
-> Ils permettent d'assurer un état stable de l'application, dans l'historique du code.
-> $Observabilité$ de l'état de l'application. Feedback rapide de l'état de l'application.
+> Feedback rapide de l'état de l'application.
 > Vert : Stabilité
 > **Non-regression**
 > Est-ce que le diff que j'apporte répond bien à tous les tests déjà en place ? Est-ce que je casse pas quelque chose ? 
