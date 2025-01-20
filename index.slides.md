@@ -703,7 +703,7 @@ Adopter <strong>Playwright</strong> en 2025
 > Créeons un nouveau fichier `button.spec.js` qui: va sur la page, clic sur le bouton et vérifie le contenu.
 
 ## text
-⏱ 650ms
+⏱ 640ms
 
 > #JP# Mon test ne fait que cliquer sur un bouton... c'est un peu long non ?
 > Il faut imaginer que devant un test unitaire, c'est à peu près 10 fois plus...
@@ -711,7 +711,6 @@ Adopter <strong>Playwright</strong> en 2025
 
 ## text
 Qu est-ce qui est long ? 🐢
-
 > #JP#... peut être que vous avez des idées... mais j'aime bien expérimenter pour être sur.
 > Alors j'ai fait en sorte que le delai de l'API que j'appelle soit paramétrable.
 > Comme ça je peux mesurer la différence entre la réponse de l'API et le temps total du test.
@@ -721,65 +720,67 @@ Qu est-ce qui est long ? 🐢
 Temps des tests
 640ms  : 640,#8a2be2;
 
-> #JP# En paramétrant l'API à 200ms, on voit que le test prend 295ms.
+> #JP# J'ai analysé le temps en détail d'un test playwright
 
 ## stackedchart unit="ms" 
 Temps des tests
 640ms : 490,#8a2be2;150,#4285f4;
-> #JP# 150ms de lancement du browser
+> #JP# Sur 640ms au total, on a 150ms de lancement du browser
 
 ## stackedchart unit="ms" 
 Temps des tests
 640ms : 330,#8a2be2;160,#34a853;150,#4285f4;
-> #JP# 160ms de mon test
+> #JP# 160ms de mon test donc la navigation et le clic
 
 ## stackedchart unit="ms" 
 Temps des tests
 640ms : 130,#8a2be2;200,#ea4335;160,#34a853;150,#4285f4;
-> #JP# 200ms d'appel réseau
+> #JP# 200ms de temps d'attente de l'appel réseau
 
 ## stackedchart unit="ms" 
 Temps des tests
 640ms : 130,#e38de0;200,#ea4335;160,#34a853;150,#4285f4;
-> #JP# 130ms d'observation
+> #JP# et 130ms d'observation, le expect en lui même, qui attend un petit interval de temps entre deux vérifications.
 
 ## stackedchart unit="ms"
 Temps des tests
 640ms : 130,#e38de0;200,#ea4335;160,#34a853;150,#4285f4;
 640ms   : 130,#e38de0;200,#ea4335;160,#34a853;150,#4285f4;
-> #JP# 130ms d'observation
+> #JP# Qu'est ce qu'on peut enlever la-dedans ?
 
 ## stackedchart unit="ms"
 Temps des tests
 640ms : 130,#e38de0;200,#ea4335;160,#34a853;150,#4285f4;
-540ms   : 130,#e38de0;200,#ea4335;160,#34a853;
-> #JP# Ca je l'ai qu'une fois par fichier
+490ms   : 130,#e38de0;200,#ea4335;160,#34a853;
+> #JP# L'initialisation du browser car je l'ai qu'une fois par fichier
 
 ## stackedchart unit="ms"
 Temps des tests
 640ms : 130,#e38de0;200,#ea4335;160,#34a853;150,#4285f4;
-410ms   : 200,#ea4335;160,#34a853;
-> #JP# Le expect je peux l'optimiser avec un poll
+360ms : 200,#ea4335;160,#34a853;
+> #JP# L'intervalle entre deux observations on peut le forcer à 0 (attention au CPU)
 
 ## text
 Comment encore plus optimiser ? 🚀
 
 ## stackedchart unit="ms"
 Temps des tests
-640ms  : 130,#e38de0;200,#ea4335;60,#fbbc05;100,#34a853;150,#4285f4;
-210ms?? : 60,#fbbc05;100,#34a853;
-> #JP# Le expect je peux l'optimiser avec un poll
-
+640ms  : 130,#e38de0;200,#ea4335;160,#34a853;150,#4285f4;
+160ms?? : 160,#34a853;
+> #JP# Et enfin, peut on s'abstraire du réseau, la composante la plus lente, la plus fragile
+> et surtout la plus couteuse dans un test plus long?
+> Bien evidemment... on vous recommande de _mocker vos APIs._
 
 ## tip
 <strong>Mockez</strong> les APIs de vos tests
+> #JP# Comme ça vous pouvez simuler les réponses que vous voulez et surtout c'est instantané.
 
 ## ext-content contain
 <img src="src/img/playwright.png">
 https://playwright.dev/docs/mock
 Playwright - <strong>Mocking</strong>
 
-> Montre API mock Playright
+> Playwright permet de faire ça en une ligne de code, c'est magnifique
 
 
 ## blank white

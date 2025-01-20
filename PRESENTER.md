@@ -1,35 +1,35 @@
 # This document aims to provide the steps to run before the presentation to have everything ready.
 
-## 1. Install the dependencies
-```bash
-pnpm i
+1. Lance le server
+```shell
+pnpm start
+```
+2. Lance le serveur de la démo et l'onglet
+```shell
+pnpm demo
+open -a firefox -g http://localhost:3000/
 ```
 
-## 2. Prepare the demos
-### Run the docker daemon
-```bash
-orb # start orbstack
-```
-### Run a Redis container in a terminal
-```bash
-docker run -d -p 6379:6379 redis # Run a Redis container for the vitest without test containers
+3. Lance le presenter
+```shell
+pnpm presenter
+open -a firefox -g http://localhost:4320/pages/console/?slide-deck-url=http://localhost:8080/
 ```
 
-### Run the demo app for playwright-overhead in another terminal
-```bash
-pnpm --dir demo/dummy-app exec dev # Run the Playwright Overhead demo
+4. Ouvre le viewer
+```shell
+open -a firefox -g http://localhost:4320/pages/viewer/
 ```
 
-# Commands to run the demos
-## Playwright Overhead demo
-```bash
-pnpm --dir demo/dummy-app exec playwright test --ui # run the tests with the playwright UI
+
+Run all at once in a terminal
+```shell
+pnpm start & pnpm demo & pnpm presenter & open -a firefox -g http://localhost:3000/ & open -a firefox -g http://localhost:4320/pages/console/?slide-deck-url=http://localhost:8080/ & open -a firefox -g http://localhost:4320/pages/viewer/
 ```
 
-## Vitest-container
-```bash
-pnpm --dir demo/vitest-container exec vitest # run all the tests
-pnpm --dir demo/vitest-container exec vitest container # run only the mocked tests
-pnpm --dir demo/vitest-container exec vitest index --sequence.concurrent # run the tests in parallel
-pnpm --dir demo/vitest-container exec vitest container --sequence.concurrent # run the tests in parallel
-```
+## Dans Webstorm
+
+1. Ouvre dans Webstorm, le dossier de la présentation `talk-test/demo/playwright-tests`
+2. Ouvre dans cet ordre `package.json`, `tests/simple.spec.ts`, `tests/button.spec.ts`
+3. Passe en thème clair "Theme > Light"
+4. Passe en mode présentateur "Enter presentation mode" ⚠️ça fait passer en fullscreen
