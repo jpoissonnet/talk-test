@@ -1,7 +1,8 @@
 import { css, html } from "lit";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { defineSlideType } from "./base.js";
-import { getMeta, getTitle, markup, pipeline } from "../utils.mjs";
+import "@cicciosgamino/qr-code-element";
+import { getMeta, markup } from "../utils.mjs";
 import "../animated-background.js";
 
 defineSlideType("slide-poster", {

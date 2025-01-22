@@ -967,18 +967,23 @@ Bon, au final...
 ## poster main
 Merci beaucoup !
 ==========
-xxxxxxxxxx
-xxxxxxxxxx
-xxxxxxxxxx
-xxxx
-xxxxxxxxxx
-xxxxxxxxxx
-xxxxxxxx
+<div class="qr-container">
+  <qr-code-element
+    text="https://app.voxxr.in/user-tokens/register?type=TalkFeedbacksViewer&spaceToken=&eventId=snowcamp25&talkId=cm2aou1w800b4xalmlhxk8psd&secretToken=27c908ab-5db8-4b6d-b88f-f9c3c031650f"
+    error-correction="medium"
+    mask-pattern="-1"
+    scale="5">
+  </qr-code-element>
+</div>
 ==========
 xxxxxxxxxx
 xxxxxx
 xxxxxxxxxx
+Votre feedback est important !
 xxxxxxxxxx
+xxxxxxxxxx
+xxxxx
+==========
 xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxxx
