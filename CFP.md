@@ -107,10 +107,10 @@ Intro + Slide de titre + présentation de chacun
 
 ## TODO
 
-- [ ] Référencer un contenu sur Cucumber / playwright-bdd
-- [ ] Référencer l'ami Mathieu Mure sur Playwright
-- [ ] Ajouter le lien Github dans la présentation
-- [ ] Ajouter le livre de l'Afnor en référence
+- [x] Référencer un contenu sur Cucumber / playwright-bdd
+- [x] Référencer l'ami Mathieu Mure sur Playwright
+- [x] Ajouter le lien Github dans la présentation
+- [x] Ajouter le livre de l'Afnor en référence
 - [ ] Donner l'impression que la 3 eme est partie est plus longue
 
 

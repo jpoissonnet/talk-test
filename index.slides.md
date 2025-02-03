@@ -2,9 +2,9 @@
 author:
 author-twitter:
 author-company:
-event: Snowcamp
-city: Grenoble
-date: 23 janvier 2025
+event: LyonJS 💯
+city: Lyon
+date: 21 février 2025
 ---
 
 # Tester c'est tricher
@@ -778,6 +778,12 @@ Playwright - <strong>Mocking</strong>
 
 > Playwright permet de faire ça en une ligne de code, c'est magnifique
 
+## ext-content contain
+https://www.youtube.com/watch?v=UDyBHzoMpV4
+Playwright 🎭, the Cypress killer by <strong>Mathieu Mure</strong>
+<img src="src/img/playright-mathieu.jpg">
+
+> Si vous voulez aller plus loin, note ami Mathieu Mure a fait une conférence sur Playwright lors d'un LyonJS où il montre plus en détails Playright.
 
 ## blank white
 > @00:38:30@ ±01:00
@@ -796,7 +802,6 @@ Essayer le <strong>BDD</strong> ou l'<strong>ATDD</strong>
 
 > Essayer de décrire par vos tests, le comportement de votre application, behavior driven development, ou acceptance test driven development.
 > Des outils comme Gherkin, Cucumber, Specflow, etc. peuvent vous aider à écrire des tests plus lisibles, plus compréhensibles, plus maintenables.
-
 ## code
 ```gherkin
 Feature: Blog Homepage
@@ -819,6 +824,11 @@ Cucumber
 
 > Jeter donc un oeil à Cucumber, qui remplira très bien cette fonction pour vous.
 > Bon pour les technophiles, on a un autre conseil pour vous.
+
+## ext-content contain
+https://www.youtube.com/watch?v=L3rHsE-nA78
+Ryan Marsh – BDD with cucumber.js
+<img src="src/img/bdd-introduction.jpeg">
 
 ## tip
 Soignez votre <strong><em>testbase</em></strong> comme votre codebase
@@ -985,6 +995,9 @@ xxxxxxxxxx
 xxxxx
 ==========
 xxxxxxxxxx
+<span style="font-size: 0.90rem">github.com/jpoissonnet/talk-test</span>
+xxxxxxxxxx
+xxxxxxxxxx
 xxxxxxxxxx
 xxxxxxxxxx
 xxxxx
@@ -997,12 +1010,16 @@ Références :
 
 * Dépôt de la présentation : https://github.com/jpoissonnet/talk-test/
 
+Livres:
+* Mike Cohn, Succeeding with Agile: Software Development Using Scrum, Addison-Wesley Signature 2009
+* Jean Pierre Martin, Du bricolage à l'industrialisation: La qualité des logiciels, Afnor Gestion, 1987
+
 Liens :
 * state of js : https://stateofjs.com/en-US
 * Alister B Scott, Ice Cream model : https://alisterscott.github.io/TestingPyramids.html
-
 * Designing a Pragmatic Testing Strategy : https://cookbook.marmicode.io/angular/pragmatic-testing-strategy/
 * Why Vitest? : https://cookbook.marmicode.io/angular/why-vitest/
+
 Images :
 
 * photos des parapluies : https://www.neyrat.fr/
