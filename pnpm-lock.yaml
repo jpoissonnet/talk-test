@@ -49,10 +49,10 @@ importers:
     dependencies:
       '@hono/node-server':
         specifier: ^1.13.7
-        version: 1.13.7(hono@4.6.14)
+        version: 1.13.7(hono@4.7.1)
       hono:
         specifier: ^4.6.14
-        version: 4.6.14
+        version: 4.7.1
     devDependencies:
       '@playwright/test':
         specifier: ^1.49.1
@@ -1215,8 +1215,8 @@ packages:
     resolution: {integrity: sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==}
     engines: {node: '>=12.0.0'}
 
-  hono@4.6.14:
-    resolution: {integrity: sha512-j4VkyUp2xazGJ8eCCLN1Vm/bxdvm/j5ZuU9AIjLu9vapn2M44p9L3Ktr9Vnb2RN2QtcR/wVjZVMlT5k7GJQgPw==}
+  hono@4.7.1:
+    resolution: {integrity: sha512-V3eWoPkBxoNgFCkSc5Y5rpLF6YoQQx1pkYO4qrF6YfOw8RZbujUNlJLZCxh0z9gZct70+je2Ih7Zrdpv21hP9w==}
     engines: {node: '>=16.9.0'}
 
   http-assert@1.5.0:
@@ -2196,9 +2196,9 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@hono/node-server@1.13.7(hono@4.6.14)':
+  '@hono/node-server@1.13.7(hono@4.7.1)':
     dependencies:
-      hono: 4.6.14
+      hono: 4.7.1
 
   '@isaacs/cliui@8.0.2':
     dependencies:
@@ -3097,7 +3097,7 @@ snapshots:
 
   highlight.js@11.11.1: {}
 
-  hono@4.6.14: {}
+  hono@4.7.1: {}
 
   http-assert@1.5.0:
     dependencies:
