@@ -64,7 +64,7 @@ xxxxxxxxxx
 xxxxxxxxxx
 ==========
 xxxxxxxxxx
-<img src="src/img/grenoble.png"/>
+<img src="src/img/lyonjs.png"/>
 xxxxxxxxxx
 xxxxxxxxx
 ==========
