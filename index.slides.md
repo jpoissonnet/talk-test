@@ -979,7 +979,7 @@ Merci beaucoup !
 ==========
 <div class="qr-container">
   <qr-code-element
-    text="https://app.voxxr.in/user-tokens/register?type=TalkFeedbacksViewer&spaceToken=&eventId=snowcamp25&talkId=cm2aou1w800b4xalmlhxk8psd&secretToken=27c908ab-5db8-4b6d-b88f-f9c3c031650f"
+    text="https://openfeedback.io/sa97jzlbou7Y34dlrQQf/2025-02-21/BiEYFWPyI1gdrgT6Slt2"
     error-correction="medium"
     mask-pattern="-1"
     scale="5">
