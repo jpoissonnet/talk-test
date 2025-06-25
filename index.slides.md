@@ -2,9 +2,9 @@
 author:
 author-twitter:
 author-company:
-event: LyonJS 💯
-city: Lyon
-date: 21 février 2025
+event: Sunnytech
+city: Montpellier
+date: 25 juin 2025
 ---
 
 # Tester c'est tricher
@@ -35,7 +35,7 @@ xxxxxxxxxx
 xxxxxxxxxx
 ==========
 xxxxxxxxxx
-<img src="src/img/lyonjs.png"/>
+<img src="src/img/sunnytech.jpeg"/>
 xxxxxxxxxx
 xxxxxxxxx
 ==========
@@ -64,7 +64,7 @@ xxxxxxxxxx
 xxxxxxxxxx
 ==========
 xxxxxxxxxx
-<img src="src/img/lyonjs.png"/>
+<img src="src/img/sunnytech.jpeg"/>
 xxxxxxxxxx
 xxxxxxxxx
 ==========
@@ -979,7 +979,7 @@ Merci beaucoup !
 ==========
 <div class="qr-container">
   <qr-code-element
-    text="https://openfeedback.io/sa97jzlbou7Y34dlrQQf/2025-02-21/BiEYFWPyI1gdrgT6Slt2"
+    text="https://openfeedback.io/sunnytech2025/2025-06-26/cm3xco7n1006spydesz29k7bo"
     error-correction="medium"
     mask-pattern="-1"
     scale="5">
