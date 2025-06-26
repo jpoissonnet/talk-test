@@ -4,7 +4,7 @@ author-twitter:
 author-company:
 event: Sunnytech
 city: Montpellier
-date: 25 juin 2025
+date: 26 juin 2025
 ---
 
 # Tester c'est tricher
