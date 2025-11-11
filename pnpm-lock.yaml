@@ -37,7 +37,7 @@ importers:
         version: 10.1.0
       prettier:
         specifier: ^3.4.2
-        version: 3.4.2
+        version: 3.6.2
       puppeteer:
         specifier: ^10.4.0
         version: 10.4.0
@@ -77,7 +77,7 @@ importers:
     dependencies:
       prettier:
         specifier: ^3.4.2
-        version: 3.4.2
+        version: 3.6.2
       redis:
         specifier: ^4.7.0
         version: 4.7.0
@@ -1585,8 +1585,8 @@ packages:
     resolution: {integrity: sha512-OCVPnIObs4N29kxTjzLfUryOkvZEq+pf8jTF0lg8E7uETuWHA+v7j3c/xJmiqpX450191LlmZfUKkXxkTry7nA==}
     engines: {node: ^10 || ^12 || >=14}
 
-  prettier@3.4.2:
-    resolution: {integrity: sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==}
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -3479,7 +3479,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  prettier@3.4.2: {}
+  prettier@3.6.2: {}
 
   process-nextick-args@2.0.1: {}
 
