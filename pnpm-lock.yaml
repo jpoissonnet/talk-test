@@ -42,8 +42,8 @@ importers:
         specifier: ^10.4.0
         version: 10.4.0
       twemoji:
-        specifier: ^13.1.1
-        version: 13.1.1
+        specifier: ^14.0.0
+        version: 14.0.2
 
   demo/dummy-app:
     dependencies:
@@ -1872,11 +1872,11 @@ packages:
   tweetnacl@0.14.5:
     resolution: {integrity: sha512-KXXFFdAbFXY4geFIwoyNK+f5Z1b7swfXABfL7HXCmoIWMKU3dmS26672A4EeQtDzLKy7SXmfBu51JolvEKwtGA==}
 
-  twemoji-parser@13.1.0:
-    resolution: {integrity: sha512-AQOzLJpYlpWMy8n+0ATyKKZzWlZBJN+G0C+5lhX7Ftc2PeEVdUU/7ns2Pn2vVje26AIZ/OHwFoUbdv6YYD/wGg==}
+  twemoji-parser@14.0.0:
+    resolution: {integrity: sha512-9DUOTGLOWs0pFWnh1p6NF+C3CkQ96PWmEFwhOVmT3WbecRC+68AIqpsnJXygfkFcp4aXbOp8Dwbhh/HQgvoRxA==}
 
-  twemoji@13.1.1:
-    resolution: {integrity: sha512-IIIoq+n1lk1M1+evBKZD3DO0ud02fDQ4ssbgAv8rp3YBWUeNmskjlisFUPPDacQ50XS3bhrd4Kq9Q2gqhxb0dg==}
+  twemoji@14.0.2:
+    resolution: {integrity: sha512-BzOoXIe1QVdmsUmZ54xbEH+8AgtOKUiG53zO5vVP2iUu6h5u9lN15NcuS6te4OY96qx0H7JK9vjjl9WQbkTRuA==}
 
   type-is@1.6.18:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
@@ -3838,13 +3838,13 @@ snapshots:
 
   tweetnacl@0.14.5: {}
 
-  twemoji-parser@13.1.0: {}
+  twemoji-parser@14.0.0: {}
 
-  twemoji@13.1.1:
+  twemoji@14.0.2:
     dependencies:
       fs-extra: 8.1.0
       jsonfile: 5.0.0
-      twemoji-parser: 13.1.0
+      twemoji-parser: 14.0.0
       universalify: 0.1.2
 
   type-is@1.6.18:
