@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   ensuite-present:
-    hash: m77fnpdqjxgwee2xa2vubcvbwi
+    hash: 730218a40b559a3bd558857b5c6f699f7b42826d43f4732dbe600f423cfa3a1f
     path: patches/ensuite-present.patch
 
 importers:
@@ -31,7 +31,7 @@ importers:
         version: 3.6.0
       ensuite-present:
         specifier: 0.1.0
-        version: 0.1.0(patch_hash=m77fnpdqjxgwee2xa2vubcvbwi)
+        version: 0.1.0(patch_hash=730218a40b559a3bd558857b5c6f699f7b42826d43f4732dbe600f423cfa3a1f)
       fs-extra:
         specifier: ^10.1.0
         version: 10.1.0
@@ -2947,7 +2947,7 @@ snapshots:
     dependencies:
       once: 1.4.0
 
-  ensuite-present@0.1.0(patch_hash=m77fnpdqjxgwee2xa2vubcvbwi):
+  ensuite-present@0.1.0(patch_hash=730218a40b559a3bd558857b5c6f699f7b42826d43f4732dbe600f423cfa3a1f):
     dependencies:
       node-static: 0.7.11
 
