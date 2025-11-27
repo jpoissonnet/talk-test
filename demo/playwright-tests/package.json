@@ -2,7 +2,7 @@
   "name": "playwright-tests",
   "version": "1.0.0",
   "devDependencies": {
-    "@playwright/test": "1.56.1",
+    "@playwright/test": "1.57.0",
     "@types/node": "^22.0.0"
   }
 }
