@@ -2,9 +2,9 @@
 author:
 author-twitter:
 author-company:
-event: Sunnytech
-city: Montpellier
-date: 26 juin 2025
+event: Devfest
+city: Dijon
+date: 5 décembre 2025
 ---
 
 # Tester c'est tricher
@@ -35,7 +35,7 @@ xxxxxxxxxx
 xxxxxxxxxx
 ==========
 xxxxxxxxxx
-<img src="src/img/sunnytech.jpeg"/>
+<img src="src/img/dijon.webp"/>
 xxxxxxxxxx
 xxxxxxxxx
 ==========
@@ -64,7 +64,7 @@ xxxxxxxxxx
 xxxxxxxxxx
 ==========
 xxxxxxxxxx
-<img src="src/img/sunnytech.jpeg"/>
+<img src="src/img/dijon.webp"/>
 xxxxxxxxxx
 xxxxxxxxx
 ==========
@@ -241,7 +241,7 @@ Un modèle de <strong>2009</strong>
 > #AC# Pour autant on voit encore ce modèle exposé, transformé, avec plus ou moins d'étages sans pour autant qu'on se préoccupe du message initial.
 
 ## ext-content contain
-<img src="src/img/honeycomb-test-model-033e461521df0d8b1cf5bf7dc22e1380.png">
+<img src="src/img/honeycomb-test-model-033e461521df0d8b1cf5bf7dc22e1380.png"/>
 https://cookbook.marmicode.io/angular/pragmatic-testing-strategy/
 Designing a Pragmatic Testing Strategy - <strong>Y Jaaidi</strong>
 
@@ -251,6 +251,18 @@ Designing a Pragmatic Testing Strategy - <strong>Y Jaaidi</strong>
 > #JP# D'abord, il lève l'ambiguïté entre les tests d'intégration et les tests unitaires, en les regroupant sous le terme de tests "narrow".
 > Ensuite, il déplace ces tests unitaires vers le centre de l'hexagone, pour montrer qu'ils sont au cœur de la stratégie de test.
 > Mais qu'ils ne sont pas la base de tout et qu'ils ne sont pas suffisants.
+
+## ext-content contain
+<img src="src/img/trophy.webp"/>
+https://kentcdodds.com/blog/the-testing-trophy-and-testing-classifications
+The Testing Trophy and Testing Classifications - <strong>Kent C Dodds</strong>
+
+> #AC# Et puis encore un autre modèle, celui de Ken C Dodds. Le trophé des tests
+> #JP# Pour lui, le socle de votre stratégie de testing doit reposer sur de l'analyse static et votre compilateur.
+> Puis un bonne couche de tests d'intégrations
+> Et enfin une relative petite couche de tests e2e.
+> #AC# et anecdote, sachez que Kent est plutot mauvais au baby foot. 
+> Il se peut qu'avec l'ami Mickael, nous l'ayons peut-être secoué un peu.
 
 ## text white
 🔬
@@ -979,7 +991,7 @@ Merci beaucoup !
 ==========
 <div class="qr-container">
   <qr-code-element
-    text="https://openfeedback.io/sunnytech2025/2025-06-26/cm3xco7n1006spydesz29k7bo"
+    text="https://openfeedback.io/devfest-dijon-2025/2025-12-05/cmcjf8msm010eoe3mig4l6a33"
     error-correction="medium"
     mask-pattern="-1"
     scale="5">
