@@ -16,7 +16,7 @@
     "@web/dev-server": "^0.1.38",
     "chokidar": "^3.6.0",
     "ensuite-present": "0.1.0",
-    "fs-extra": "^10.1.0",
+    "fs-extra": "^11.0.0",
     "prettier": "^3.4.2",
     "puppeteer": "^10.4.0",
     "twemoji": "^13.1.1"
