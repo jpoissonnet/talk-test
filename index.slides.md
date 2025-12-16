@@ -1023,8 +1023,9 @@ Références :
 * Dépôt de la présentation : https://github.com/jpoissonnet/talk-test/
 
 Livres:
-* Mike Cohn, Succeeding with Agile: Software Development Using Scrum, Addison-Wesley Signature 2009
-* Jean Pierre Martin, Du bricolage à l'industrialisation: La qualité des logiciels, Afnor Gestion, 1987
+
+* Mike Cohn, Succeeding with Agile : Software Development Using Scrum, Addison-Wesley Signature 2009
+* Jean Pierre Martin, Du bricolage à l'industrialisation : La qualité des logiciels, Afnor Gestion, 1987
 
 Liens :
 * state of js : https://stateofjs.com/en-US
