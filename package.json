@@ -19,7 +19,7 @@
     "fs-extra": "^10.1.0",
     "prettier": "^3.4.2",
     "puppeteer": "^10.4.0",
-    "twemoji": "^13.1.1"
+    "twemoji": "^14.0.0"
   },
   "volta": {
     "node": "22.21.1"
